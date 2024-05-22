@@ -53,19 +53,26 @@ The website structure:
 Each team member has a list of tasks they need to do for the project.
 
 Aleksandar:
-- [ ] Test Task
+- [ ] Responsive Design for the Landing Page(s)
+- [ ] Create the "Rewards" Page in the Admin Dashboard
+- [ ] Help other team members
 
 Ivan Georgiev:
-- [ ] Test Task
+- [ ] Create the "Feedback" Page in the Admin Dashboard
+- [ ] Help out with the "Tiers" Page
+- [ ] Help other team members
 
 Ivan Petrov:
-- [ ] Test Task
+- [ ] Create the "Dashboard" Page in the Admin Dashboard
+- [ ] Create the "Apply" Section in the Landing Page
 
 Deniz Hadjiosmanov:
-- [ ] Test Task
+- [ ] Create the "How Does it Work" Section in the Landing Page
+- [ ] Create the "Users" Page in the Admin Dashboard 
 
 Raul Vila:
-- [ ] Test Task
+- [ ] Create the "Tiers" Page
 
 Christian Kituantala
-- [ ] Test Task
+- [ ] Create the "Intro" Section in the Landing Page
+- [ ] Create the Navigation Component in the Admin Dashboard
