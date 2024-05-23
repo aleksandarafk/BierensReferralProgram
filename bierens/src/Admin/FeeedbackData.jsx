@@ -65,6 +65,30 @@ export const FeedbackData = {
                 feedback: 'Accessories',
                 rating: 4
             },
+            {
+                id: '9',
+                email: 'john1@gmail.com',
+                date: '30/04/2024',
+                location: 'Veghen',
+                feedback: 'Accessories',
+                rating: 4
+            },
+            {
+                id: '10',
+                email: 'john1@gmail.com',
+                date: '18/03/2024',
+                location: 'Den Bosch',
+                feedback: 'Accessories',
+                rating: 4
+            },
+            {
+                id: '11',
+                email: 'john1@gmail.com',
+                date: '23/03/2024',
+                location: 'The Hague',
+                feedback: 'Accessories',
+                rating: 4
+            }
         ];
     },
 

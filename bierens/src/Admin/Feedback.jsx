@@ -23,7 +23,7 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 
 export default function ProductsDemo() {
-    let emptyProduct = {
+     let emptyProduct = {
         id: null,
         email: '',
         date: '',
@@ -39,9 +39,12 @@ export default function ProductsDemo() {
     const [product, setProduct] = useState(emptyProduct);
     const [selectedProducts, setSelectedProducts] = useState(null);
     const [submitted, setSubmitted] = useState(false);
+    const [deletedPeople, setDeletedPeople] = useState([])
     const [globalFilter, setGlobalFilter] = useState(null);
     const toast = useRef(null);
     const dt = useRef(null);
+    console.log(deletedPeople)
+
 
     useEffect(() => {
         FeedbackData.getProducts().then((data) => setProducts(data));
@@ -103,7 +106,11 @@ export default function ProductsDemo() {
 
     const deleteProduct = () => {
         let _products = products.filter((val) => val.id !== product.id);
-
+        
+        setDeletedPeople(prevState => {
+            return [...prevState, product]
+        })
+       
         setProducts(_products);
         setDeleteProductDialog(false);
         setProduct(emptyProduct);
@@ -145,6 +152,8 @@ export default function ProductsDemo() {
     const deleteSelectedProducts = () => {
         let _products = products.filter((val) => !selectedProducts.includes(val));
 
+        
+        
         setProducts(_products);
         setDeleteProductsDialog(false);
         setSelectedProducts(null);
@@ -176,14 +185,7 @@ export default function ProductsDemo() {
         setProduct(_product);
     };
 
-    const leftToolbarTemplate = () => {
-        return (
-            <div className="flex flex-wrap gap-2">
-                <Button label="New" icon="pi pi-plus" severity="success" onClick={openNew} />
-                <Button label="Delete" icon="pi pi-trash" severity="danger" onClick={confirmDeleteSelected} disabled={!selectedProducts || !selectedProducts.length} />
-            </div>
-        );
-    };
+   
 
     const rightToolbarTemplate = () => {
         return <Button label="Export" icon="pi pi-upload" className="p-button-help" onClick={exportCSV} />;
@@ -228,16 +230,7 @@ export default function ProductsDemo() {
         }
     };
 
-   const header = (
-        <div className="flex flex-wrap gap-2 align-items-center justify-content-between">
-            <h4 className="m-0">Manage Products</h4>
-            <IconField unstyled={true} iconPosition="left">
-               
-                <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..." />
-                <InputIcon className="pi pi-search" />
-            </IconField>
-        </div>
-    );
+   
     const productDialogFooter = (
         <React.Fragment>
             <Button label="Cancel" icon="pi pi-times" outlined onClick={hideDialog} />
@@ -259,26 +252,30 @@ export default function ProductsDemo() {
 
     return (
         <div>
+            <div className='features'>
+            <input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>
+            <Button label="Request Feedback" icon="pi pi-document" severity="success" />
+            </div>
             <Toast ref={toast} />
             <div className="card">
-                <Toolbar className="mb-2" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
+                {/* <Toolbar className="mb-2" right={rightToolbarTemplate}></Toolbar> */}
 
                 <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
-        dataKey="id"  paginator rows={10} rowsPerPageOptions={[5, 10, 25]}
+        dataKey="id"  paginator rows={7} rowsPerPageOptions={[5, 10, 25]}
         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" globalFilter={globalFilter} header={header}>
-    <Column  selectionMode="multiple" exportable={false}></Column>
-    <Column field="email" header={<div> Email</div>} sortable style={{textAlign: "left" }}></Column>
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" globalFilter={globalFilter}>
+    
+    <Column field="email" header="Email" sortable style={{textAlign: "left" }}></Column>
     <Column field="date" header={<div> Date</div>} sortable style={{textAlign: "left" }}></Column>
     <Column field="location" header={<div>Location</div>} sortable style={{textAlign: "left" }}></Column>
-    <Column field="rating" header={<div > Rating</div>} body={ratingBodyTemplate} sortable style={{ minWidth: '12rem' }}></Column>
-    <Column field="feedback" header={<div> Feedback </div>} sortable style={{ minWidth: '12rem', textAlign: "left" }}></Column>
-    <Column header={<div> Action </div>} body={actionBodyTemplate} exportable={false} style={{ minWidth: '12rem', textAlign: "left" }}></Column>
+    <Column field="rating" header={<div > Rating</div>} body={ratingBodyTemplate} sortable ></Column>
+    <Column field="feedback" header={<div> Feedback </div>} sortable style={{ textAlign: "left" }}></Column>
+    <Column header={<div> Action </div>} body={actionBodyTemplate} exportable={false} style={{ textAlign: "left" }}></Column>
 </DataTable>
 
             </div>
 
-            <Dialog visible={productDialog} style={{ width: '32rem', padding: "1em", borderRadius:"10px" }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="User Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
+            <Dialog visible={productDialog} style={{ width: '32rem', borderRadius:"10px" }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="User Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
                 {product.image && <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.image} className="product-image block m-auto pb-3" />}
                 <div className="field">
                     <label htmlFor="name" className="font-bold">
