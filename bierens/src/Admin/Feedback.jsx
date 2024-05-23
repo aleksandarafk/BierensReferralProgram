@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import "./Feedback.css"
 import { classNames } from 'primereact/utils';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
@@ -17,7 +18,9 @@ import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { Tag } from 'primereact/tag';
 import { StyleClass } from 'primereact/styleclass';
-
+import 'primereact/resources/themes/saga-blue/theme.css'; 
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 
 export default function ProductsDemo() {
     let emptyProduct = {
@@ -202,9 +205,9 @@ export default function ProductsDemo() {
 
     const actionBodyTemplate = (rowData) => {
         return (
-            <React.Fragment>
-                <Button icon="pi pi-pencil" label='Feedback'rounded outlined className="mr-2" onClick={() => editProduct(rowData)} />
-                <Button icon="pi pi-trash" label='Delete' rounded outlined severity="danger" onClick={() => confirmDeleteProduct(rowData)} />
+            <React.Fragment >
+                <Button icon="pi pi-pencil" rounded outlined className="mr-2" onClick={() => editProduct(rowData)} />
+                <Button style={{marginLeft: "0.5em"}}icon="pi pi-trash" rounded outlined severity="danger" onClick={() => confirmDeleteProduct(rowData)} />
             </React.Fragment>
         );
     };
@@ -225,12 +228,13 @@ export default function ProductsDemo() {
         }
     };
 
-    const header = (
-        <div >
+   const header = (
+        <div className="flex flex-wrap gap-2 align-items-center justify-content-between">
             <h4 className="m-0">Manage Products</h4>
-            <IconField iconPosition="left">
-                <InputIcon className="pi pi-search" />
+            <IconField unstyled={true} iconPosition="left">
+               
                 <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..." />
+                <InputIcon className="pi pi-search" />
             </IconField>
         </div>
     );
@@ -257,28 +261,28 @@ export default function ProductsDemo() {
         <div>
             <Toast ref={toast} />
             <div className="card">
-                <Toolbar className="mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
+                <Toolbar className="mb-2" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
                 <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
         dataKey="id"  paginator rows={10} rowsPerPageOptions={[5, 10, 25]}
         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" globalFilter={globalFilter} header={header}>
-    <Column style={{textAlign:"left", display: "flex", justifyContent:"center", alignItems: "center"}}  selectionMode="multiple" exportable={false}></Column>
-    <Column field="email" header={<div><i className="pi pi-tag"></i> Email</div>} sortable style={{textAlign: "left" }}></Column>
-    <Column field="date" header={<div><i className="pi pi-tag"></i> Date</div>} sortable style={{textAlign: "left" }}></Column>
-    <Column field="location" header={<div><i className="pi pi-tag"></i> Location</div>} sortable style={{textAlign: "left" }}></Column>
-    <Column field="rating" header={<div ><i className="pi pi-star"></i> Rating</div>} body={ratingBodyTemplate} sortable style={{ minWidth: '12rem' }}></Column>
-    <Column field="feedback" header={<div><i className="pi pi-shopping-cart"></i> Feedback </div>} sortable style={{ minWidth: '12rem', textAlign: "left" }}></Column>
-    <Column header={<div><i className="pi pi-shopping-cart"></i> Action </div>} body={actionBodyTemplate} exportable={false} style={{ minWidth: '12rem', textAlign: "left" }}></Column>
+    <Column  selectionMode="multiple" exportable={false}></Column>
+    <Column field="email" header={<div> Email</div>} sortable style={{textAlign: "left" }}></Column>
+    <Column field="date" header={<div> Date</div>} sortable style={{textAlign: "left" }}></Column>
+    <Column field="location" header={<div>Location</div>} sortable style={{textAlign: "left" }}></Column>
+    <Column field="rating" header={<div > Rating</div>} body={ratingBodyTemplate} sortable style={{ minWidth: '12rem' }}></Column>
+    <Column field="feedback" header={<div> Feedback </div>} sortable style={{ minWidth: '12rem', textAlign: "left" }}></Column>
+    <Column header={<div> Action </div>} body={actionBodyTemplate} exportable={false} style={{ minWidth: '12rem', textAlign: "left" }}></Column>
 </DataTable>
 
             </div>
 
-            <Dialog visible={productDialog} style={{ width: '32rem', backgroundColor: "blue" }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="User Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
+            <Dialog visible={productDialog} style={{ width: '32rem', padding: "1em", borderRadius:"10px" }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="User Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
                 {product.image && <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.image} className="product-image block m-auto pb-3" />}
                 <div className="field">
                     <label htmlFor="name" className="font-bold">
-                        Name
+                        Email
                     </label>
                     <InputText disabled id="name" value={product.email} onChange={(e) => onInputChange(e, 'name')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.name })} />
                     {submitted && !product.name && <small className="p-error">Name is required.</small>}
