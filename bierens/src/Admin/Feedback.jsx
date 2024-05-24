@@ -208,8 +208,8 @@ export default function ProductsDemo() {
     const actionBodyTemplate = (rowData) => {
         return (
             <React.Fragment >
-                <Button icon="pi pi-pencil" rounded outlined className="mr-2" onClick={() => editProduct(rowData)} />
-                <Button style={{marginLeft: "0.5em"}}icon="pi pi-trash" rounded outlined severity="danger" onClick={() => confirmDeleteProduct(rowData)} />
+                <Button icon="pi pi-file"  rounded className="mr-2" onClick={() => editProduct(rowData)} />
+                <Button style={{marginLeft: "0.5em"}}icon="pi pi-trash"  rounded severity="danger" onClick={() => confirmDeleteProduct(rowData)} />
             </React.Fragment>
         );
     };
@@ -233,8 +233,7 @@ export default function ProductsDemo() {
    
     const productDialogFooter = (
         <React.Fragment>
-            <Button label="Cancel" icon="pi pi-times" outlined onClick={hideDialog} />
-            <Button label="Save" icon="pi pi-check" onClick={saveProduct} />
+            <Button label="Done" icon="pi pi-check" onClick={hideDialog} />
         </React.Fragment>
     );
     const deleteProductDialogFooter = (
@@ -251,10 +250,15 @@ export default function ProductsDemo() {
     );
 
     return (
-        <div>
+        <div className='feedback-table'>
+            <div className='text-section'>
+            <h1 className='h1Feedback'>Feedback</h1>
+            <p className='paragraphFeedback '>Take a look at all of the reviews given by users.</p>
+            </div>
+            <div className='navbar'></div>
             <div className='features'>
             <input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>
-            <Button label="Request Feedback" icon="pi pi-document" severity="success" />
+            <Button label="Request Feedback" severity="success" />
             </div>
             <Toast ref={toast} />
             <div className="card">
@@ -264,12 +268,12 @@ export default function ProductsDemo() {
         dataKey="id"  paginator rows={7} rowsPerPageOptions={[5, 10, 25]}
         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" globalFilter={globalFilter}>
-    
+     <Column selectionMode="multiple" exportable={false}></Column>
     <Column field="email" header="Email" sortable style={{textAlign: "left" }}></Column>
     <Column field="date" header={<div> Date</div>} sortable style={{textAlign: "left" }}></Column>
     <Column field="location" header={<div>Location</div>} sortable style={{textAlign: "left" }}></Column>
     <Column field="rating" header={<div > Rating</div>} body={ratingBodyTemplate} sortable ></Column>
-    <Column field="feedback" header={<div> Feedback </div>} sortable style={{ textAlign: "left" }}></Column>
+    <Column field="feedbackShort" header={<div> Feedback </div>} sortable style={{ textAlign: "left" }}></Column>
     <Column header={<div> Action </div>} body={actionBodyTemplate} exportable={false} style={{ textAlign: "left" }}></Column>
 </DataTable>
 
@@ -281,30 +285,14 @@ export default function ProductsDemo() {
                     <label htmlFor="name" className="font-bold">
                         Email
                     </label>
-                    <InputText disabled id="name" value={product.email} onChange={(e) => onInputChange(e, 'name')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.name })} />
-                    {submitted && !product.name && <small className="p-error">Name is required.</small>}
+                    <InputText disabled id="name" value={product.email} onChange={(e) => onInputChange(e, 'description')} />
+                   
                 </div>
                 <div className="field">
                     <label htmlFor="description" className="font-bold">
                         Feedback
                     </label>
-                    <InputTextarea disabled id="description" value={product.feedback} onChange={(e) => onInputChange(e, 'description')} required rows={3} cols={20} />
-                </div>
-
-
-                <div className="formgrid grid">
-                    <div className="field col">
-                        <label htmlFor="price" className="font-bold">
-                            Price
-                        </label>
-                        <InputNumber  id="price" value={product.price} onValueChange={(e) => onInputNumberChange(e, 'price')} mode="currency" currency="USD" locale="en-US" />
-                    </div>
-                    <div className="field col">
-                        <label htmlFor="quantity" className="font-bold">
-                            Quantity
-                        </label>
-                        <InputNumber id="quantity" value={product.quantity} onValueChange={(e) => onInputNumberChange(e, 'quantity')} />
-                    </div>
+                    <InputTextarea disabled id="description" value={product.feedback} onChange={(e) => onInputChange(e, 'description')}  rows={3} cols={20} />
                 </div>
             </Dialog>
 

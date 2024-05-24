@@ -6,7 +6,7 @@ export const FeedbackData = {
                 email: 'john1@gmail.com',
                 date: '14/04/2024',
                 location: 'Eindhoven',
-                feedback: 'Lololololol test test test test test test test',
+                feedbackShort: 'Lololololol test test test test test test test'.substring(0, 25) +  "\u2026" ,
                 rating: 5
             },
             {
@@ -14,7 +14,7 @@ export const FeedbackData = {
                 email: 'john1@gmail.com',
                 date: '12/04/2024',
                 location: 'Amsterdam',
-                feedback: 'Accessories',
+                feedbackShort: 'Lololololol test test test test test test test'.substring(0, 25) +  "\u2026" ,
                 rating: 4
             },
             {
@@ -22,7 +22,7 @@ export const FeedbackData = {
                 email: 'john1@gmail.com',
                 date: '15/03/2024',
                 location: 'Amsterdam',
-                feedback: 'Accessories',
+                feedbackShort: 'Lololololol test test test test test test test'.substring(0, 25) +  "\u2026" ,
                 rating: 3
             },
             {
@@ -30,7 +30,7 @@ export const FeedbackData = {
                 email: 'john1@gmail.com',
                 date: '11/10/2023',
                 location: 'Utrecht',
-                feedback: 'Accessories',
+                feedbackShort: 'Lololololol test test test test test test test'.substring(0, 25) +  "\u2026" ,
                 rating: 3.5
             },
             {
@@ -38,7 +38,7 @@ export const FeedbackData = {
                 email: 'john1@gmail.com',
                 date: '14/05/2024',
                 location: 'Tilburg',
-                feedback: 'Not ',
+                feedbackShort: 'Lololololol test test test test test test test'.substring(0, 25) +  "\u2026" ,
                 rating: 3.5
             },
             {
@@ -46,7 +46,7 @@ export const FeedbackData = {
                 email: 'john1@gmail.com',
                 date: '11/01/2024',
                 location: 'Venlo',
-                feedback: 'Accessories',
+                feedbackShort: 'Lololololol test test test test test test test'.substring(0, 25) +  "\u2026" ,
                 rating: 5
             },
             {
@@ -54,7 +54,7 @@ export const FeedbackData = {
                 email: 'john1@gmail.com',
                 date: '26/02/2024',
                 location: 'Veldhoven',
-                feedback: 'Accessories',
+                feedbackShort: 'Lololololol test test test test test test test'.substring(0, 25) +  "\u2026" ,
                 rating: 3.5
             },
             {
@@ -62,7 +62,7 @@ export const FeedbackData = {
                 email: 'john1@gmail.com',
                 date: '30/03/2024',
                 location: 'The Hague',
-                feedback: 'Accessories',
+                feedbackShort: 'Lololololol test test test test test test test'.substring(0, 25) +  "\u2026" ,
                 rating: 4
             },
             {
@@ -70,7 +70,7 @@ export const FeedbackData = {
                 email: 'john1@gmail.com',
                 date: '30/04/2024',
                 location: 'Veghen',
-                feedback: 'Accessories',
+                feedbackShort: 'Lololololol test test test test test test test'.substring(0, 25) +  "\u2026" ,
                 rating: 4
             },
             {
@@ -78,7 +78,7 @@ export const FeedbackData = {
                 email: 'john1@gmail.com',
                 date: '18/03/2024',
                 location: 'Den Bosch',
-                feedback: 'Accessories',
+                feedbackShort: 'Lololololol test test test test test test test'.substring(0, 25) +  "\u2026" ,
                 rating: 4
             },
             {
@@ -86,7 +86,7 @@ export const FeedbackData = {
                 email: 'john1@gmail.com',
                 date: '23/03/2024',
                 location: 'The Hague',
-                feedback: 'Accessories',
+                feedbackShort: 'Lololololol test test test test test test test'.substring(0, 25) +  "\u2026" ,
                 rating: 4
             }
         ];
