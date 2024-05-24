@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./FeedbackDeleted.css"
 import { classNames } from 'primereact/utils';
+import { FeedbackData } from "./FeedbackData.jsx"
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Toast } from 'primereact/toast';
@@ -21,6 +22,7 @@ import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function FeedbackDeleted() {
      let emptyProduct = {
@@ -32,7 +34,8 @@ export default function FeedbackDeleted() {
         rating: 0
     };
 
-    const [products, setProducts] = useState(null);
+    const [products, setProducts] = useState([]);
+    const [allData, setAllData] = useState([])
     const [productDialog, setProductDialog] = useState(false);
     const [deleteProductDialog, setDeleteProductDialog] = useState(false);
     const [deleteProductsDialog, setDeleteProductsDialog] = useState(false);
@@ -50,6 +53,7 @@ export default function FeedbackDeleted() {
 
     useEffect(() => {
         setProducts(linkProps);
+        FeedbackData.getProducts().then((data) => setAllData(data));
     }, []);
 
     const openNew = () => {
@@ -211,7 +215,7 @@ export default function FeedbackDeleted() {
         return (
             <React.Fragment >
                 <Button icon="pi pi-file"  rounded className="mr-2" onClick={() => editProduct(rowData)} />
-                <Button style={{marginLeft: "0.5em"}}icon="pi pi-trash"  rounded severity="danger" onClick={() => confirmDeleteProduct(rowData)} />
+                <Button style={{marginLeft: "0.5em"}}icon="pi pi-plus"  rounded onClick={() => confirmDeleteProduct(rowData)} />
             </React.Fragment>
         );
     };
@@ -241,7 +245,7 @@ export default function FeedbackDeleted() {
     const deleteProductDialogFooter = (
         <React.Fragment>
             <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductDialog} />
-            <Button label="Yes" icon="pi pi-check" severity="danger" onClick={deleteProduct} />
+            <Button label="Yes" icon="pi pi-check" severity='success' onClick={deleteProduct} />
         </React.Fragment>
     );
     const deleteProductsDialogFooter = (
@@ -256,6 +260,10 @@ export default function FeedbackDeleted() {
             <div className='text-section'>
             <h1 className='h1Feedback'> Deleted Feedback</h1>
             <p className='paragraphFeedback '>Here are all the user's which feedback was deleted.</p>
+            </div>
+            <div>
+            <Link to="/Feedback"  style={{textAlign: "left"}}> <p> All feedback: {allData.length - products.length} </p></Link>
+            <Link to="/FeedbackDeleted" style={{textAlign: "left"}}> <p>Deleted: {products.length}</p></Link>
             </div>
             <div className='navbar'></div>
             <div className='features'>
@@ -299,11 +307,11 @@ export default function FeedbackDeleted() {
             </Dialog>
 
             <Dialog visible={deleteProductDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
-                <div className="confirmation-content">
-                    <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
+                <div className="confirmation-content" style={{display: "flex", alignItems:"center"}}>
+                    <i className="pi pi-info-circle mr-3" style={{ fontSize: '2rem' }} />
                     {product && (
-                        <span>
-                            Are you sure you want to delete <b>{product.name}</b>?
+                        <span style={{marginLeft: "1em"}}>
+                            Are you sure you want to return the selected user <b>{product.name}</b>?
                         </span>
                     )}
                 </div>
