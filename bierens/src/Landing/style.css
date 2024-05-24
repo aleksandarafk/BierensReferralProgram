@@ -1,0 +1,60 @@
+* {
+    margin: 0px auto;
+    padding: 0px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#landing-top {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(image/LandingPage-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#landing-top main, #landing-top header, #landing-top footer {
+    width: 90%;
+    display: block;
+}
+
+#landing-top header, #landing-top footer {
+    width: 100%;
+}
+
+/* --Header */
+
+#landing-top header {
+    height: 132px;
+}
+
+/* --main */
+
+#landing-top main {
+    height: calc(100vh - 132px);
+}
+
+#landing-top #main-inner {
+    height: 100%;
+    width: 100%;
+    background: purple;
+}
+
+#landing-top .main-inner-content {
+    display: inline-block;
+    width: calc(50%);
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+#landing-top #main-inner-left {
+    background: blue;
+}
+
+#landing-top #main-inner-right {
+    background: green;
+}
