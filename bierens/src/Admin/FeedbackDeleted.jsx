@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import "./Feedback.css"
+import "./FeedbackDeleted.css"
 import { classNames } from 'primereact/utils';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import {FeedbackData} from "./FeeedbackData.jsx"
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { FileUpload } from 'primereact/fileupload';
@@ -21,9 +20,9 @@ import { StyleClass } from 'primereact/styleclass';
 import 'primereact/resources/themes/saga-blue/theme.css'; 
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-export default function Feedback() {
+export default function FeedbackDeleted() {
      let emptyProduct = {
         id: null,
         email: '',
@@ -46,9 +45,11 @@ export default function Feedback() {
     const dt = useRef(null);
     console.log(deletedPeople)
 
+    const linkProps = useLocation().state;
+    console.log(linkProps)
 
     useEffect(() => {
-        FeedbackData.getProducts().then((data) => setProducts(data));
+        setProducts(linkProps);
     }, []);
 
     const openNew = () => {
@@ -253,12 +254,8 @@ export default function Feedback() {
     return (
         <div className='feedback-table'>
             <div className='text-section'>
-            <h1 className='h1Feedback'>Feedback</h1>
-            <p className='paragraphFeedback '>Take a look at all of the reviews given by users.</p>
-            </div>
-            <div>
-            <Link to="/Feedback" state={deletedPeople} style={{textAlign: "left"}}> <p>All feedback: {products.length} </p></Link>
-            <Link to="/FeedbackDeleted" state={deletedPeople} style={{textAlign: "left"}}> <p>Deleted: {deletedPeople.length}</p></Link>
+            <h1 className='h1Feedback'> Deleted Feedback</h1>
+            <p className='paragraphFeedback '>Here are all the user's which feedback was deleted.</p>
             </div>
             <div className='navbar'></div>
             <div className='features'>

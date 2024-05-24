@@ -110,7 +110,7 @@ export const FeedbackData = {
                 rating: 4
             },
             {
-                id: '12',
+                id: '13',
                 email: 'john1@gmail.com',
                 date: '23/03/2024',
                 location: 'The Hague',
@@ -119,7 +119,7 @@ export const FeedbackData = {
                 rating: 5
             },
             {
-                id: '13',
+                id: '14',
                 email: 'john1@gmail.com',
                 date: '23/03/2024',
                 location: 'The Hague',
