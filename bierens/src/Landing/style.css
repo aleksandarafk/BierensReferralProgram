@@ -29,6 +29,10 @@ body {
 
 #landing-top header {
     height: 132px;
+    background-image: url(image/bierens-site-header.png);
+    background-size: auto 132px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* --main */
