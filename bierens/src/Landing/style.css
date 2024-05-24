@@ -44,7 +44,6 @@ body {
 #landing-top #main-inner {
     height: 100%;
     width: 100%;
-    background: purple;
 }
 
 #landing-top .main-inner-content {
@@ -55,9 +54,28 @@ body {
     float: left;
 }
 
-#landing-top #main-inner-left {
+/* --main --innerleft */
+
+/* #landing-top #main-inner-left {
     background: blue;
+} */
+
+.button-calltoaction {
+    width: 264px;
+    height: 84px;
+    background: linear-gradient(to left, #326AD7, #2651A4);
+    border-radius: 10px;
+    border: 0px transparent;
+    color: white;
 }
+
+.button-calltoaction:hover {
+    width: 236px;
+    height: 70px;
+    transition: all 1s;
+}
+
+/* --main --innerright */
 
 #landing-top #main-inner-right {
     background: green;
