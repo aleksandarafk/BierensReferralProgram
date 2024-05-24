@@ -292,7 +292,7 @@ export default function ProductsDemo() {
                     <label htmlFor="description" className="font-bold">
                         Feedback
                     </label>
-                    <InputTextarea disabled id="description" value={product.feedback} onChange={(e) => onInputChange(e, 'description')}  rows={3} cols={20} />
+                    <InputTextarea disabled id="description" value={product.feedbackAll} onChange={(e) => onInputChange(e, 'description')}  rows={3} cols={20} />
                 </div>
             </Dialog>
 
