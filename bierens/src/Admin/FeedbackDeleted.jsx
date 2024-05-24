@@ -261,9 +261,9 @@ export default function FeedbackDeleted() {
             <h1 className='h1Feedback'> Deleted Feedback</h1>
             <p className='paragraphFeedback '>Here are all the user's which feedback was deleted.</p>
             </div>
-            <div>
-            <Link to="/Feedback"  style={{textAlign: "left"}}> <p> All feedback: {allData.length - products.length} </p></Link>
-            <Link to="/FeedbackDeleted" style={{textAlign: "left"}}> <p>Deleted: {products.length}</p></Link>
+            <div className='nav-pages'>
+            <Link to="/Feedback" style={{textAlign: "left", textDecoration:"none"}}> <p style={{margin: 0, marginBottom: "0.5em"}}> All feedback: {allData.length - products.length} </p></Link>
+            <Link to="/FeedbackDeleted" style={{textAlign: "left", textDecoration:"none", color: "black"}}> <p style={{margin: 0, marginBottom: "0.5em"}}>Deleted: {products.length}</p></Link>
             </div>
             <div className='navbar'></div>
             <div className='features'>
@@ -310,7 +310,7 @@ export default function FeedbackDeleted() {
                 <div className="confirmation-content" style={{display: "flex", alignItems:"center"}}>
                     <i className="pi pi-info-circle mr-3" style={{ fontSize: '2rem' }} />
                     {product && (
-                        <span style={{marginLeft: "1em"}}>
+                        <span style={{marginLeft: "0.5em"}}>
                             Are you sure you want to return the selected user <b>{product.name}</b>?
                         </span>
                     )}

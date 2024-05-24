@@ -256,9 +256,9 @@ export default function Feedback() {
             <h1 className='h1Feedback'>Feedback</h1>
             <p className='paragraphFeedback '>Take a look at all of the reviews given by users.</p>
             </div>
-            <div>
-            <Link to="/Feedback" state={deletedPeople} style={{textAlign: "left"}}> <p>All feedback: {products.length} </p></Link>
-            <Link to="/FeedbackDeleted" state={deletedPeople} style={{textAlign: "left"}}> <p>Deleted: {deletedPeople.length}</p></Link>
+            <div className="nav-pages">
+            <Link  to="/Feedback" state={deletedPeople} style={{textAlign: "left", textDecoration:"none", color: "black"}}> <p style={{margin: 0, marginBottom: "0.5em"}}>All feedback: {products.length} </p></Link>
+            <Link to="/FeedbackDeleted" state={deletedPeople} style={{textAlign: "left", textDecoration:"none" }}> <p style={{margin: 0, marginBottom: "0.5em" }}>Deleted: {deletedPeople.length}</p></Link>
             </div>
             <div className='navbar'></div>
             <div className='features'>
@@ -302,11 +302,11 @@ export default function Feedback() {
             </Dialog>
 
             <Dialog visible={deleteProductDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
-                <div className="confirmation-content">
+                <div className="confirmation-content" style={{display: "flex", alignItems: "center"}}>
                     <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
                     {product && (
-                        <span>
-                            Are you sure you want to delete <b>{product.name}</b>?
+                        <span style={{marginLeft: "0.5em"}}>
+                            Are you sure you want to delete the user's feedback<b>{product.name}</b>?
                         </span>
                     )}
                 </div>

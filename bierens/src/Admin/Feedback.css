@@ -76,3 +76,23 @@
 .paragraphFeedback {
     margin-top: -3em;
 }
+
+.nav-pages{
+    display: flex;
+    gap: 1em;
+    border-bottom: 1px solid black;
+    margin-bottom: 1em;
+}
+
+a{
+    color: var(--bierens-text-gray)
+}
+
+a:hover{
+    color: var(--bierens-blue);
+}
+
+a:active{
+    color: green;
+}
+
