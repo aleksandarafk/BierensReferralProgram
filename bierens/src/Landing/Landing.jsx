@@ -13,7 +13,7 @@ const Landing = () => {
                 </div>
             </div>
             <div className="Right-side-img">
-                <img src="/images/Right-side-img.png" alt="Repeat." />
+                <img/>
             </div>
         </section>
     );
