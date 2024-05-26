@@ -58,6 +58,7 @@ body {
     border-radius: 10px;
     height: 210px;
     flex: 0.35;
+    gap: 56px;
 }
 
 .big_card {
@@ -68,6 +69,7 @@ body {
     border-radius: 10px;
     height: 210px;
     flex: 0.60;
+    gap: 106px;
 }
 
 .card_description {
@@ -78,6 +80,14 @@ body {
     padding: 0 0 0 20px;
     text-align: left;
     margin-top: 20px;
+}
+
+#description1 {
+    width: 48%;
+}
+
+#description2 {
+    width: 40%;
 }
 
 .bullet_number {
@@ -96,4 +106,22 @@ body {
     font-family: 'Noto Sans';
     font-weight: bold;
     font-size: 21px;
+}
+
+.infoImage {
+    height: 70%;
+    align-self: flex-end;
+}
+
+#rewards_card {
+    gap: 160px;
+}
+
+#progress_card {
+    gap: 0;
+}
+
+#progressImage {
+    width: 47%;
+    margin-right: 5px;
 }
