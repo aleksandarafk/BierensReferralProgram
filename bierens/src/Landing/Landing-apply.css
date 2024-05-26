@@ -1,0 +1,68 @@
+/* Landing-apply.css */
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+.How-to-apply {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Play', sans-serif; /* Set the font family to 'Play' */
+}
+
+.How-to-apply-text {
+    max-width: 800px; /* Set the maximum width */
+    width: 100%; /* Ensure it can scale down on smaller screens */
+    text-align: left; /* Align text to start from the left */
+}
+
+.How-to-apply-text h1 {
+    font-size: 80px;
+    color: #000000;
+}
+
+.How-to-apply-text .Earn {
+    color: #00388B; 
+}
+
+.How-to-apply-text p {
+    font-size: 36px;
+    color: #000000;
+    margin: 10px 0;
+}
+
+.Email-and-Button {
+    display: flex;
+    align-items: center;
+    
+}
+
+.Email-and-Button input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    height: 60px; /* Set height to 60px */
+    font-size: 20px; /* Set font size to 20px */
+    font-weight: 800; /* Attempt to make it extra bold */
+    width: 442px; /* Set width to 442px */
+    color: #333;
+    cursor: pointer;
+    border-radius: 10px; 
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Black border with 20% opacity */
+}
+
+.Email-and-Button button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #326AD7, #2651A4); /* Gradient colors */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; 
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
+    height: 84px; /* Set height to 84px */
+    font-size: 36px; /* Set font size to 36px */
+    width: 177px; /* Set width to 177px */
+}
+
+.Email-and-Button button:hover {
+    background: linear-gradient(to right, #2651A4, #326AD7); /* Reversed gradient on hover */
+}
+
