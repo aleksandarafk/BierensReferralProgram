@@ -25,14 +25,37 @@ body {
     width: 100%;
 }
 
+.highlight {
+    color: #326AD7!important;
+}
+
+/* --text */
+
+h1 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 4em;
+}
+p, a, button {
+    font-family: "Montserrat";
+    font-size: 1em;
+}
+button, #landing-top-text {
+    font-weight: bolder;
+}
+
+/* --image */
+
+#landing-top-image {
+    width: 100%;
+    max-width: 100%;
+}
+
 /* --Header */
 
 #landing-top header {
     height: 132px;
-    background-image: url(image/bierens-site-header.png);
-    background-size: auto 132px;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: #326AD7;
 }
 
 /* --main */
@@ -75,8 +98,12 @@ body {
     transition: all 1s;
 }
 
+#main-inner-left h1, #main-inner-left p, #main-inner-left a {
+    padding: 20px;
+}
+
 /* --main --innerright */
 
-#landing-top #main-inner-right {
+/* #landing-top #main-inner-right {
     background: green;
-}
+} */
