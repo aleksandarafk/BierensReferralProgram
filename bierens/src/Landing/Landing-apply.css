@@ -1,6 +1,10 @@
 /* Landing-apply.css */
 
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+body{
+    background-image: url('Images/Apply-Background.png'); /* Apply background image to the section */
+ 
+}
 
 .How-to-apply {
     display: flex;
@@ -8,21 +12,15 @@
     align-items: center;
     padding: 100px 50px;
     font-family: 'Play', sans-serif; /* Set the font family to 'Play' */
-    position: relative; /* Set position to relative to contain the pseudo-elements */
-    background-image: url('Images/Apply-Background.png'); /* Apply background image to the section */
-    background-size: cover; /* Cover the entire section with the background image */
-    background-position: center; /* Center the background image */
     height: 500px; /* Set the height of the parent container */
 }
 
 .How-to-apply-text {
-    max-width: calc(2/3 * 100% - 20px); /* Set the maximum width to 2/3 of the section width */
-    width: 100%; /* Ensure it takes up the full available width */
     text-align: left; /* Align text to start from the left */
 }
 
 .How-to-apply-text h1 {
-    font-size: 80px;
+    font-size: 60px;
     color: #000000;
 }
 
@@ -31,9 +29,8 @@
 }
 
 .How-to-apply-text p {
-    font-size: 36px;
+    font-size: 30px;
     color: #000000;
-    margin: 10px 0;
 }
 
 .Email-and-Button {
@@ -71,11 +68,8 @@
     background: linear-gradient(to right, #2651A4, #326AD7); /* Reversed gradient on hover */
 }
 
-.Right-side-img {
-    width: 670px; /* Set width to 670px */
+.RightImg {
+    width: 500px; /* Set width to 670px */
     height: 100%; /* Set height to 100% to match the height of the left side */
-    background-image: url('Images/Right-side-img.png'); /* Use the provided path to the right-side image */
-    background-size: contain; /* Ensure the image fits within the container */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-position: center; /* Center the background image */
+  margin-left: 100px;
 }

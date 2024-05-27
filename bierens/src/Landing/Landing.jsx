@@ -1,10 +1,10 @@
 import React from "react";
 import "./Landing-apply.css";
-import HowToApply from "./HowToApply";
+import Howtoapply from "./How-to-apply";
 
 const Landing = () => {
     return (
-        <HowToApply/>
+        <Howtoapply/>
     );
 };
 
