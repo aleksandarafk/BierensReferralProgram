@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+#menu {
+    height: 100vh;
+    width: 214px;
+    background: #00388B;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+header, main, footer {
+    position: relative;
+}
+
+header {
+    padding-bottom: 60px;
+}
+
+
+
+            /* --image */
+#logo {
+    width: 50%;
+    margin-top: 40px;
+}
+
+            /* --text */
+a, p, b, i {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 20px;
+    color: white;
+}

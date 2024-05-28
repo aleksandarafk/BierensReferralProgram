@@ -1,14 +1,11 @@
 import React from "react";
 import "./Dashboard.css";
+import Menu from "./Menu";
 
 const Dashboard = () => {
 
 
-    return(
-    <div className="test">
-    <h1> Admin Dashboard </h1>
-
-        </div>)
+    return(<Menu></Menu>)
 }
 
 export default Dashboard;
