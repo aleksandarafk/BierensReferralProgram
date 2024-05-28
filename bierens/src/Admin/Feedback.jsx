@@ -18,6 +18,7 @@ import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { Tag } from 'primereact/tag';
 import { StyleClass } from 'primereact/styleclass';
+import { Paginator } from 'primereact/paginator';
 import 'primereact/resources/themes/saga-blue/theme.css'; 
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -45,6 +46,13 @@ export default function Feedback() {
     const toast = useRef(null);
     const dt = useRef(null);
     console.log(deletedPeople)
+    const [first, setFirst] = useState(0);
+    const [rows, setRows] = useState(10);
+
+    const onPageChange = (event) => {
+        setFirst(event.first);
+        setRows(event.rows);
+    };
 
 
     useEffect(() => {
@@ -251,6 +259,7 @@ export default function Feedback() {
     );
 
     return (
+        <section className='feedback-section'>
         <div className='feedback-table'>
             <div className='text-section'>
             <h1 className='h1Feedback'>Feedback</h1>
@@ -269,10 +278,10 @@ export default function Feedback() {
             <div className="card">
                 {/* <Toolbar className="mb-2" right={rightToolbarTemplate}></Toolbar> */}
 
-                <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
+                <DataTable ref={dt}  value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
         dataKey="id"  paginator rows={7} rowsPerPageOptions={[5, 10, 25]}
         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" globalFilter={globalFilter}>
+        currentPageReportTemplate="Showing {last} out of {totalRecords} users" globalFilter={globalFilter}>
      <Column selectionMode="multiple" exportable={false}></Column>
     <Column field="email" header="Email" sortable style={{textAlign: "left" }}></Column>
     <Column field="date" header={<div> Date</div>} sortable style={{textAlign: "left" }}></Column>
@@ -280,11 +289,12 @@ export default function Feedback() {
     <Column field="rating" header={<div > Rating</div>} body={ratingBodyTemplate} sortable ></Column>
     <Column field="feedbackShort" header={<div> Feedback </div>} sortable style={{ textAlign: "left" }}></Column>
     <Column header={<div> Action </div>} body={actionBodyTemplate} exportable={false} style={{ textAlign: "left" }}></Column>
+    
 </DataTable>
 
             </div>
 
-            <Dialog visible={productDialog} style={{ width: '32rem', borderRadius:"10px" }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="User Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
+            <Dialog visible={productDialog} style={{ width: '32rem', borderRadius:"10px"}} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="User Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
                 {product.image && <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.image} className="product-image block m-auto pb-3" />}
                 <div className="field">
                     <label htmlFor="name" className="font-bold">
@@ -319,5 +329,6 @@ export default function Feedback() {
                 </div>
             </Dialog>
         </div>
+        </section>
     );
 }

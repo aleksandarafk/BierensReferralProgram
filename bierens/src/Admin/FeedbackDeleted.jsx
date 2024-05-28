@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import "./FeedbackDeleted.css"
+import "./Feedback.css"
 import { classNames } from 'primereact/utils';
 import { FeedbackData } from "./FeedbackData.jsx"
 import { DataTable } from 'primereact/datatable';
@@ -277,7 +277,7 @@ export default function FeedbackDeleted() {
                 <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
         dataKey="id"  paginator rows={7} rowsPerPageOptions={[5, 10, 25]}
         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" globalFilter={globalFilter}>
+        currentPageReportTemplate="Showing {last} out of {totalRecords} users" globalFilter={globalFilter}>
      <Column selectionMode="multiple" exportable={false}></Column>
     <Column field="email" header="Email" sortable style={{textAlign: "left" }}></Column>
     <Column field="date" header={<div> Date</div>} sortable style={{textAlign: "left" }}></Column>

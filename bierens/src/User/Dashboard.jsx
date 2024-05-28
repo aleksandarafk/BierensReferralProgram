@@ -1,9 +1,10 @@
 import React from "react";
 
 const Referral = () => {
-    return(<div>
+    return(
+    
+    <div className="main-container">
 
-    <h1> Referral Page </h1>
         </div>)
 }
 
