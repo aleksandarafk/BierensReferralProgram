@@ -245,13 +245,13 @@ export default function FeedbackDeleted() {
     const deleteProductDialogFooter = (
         <React.Fragment>
             <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductDialog} />
-            <Button label="Yes" icon="pi pi-check" severity='success' onClick={deleteProduct} />
+            <Button label="Yes" icon="pi pi-check" className='button-reform' severity='success' onClick={deleteProduct} />
         </React.Fragment>
     );
     const deleteProductsDialogFooter = (
         <React.Fragment>
             <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductsDialog} />
-            <Button label="Yes" icon="pi pi-check" severity="danger" onClick={deleteSelectedProducts} />
+            <Button label="Yes" icon="pi pi-check"  severity="danger" onClick={deleteSelectedProducts} />
         </React.Fragment>
     );
 

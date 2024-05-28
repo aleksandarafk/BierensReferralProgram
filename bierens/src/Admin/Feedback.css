@@ -173,17 +173,12 @@ a:hover{
   .p-paginator-bottom{
     padding-bottom: 0.5rem;
   }
-  
-  .p-dropdown {
-    padding: 0.2rem;
+
+  .p-dropdown-label{
     text-align: center;
     display: flex;
     justify-content: center;
-  }
-
-  .p-dropdown-label{
-    display: block;
-    margin-bottom: -1;
+    margin-top: -0.15em;
   }
 
   .p-dialog-header{
@@ -234,4 +229,11 @@ a:hover{
     justify-content: flex-start;
     gap: 0.5em;
    
+}
+
+.button-reform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3em;
 }

@@ -242,19 +242,19 @@ export default function Feedback() {
    
     const productDialogFooter = (
         <React.Fragment>
-            <Button label="Done" icon="pi pi-check" onClick={hideDialog} />
+            <Button label="Done" className='button-reform' icon="pi pi-check" onClick={hideDialog} />
         </React.Fragment>
     );
     const deleteProductDialogFooter = (
         <React.Fragment>
-            <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductDialog} />
-            <Button label="Yes" icon="pi pi-check" severity="danger" onClick={deleteProduct} />
+            <Button label="No" icon="pi pi-times" className='button-reform' outlined onClick={hideDeleteProductDialog} />
+            <Button label="Yes" icon="pi pi-check" className='button-reform' severity="danger" onClick={deleteProduct} />
         </React.Fragment>
     );
     const deleteProductsDialogFooter = (
         <React.Fragment>
-            <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductsDialog} />
-            <Button label="Yes" icon="pi pi-check" severity="danger" onClick={deleteSelectedProducts} />
+            <Button label="No" icon="pi pi-times" className='button-reform' outlined onClick={hideDeleteProductsDialog} />
+            <Button label="Yes" icon="pi pi-check"  className='button-reform' severity="danger" onClick={deleteSelectedProducts} />
         </React.Fragment>
     );
 
