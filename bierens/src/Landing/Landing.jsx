@@ -1,10 +1,8 @@
 import React from "react";
+import Landingtop from "./landingtop";
 
 const Landing = () => {
-    return(<div>
-
-    <h1> Landing Page </h1>
-        </div>)
+    return(<Landingtop></Landingtop>)
 }
 
 export default Landing;
