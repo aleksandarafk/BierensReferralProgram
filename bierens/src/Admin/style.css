@@ -11,6 +11,9 @@
 
 header, main, footer {
     position: relative;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
 }
 
 header {
@@ -31,3 +34,50 @@ a, p, b, i {
     font-size: 20px;
     color: white;
 }
+.currentpage {
+    background: white;
+}
+.currentpage a {
+    color: #00388B;
+}
+
+            /* --List */
+ul {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    text-align: left;
+    position: relative;
+    padding: 0;
+}
+ul li {
+    list-style: none;
+    text-align: center;
+    padding: 15px 0px 15px 0px;
+    width: 100%;
+    position: inherit;
+    left: 0;
+    display: block;
+}
+ul li a {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
+        /* --List --hover */
+ul li:hover {
+    background: white;
+    transition: all 1s;
+}
+ul li:hover a {
+    color: #00388B;
+    font-weight: bold;
+    transition: all 1s;
+}
+
+                                        /* --main */
+main {
+    height: calc(100% - 368px);
+}
+                                    /* --main --main-inner */

@@ -10,6 +10,12 @@ function Menu () {
             </header>
             <main>
                 <div id="main-inner">
+                    <ul>
+                        <li><a>Dashboard</a></li>
+                        <li><a>Users</a></li>
+                        <li><a>Rewards</a></li>
+                        <li><a>Feedback</a></li>
+                    </ul>
                 </div>
             </main>
             <footer></footer>
