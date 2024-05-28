@@ -1,9 +1,7 @@
-/* Landing-apply.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
-body{
+
+body {
     background-image: url('Images/Apply-Background.png'); /* Apply background image to the section */
- 
 }
 
 .How-to-apply {
@@ -41,35 +39,79 @@ body{
 .Email-and-Button input[type="text"] {
     padding: 10px;
     margin-right: 10px;
-    height: 60px; /* Set height to 84px */
+    height: 60px; /* Set height to 60px */
     font-size: 20px; /* Set font size to 20px */
-    font-weight: 800; /* Attempt to make it extra bold */
+    font-weight: 800; /* Set font weight to 800 */
     width: 442px; /* Set width to 442px */
     color: #333;
-    cursor: pointer;
+    cursor: text;
     border-radius: 10px; 
     border: 2px solid rgba(0, 0, 0, 0.2); /* Black border with 20% opacity */
 }
 
 .Email-and-Button button {
-    padding: 10px 20px;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
     background: linear-gradient(to right, #326AD7, #2651A4); /* Gradient colors */
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 10px; 
     transition: background 0.3s ease; /* Smooth transition for hover effect */
-    height: 84px; /* Set height to 84px */
-    font-size: 36px; /* Set font size to 36px */
+    height: 84px; /* Match height of the input */
+    font-size: 20px; /* Match font size of the input */
     width: 177px; /* Set width to 177px */
 }
 
 .Email-and-Button button:hover {
-    background: linear-gradient(to right, #2651A4, #326AD7); /* Reversed gradient on hover */
+    background: linear-gradient(to right, #2651A4, #326AD7); 
 }
+.Email-and-Button .disabled-button {
+    background-color: #ccc; /* Grey color for disabled button */
+    color: #666; /* Text color for disabled button */
+  }
+  
 
 .RightImg {
-    width: 500px; /* Set width to 670px */
-    height: 100%; /* Set height to 100% to match the height of the left side */
-  margin-left: 100px;
+    width: 500px; 
+    height: 100%; 
+    margin-left: 100px;
+}
+.Email-and-Button .disabled-button {
+    background-color: #ccc; 
+    color: #666; 
+    cursor: not-allowed; 
+}
+
+/* Styles for Popup component */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.popup-message {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.popup-close {
+  background-color: #326ad7;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
