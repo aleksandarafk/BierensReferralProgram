@@ -18,7 +18,11 @@ function Menu () {
                     </ul>
                 </div>
             </main>
-            <footer></footer>
+            <footer>
+                <ul>
+                    <li><a>&#9783; Log out</a></li>
+                </ul>
+            </footer>
         </div>
     )
 }
