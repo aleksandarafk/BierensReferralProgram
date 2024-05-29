@@ -54,6 +54,8 @@ function Howtoapply() {
     window.location.reload(); // Reload the page
   };
 
+
+
   return (
     <div className="How-to-apply">
       <div className="How-to-apply-text">

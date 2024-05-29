@@ -63,11 +63,9 @@ body {
     width: 177px; /* Set width to 177px */
 }
 
-.Email-and-Button button:hover {
-    background: linear-gradient(to right, #2651A4, #326AD7); 
-}
+
 .Email-and-Button .disabled-button {
-    background-color: #ccc; /* Grey color for disabled button */
+    background: #8e8e8e ; /* Grey color for disabled button */ 
     color: #666; /* Text color for disabled button */
   }
   
