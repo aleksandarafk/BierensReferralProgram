@@ -1,3 +1,79 @@
+.custom-datatable .p-datatable-thead > tr > th {
+    background-color: var(--bierens-blue);
+    color: white; 
+    border-color: var(--bierens-blue);
+  }
+  
+  .custom-datatable{
+    margin-left: 12%;
+  }
+  
+  .custom-datatable .p-datatable-tbody > tr > td {
+    border-color: rgba(0, 56, 139, 0.5);
+  }
+  
+  .custom-datatable .p-datatable-thead > tr > th .pi {
+    color: white; /* Make icons in the header white */
+  }
+  
+  .custom-datatable .p-sortable-column .p-sortable-column-icon {
+    color: white !important; /* Make sortable icons in the header white */
+  }
+  
+  .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: var(--bierens-blue);
+    border-color: #fffbeb;
+    color: #fff;
+  }
+  
+  .p-datatable.p-datatable-gridlines .p-paginator-bottom {
+    border-color: transparent;
+  }
+  
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    background: var(--bierens-blue);
+    color: #fff;
+  }
+  
+  .p-dropdown:not(.p-disabled).p-focus{
+    border-color: var(--bierens-blue);
+    box-shadow: 0 0 0 0.2rem transparent;
+  }
+  
+  .p-inputtext:enabled:hover {
+    border-color: var(--bierens-blue);
+  }
+  
+  .p-datatable > .p-datatable-wrapper {
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .heading {
+    position: absolute;
+    top: 0; 
+    padding: 36px; 
+    z-index: 1;
+    color: black;
+    margin-left: 8%;
+    margin-top: -2rem;
+  }
+  
+  .p-datatable .p-datatable-header {
+    color:var(--bierens-text-gray);
+    padding: 1rem 1rem;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10vw;
+    height: 100vh;
+    background-color: var(--bierens-blue);
+  } 
 
   img.product-image.block.m-auto.pb-3 {
     height: 200px;
