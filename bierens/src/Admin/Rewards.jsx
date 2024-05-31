@@ -269,8 +269,9 @@ export default function Rewards() {
     return (
         <div>
             <Toast ref={toast} />
-            <div className='heading'>
-            <h2>Rewards</h2>
+            <div className='textsection'>
+            <h1 className='h1Rewards'>Rewards</h1>
+            <p className='paragraphRewards '>View, change or remove rewards based on Tier, Year & Season</p>
             </div>
             <div className='navbar'></div>
             <div className="card">
