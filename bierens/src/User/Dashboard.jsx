@@ -1,10 +1,8 @@
 import React from "react";
+import Login from "./login";
 
 const Referral = () => {
-    return(<div>
-
-    <h1> Referral Page </h1>
-        </div>)
+    return(<Login></Login>)
 }
 
 export default Referral;
