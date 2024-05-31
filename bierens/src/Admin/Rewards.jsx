@@ -19,6 +19,14 @@ import 'primeicons/primeicons.css';
 
 
 export default function Rewards() {
+    const actionBodyTemplate = (rowData) => {
+        return (
+            <React.Fragment>
+                <Button icon="pi pi-pencil" rounded outlined className="mr-2" />
+                <Button icon="pi pi-trash" rounded outlined severity="danger" />
+            </React.Fragment>
+        );
+    };
 
     const header = (
         <div className="flex flex-wrap gap-2 align-items-center justify-content-between">
@@ -60,7 +68,7 @@ export default function Rewards() {
         <Column field="season" header="Season" style={{ minWidth: '6rem' }}></Column>
         <Column field="quantity" header="Quantity" sortable style={{ minWidth: '4rem' }}></Column>
         <Column field="type" header="Type" sortable style={{ minWidth: '6rem' }}></Column>
-        <Column header="Action" style={{ minWidth: '6rem' }}></Column>
+        <Column header="Action" body={actionBodyTemplate} style={{ minWidth: '6rem' }}></Column>
         </DataTable>
         </div>
         </div>
