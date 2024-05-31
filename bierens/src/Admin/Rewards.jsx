@@ -39,7 +39,21 @@ export default function Rewards() {
         tier: 0,
         quantity: 0,
     };
+    const [products, setProducts] = useState(null);
+    const [productDialog, setProductDialog] = useState(false);
+    const [deleteProductDialog, setDeleteProductDialog] = useState(false);
+    const [deleteProductsDialog, setDeleteProductsDialog] = useState(false);
+    const [product, setProduct] = useState(emptyProduct);
+    const [selectedProducts, setSelectedProducts] = useState(null);
+    const [submitted, setSubmitted] = useState(false);
+    const [globalFilter, setGlobalFilter] = useState(null);
+    const toast = useRef(null);
+    const dt = useRef(null);
 
+    useEffect(() => {
+        ProductService.getProducts().then((data) => setProducts(data));
+    }, []);
+    
     const cols = [
         { field: 'name', header: 'Name' },
         { field: 'tier', header: 'Tier' },
