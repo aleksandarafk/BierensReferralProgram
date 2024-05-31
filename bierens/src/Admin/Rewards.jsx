@@ -6,6 +6,11 @@ import { ProductService } from './service/ProductService';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { ProductService } from './service/RewardsData';
+import { IconField } from 'primereact/iconfield';
+import { InputIcon } from 'primereact/inputicon';
+import { Button } from 'primereact/button';
+
+
 import "./Rewards.css";
 import 'primeflex/primeflex.css';  
 import 'primereact/resources/primereact.css';
@@ -15,6 +20,18 @@ import 'primeicons/primeicons.css';
 
 export default function Rewards() {
 
+    const header = (
+        <div className="flex flex-wrap gap-2 align-items-center justify-content-between">
+            <h4 className="m-0">View, change or remove rewards based on Tier, Year & Season</h4>
+            
+            <IconField iconPosition="left">
+                <InputIcon className="pi pi-search" />
+                <InputText type="search" placeholder="Search..." style={{marginRight: '5px'}} />
+                <Button label="New" icon="pi pi-plus" severity="success"  style={{marginRight: '5px'}}/>
+                <Button label="Delete" icon="pi pi-trash" severity="danger" />
+            </IconField>
+        </div>
+    );
 
     return(
         <div>
