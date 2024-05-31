@@ -9,6 +9,12 @@ import { ProductService } from './service/RewardsData';
 import { IconField } from 'primereact/iconfield';
 import { InputIcon } from 'primereact/inputicon';
 import { Button } from 'primereact/button';
+import { RadioButton } from 'primereact/radiobutton';
+import { InputNumber } from 'primereact/inputnumber';
+import { Dialog } from 'primereact/dialog';
+import { InputText } from 'primereact/inputtext';
+import { InputTextarea } from 'primereact/inputtextarea';
+
 
 
 import "./Rewards.css";
@@ -71,6 +77,75 @@ export default function Rewards() {
         <Column header="Action" body={actionBodyTemplate} style={{ minWidth: '6rem' }}></Column>
         </DataTable>
         </div>
+
+        <Dialog style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Product Details" modal className="p-fluid">
+    <div className="field">
+        <label htmlFor="name" className="font-bold">
+            Name
+        </label>
+        <InputText id="name" required autoFocus/>
+        {<small className="p-error">Name is required.</small>}
+    </div>
+    <div className="field">
+        <label htmlFor="description" className="font-bold">
+            Description
+        </label>
+        <InputTextarea id="description" required rows={3} cols={20} />
+    </div>
+    <div className="field">
+        <label className="mb-3 font-bold">Season</label>
+        <div className="formgrid grid">
+            <div className="field-radiobutton col-6">
+                <RadioButton inputId="season1" name="season" value="Winter" />
+                <label htmlFor="season1">Winter</label>
+            </div>
+            <div className="field-radiobutton col-6">
+                <RadioButton inputId="season2" name="season" value="Spring" />
+                <label htmlFor="season2">Spring</label>
+            </div>
+            <div className="field-radiobutton col-6">
+                <RadioButton inputId="season3" name="season" value="Summer" />
+                <label htmlFor="season3">Summer</label>
+            </div>
+            <div className="field-radiobutton col-6">
+                <RadioButton inputId="season4" name="season" value="Autumn" />
+                <label htmlFor="season4">Autumn</label>
+            </div>
         </div>
+    </div>
+    <div className="field">
+        <label className="mb-3 font-bold">Type</label>
+        <div className="formgrid grid">
+            <div className="field-radiobutton col-6">
+                <RadioButton inputId="type1" name="type" value="Digital" />
+                <label htmlFor="type1">Digital</label>
+            </div>
+            <div className="field-radiobutton col-6">
+                <RadioButton inputId="type2" name="type" value="Physical" />
+                <label htmlFor="type2">Physical</label>
+            </div>
+        </div>
+    </div>
+    <div className="formgrid grid">
+        <div className="field col">
+            <label htmlFor="quantity" className="font-bold">
+                Quantity
+            </label>
+            <InputNumber id="quantity" min={1} max={99} showButtons/>
+        </div>
+    </div>
+    <div className="formgrid grid">
+        <div className="field col">
+            <label htmlFor="tier" className="font-bold">
+                Tier
+            </label>
+            <InputNumber id="tier" showButtons min={1} max={5}/>
+        </div>
+    </div>
+</Dialog>
+
+        </div>
+
+        
     )
 }
