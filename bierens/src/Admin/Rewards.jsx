@@ -26,7 +26,7 @@ import 'primeicons/primeicons.css';
 
 
 export default function Rewards() {
-    
+
     let emptyProduct = {
         id: null,
         name: '',
@@ -39,6 +39,32 @@ export default function Rewards() {
         tier: 0,
         quantity: 0,
     };
+
+    const cols = [
+        { field: 'name', header: 'Name' },
+        { field: 'tier', header: 'Tier' },
+        { field: 'season', header: 'Season' },
+        { field: 'quantity', header: 'Quantity' },
+        { field: 'type', header: 'Type' }
+    ];
+
+    const exportColumns = cols.map((col) => ({ title: col.header, dataKey: col.field }));
+
+    const exportPDF = () => {
+        import('jspdf').then((jsPDF) => {
+            import('jspdf-autotable').then(() => {
+                const doc = new jsPDF.default(0, 0);
+
+                doc.autoTable(exportColumns, products);
+                doc.save('products.pdf');
+            });
+        });
+    };
+
+    const rightToolbarTemplate = () => {
+        return <Button label="Export" icon="pi pi-upload" className="p-button-help" onClick={exportPDF} />;
+    };
+
 
     const actionBodyTemplate = (rowData) => {
         return (
