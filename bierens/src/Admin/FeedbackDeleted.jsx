@@ -268,7 +268,6 @@ export default function FeedbackDeleted() {
             <div className='navbar'></div>
             <div className='features'>
             <input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>
-            <Button label="Request Feedback" severity="success" />
             </div>
             <Toast ref={toast} />
             <div className="card">

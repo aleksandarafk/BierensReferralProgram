@@ -38,6 +38,7 @@ export default function Feedback() {
     const [productDialog, setProductDialog] = useState(false);
     const [deleteProductDialog, setDeleteProductDialog] = useState(false);
     const [deleteProductsDialog, setDeleteProductsDialog] = useState(false);
+    const [feedbackDialog, setFeedbackDialog] = useState(false);
     const [product, setProduct] = useState(emptyProduct);
     const [selectedProducts, setSelectedProducts] = useState(null);
     const [submitted, setSubmitted] = useState(false);
@@ -53,6 +54,9 @@ export default function Feedback() {
         setFirst(event.first);
         setRows(event.rows);
     };
+
+    
+    let severityFeedback = selectedProducts === null || selectedProducts.length === deletedPeople.length ? "secondary" : "success";
 
 
     useEffect(() => {
@@ -76,6 +80,10 @@ export default function Feedback() {
 
     const hideDeleteProductsDialog = () => {
         setDeleteProductsDialog(false);
+    };
+
+    const hideFeedbackDialog = () => {
+        setFeedbackDialog(false);
     };
 
     const saveProduct = () => {
@@ -125,6 +133,23 @@ export default function Feedback() {
         setProduct(emptyProduct);
         toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
     };
+
+    const feedbackSent = () => {
+
+        setFeedbackDialog(false)
+        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Feedback sent', life: 3000 });
+    }
+
+    const showFeedbackPrompt = (severity) => {
+        if(selectedProducts === null || selectedProducts.length === deletedPeople.length ){
+            setFeedbackDialog(false)
+        }
+        else{
+            setFeedbackDialog(true)
+            console.log(selectedProducts)
+            localStorage.setItem("feedbackSent", true)
+        }
+    }
 
     const findIndexById = (id) => {
         let index = -1;
@@ -258,6 +283,13 @@ export default function Feedback() {
         </React.Fragment>
     );
 
+    const feedbackDialogFooter = (
+        <React.Fragment>
+            <Button label="No" icon="pi pi-times" className='button-reform' outlined onClick={hideFeedbackDialog} />
+            <Button label="Yes" icon="pi pi-check"  className='button-reform' severity="danger" onClick={feedbackSent} />
+        </React.Fragment>
+    );
+
     return (
         <section className='feedback-section'>
         <div className='feedback-table'>
@@ -272,7 +304,7 @@ export default function Feedback() {
             <div className='navbar'></div>
             <div className='features'>
             <input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>
-            <Button label="Request Feedback" severity="success" />
+            <Button label="Request Feedback" severity={severityFeedback} onClick={() => showFeedbackPrompt(severityFeedback)}/>
             </div>
             <Toast ref={toast} />
             <div className="card">
@@ -326,6 +358,13 @@ export default function Feedback() {
                 <div className="confirmation-content">
                     <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
                     {product && <span>Are you sure you want to delete the selected products?</span>}
+                </div>
+            </Dialog>
+
+            <Dialog visible={feedbackDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={feedbackDialogFooter} onHide={hideFeedbackDialog}>
+                <div className="confirmation-content">
+                    <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
+                    {product && <span>Are you sure you want to ask for feedback?</span>}
                 </div>
             </Dialog>
         </div>
