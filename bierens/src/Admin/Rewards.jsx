@@ -14,6 +14,7 @@ import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
+import { FileUpload } from 'primereact/fileupload';
 
 
 
@@ -25,6 +26,20 @@ import 'primeicons/primeicons.css';
 
 
 export default function Rewards() {
+    
+    let emptyProduct = {
+        id: null,
+        name: '',
+        season: null,
+        type: null,
+        image: '',
+        imageUrl: '',
+        description: '',
+        category: null,
+        tier: 0,
+        quantity: 0,
+    };
+
     const actionBodyTemplate = (rowData) => {
         return (
             <React.Fragment>
@@ -142,8 +157,28 @@ export default function Rewards() {
             <InputNumber id="tier" showButtons min={1} max={5}/>
         </div>
     </div>
+    <div className="field">
+        <label htmlFor="image" className="font-bold">Image</label>
+        <FileUpload name="image" accept="image/*" customUpload />
+    </div>
+
 </Dialog>
 
+<Dialog style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal>
+                <div className="confirmation-content">
+                    <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
+                        <span>
+                            Are you sure you want to delete <b>the product</b>?
+                        </span>
+                </div>
+            </Dialog>
+
+            <Dialog  style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal>
+                <div className="confirmation-content">
+                    <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
+                    <span>Are you sure you want to delete the selected rewards?</span>
+                </div>
+            </Dialog>
         </div>
 
         
