@@ -146,14 +146,31 @@ export default function Rewards() {
         return id;
     };
 
-    const exportPDF = () => {
-        import('jspdf').then((jsPDF) => {
-            import('jspdf-autotable').then(() => {
-                const doc = new jsPDF.default(0, 0);
 
-                doc.autoTable(exportColumns, products);
-                doc.save('products.pdf');
+    const exportExcel = () => {
+        import('xlsx').then((xlsx) => {
+            const worksheet = xlsx.utils.json_to_sheet(products);
+            const workbook = { Sheets: { data: worksheet }, SheetNames: ['data'] };
+            const excelBuffer = xlsx.write(workbook, {
+                bookType: 'xlsx',
+                type: 'array'
             });
+
+            saveAsExcelFile(excelBuffer, 'rewardslist');
+        });
+    };
+
+    const saveAsExcelFile = (buffer, fileName) => {
+        import('file-saver').then((module) => {
+            if (module && module.default) {
+                let EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+                let EXCEL_EXTENSION = '.xlsx';
+                const data = new Blob([buffer], {
+                    type: EXCEL_TYPE
+                });
+
+                module.default.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+            }
         });
     };
 
@@ -218,7 +235,7 @@ export default function Rewards() {
     
     
     const rightToolbarTemplate = () => {
-        return <Button label="Export" icon="pi pi-upload" className="p-button-help" onClick={exportPDF} />;
+        return <Button label="Export" icon="pi pi-upload" className="p-button-help" onClick={exportExcel} />;
     };
 
     const imageBodyTemplate = (rowData) => {
@@ -236,9 +253,7 @@ export default function Rewards() {
     };
 
     const header = (
-        <div className="flex flex-wrap gap-2 align-items-center justify-content-between">
-            <h4 className="m-0">View, change or remove rewards based on Tier, Year & Season</h4>
-            
+        <div className="flex flex-wrap gap-2 align-items-center justify-content-end">
             <IconField iconPosition="left">
                 <InputIcon className="pi pi-search" />
                 <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..." style={{marginRight: '5px'}} />
@@ -267,7 +282,7 @@ export default function Rewards() {
     );
 
     return (
-        <div>
+        <div id='RewardsTable' style={{ boxSizing: 'content-box', margin: 'none', padding: 'none' }}>
             <Toast ref={toast} />
             <div className='textsection'>
             <h1 className='h1Rewards'>Rewards</h1>
@@ -306,13 +321,14 @@ export default function Rewards() {
             Name
         </label>
         <InputText id="name" value={product.name} onChange={(e) => onInputChange(e, 'name')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.name })} />
-        {submitted && !product.name && <small className="p-error">Name is required.</small>}
+        {submitted && !product.name && <small className="p-error">Reward name is required.</small>}
     </div>
     <div className="field">
         <label htmlFor="description" className="font-bold">
             Description
         </label>
-        <InputTextarea id="description" value={product.description} onChange={(e) => onInputChange(e, 'description')} required rows={3} cols={20} />
+        <InputTextarea id="description" value={product.description} onChange={(e) => onInputChange(e, 'description')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.description })}  autoResize rows={3} cols={20} />
+        {submitted && !product.description && <small className="p-error">Reward description is required.</small>}
     </div>
     <div className="field">
         <label className="mb-3 font-bold">Season</label>

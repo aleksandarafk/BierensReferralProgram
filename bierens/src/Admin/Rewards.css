@@ -1,99 +1,177 @@
 .custom-datatable .p-datatable-thead > tr > th {
-    background-color: var(--bierens-blue);
-    color: white; 
-    border-color: var(--bierens-blue);
-  }
-  
-  .custom-datatable{
-    margin-left: 12%;
-  }
-  
-  .custom-datatable .p-datatable-tbody > tr > td {
-    border-color: rgba(0, 56, 139, 0.5);
-  }
-  
-  .custom-datatable .p-datatable-thead > tr > th .pi {
-    color: white; /* Make icons in the header white */
-  }
-  
-  .custom-datatable .p-sortable-column .p-sortable-column-icon {
-    color: white !important; /* Make sortable icons in the header white */
-  }
-  
-  .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
-    background: var(--bierens-blue);
-    border-color: #fffbeb;
-    color: #fff;
-  }
-  
-  .p-datatable.p-datatable-gridlines .p-paginator-bottom {
-    border-color: transparent;
-  }
-  
-  .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
-    background: var(--bierens-blue);
-    color: #fff;
-  }
-  
-  .p-dropdown:not(.p-disabled).p-focus{
-    border-color: var(--bierens-blue);
-    box-shadow: 0 0 0 0.2rem transparent;
-  }
-  
-  .p-inputtext:enabled:hover {
-    border-color: var(--bierens-blue);
-  }
-  
-  .p-datatable > .p-datatable-wrapper {
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .heading {
-    position: absolute;
-    top: 0; 
-    padding: 36px; 
-    z-index: 1;
-    color: black;
-    margin-left: 8%;
-    margin-top: -2rem;
-  }
-  
-  .p-datatable .p-datatable-header {
-    color: transparent;
-    padding: 1rem 1rem;
-    font-weight: 700;
-    background-color: transparent;
-    border: none;
-  }
-  
-  .navbar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 10vw;
-    height: 100vh;
-    background-color: var(--bierens-blue);
-  } 
+  background-color: var(--bierens-blue);
+  color: white; 
+  border-color: var(--bierens-blue);
+}
 
-  img.product-image.block.m-auto.pb-3 {
-    height: 200px;
-    width: 200px;
-  }
-  
-  .paragraphRewards {
-    margin-top: -5rem;
-    color:var(--bierens-text-gray);
+.custom-datatable{
+  margin-left: 12%;
+}
+
+.custom-datatable .p-datatable-tbody > tr > td {
+  border-color: rgba(0, 56, 139, 0.5);
+}
+
+.custom-datatable .p-datatable-thead > tr > th .pi {
+  color: white; /* Make icons in the header white */
+}
+
+.custom-datatable .p-sortable-column .p-sortable-column-icon {
+  color: white !important; /* Make sortable icons in the header white */
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: var(--bierens-blue);
+  border-color: #fffbeb;
+  color: #fff;
+}
+
+.p-datatable.p-datatable-gridlines .p-paginator-bottom {
+  border-color: transparent;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  background: var(--bierens-blue);
+  color: #fff;
+}
+
+.p-dropdown:not(.p-disabled).p-focus{
+  border-color: var(--bierens-blue);
+  box-shadow: 0 0 0 0.2rem transparent;
+}
+
+.p-inputtext:enabled:hover {
+  border-color: var(--bierens-blue);
+}
+
+.p-datatable > .p-datatable-wrapper {
+  border-radius: 10px 10px 0 0;
+}
+
+.heading {
+  position: absolute;
+  top: 0; 
+  padding: 36px; 
+  z-index: 1;
+  color: black;
+  margin-left: 8%;
+  margin-top: -2rem;
+}
+
+.p-datatable .p-datatable-header {
+  color: transparent;
+  padding: 1rem 1rem;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10vw;
+  height: 100vh;
+  background-color: var(--bierens-blue);
+} 
+
+img.product-image.block.m-auto.pb-3 {
+  height: 200px;
+  width: 200px;
+}
+
+.paragraphRewards {
+  margin-top: -5rem;
+  color:var(--bierens-text-gray);
 }
 
 .textsection{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2em;
-    margin-left: 10rem;
-    margin-top: -4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2em;
+  margin-left: 12rem;
+  margin-top: -2rem;
 }
 
 .h1Rewards{
- size: var(--header1)
+size: var(--header1)
 }
+
+.p-paginator {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Adjust paginator links */
+.p-paginator .p-paginator-element {
+  margin: 0 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: var(--bierens-blue);
+  cursor: pointer;
+}
+
+.p-paginator .p-paginator-element:hover {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* Highlight the current page */
+.p-paginator .p-highlight {
+  background-color:var(--bierens-blue);
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Customize specific paginator elements */
+.p-paginator .p-paginator-page,
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+  margin: 0 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: var(--bierens-blue);
+  cursor: pointer;
+}
+
+.p-paginator .p-paginator-page.p-highlight,
+.p-paginator .p-paginator-first.p-highlight,
+.p-paginator .p-paginator-prev.p-highlight,
+.p-paginator .p-paginator-next.p-highlight,
+.p-paginator .p-paginator-last.p-highlight {
+  background-color: var(--bierens-blue);
+  color: #fff;
+  border-radius: 4px;
+}
+
+.p-paginator .p-paginator-current {
+  color: #000;
+  margin-right: 1rem;
+}
+
+/* Additional adjustments to make sure paginator fits well */
+.p-paginator .p-paginator-pages {
+  display: flex;
+  align-items: center;
+}
+
+.p-paginator .p-paginator-rpp-options {
+  margin-left: auto;
+}
+
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next {
+  padding: 5px 15px;
+}
+
+.p-paginator-bottom{
+  padding-bottom: 0.5rem;
+}
+
+
