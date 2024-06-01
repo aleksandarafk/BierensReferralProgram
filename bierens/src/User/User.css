@@ -455,7 +455,13 @@
   bottom: 0;
   left: 0;
   border-radius: 8px;
-  background-color: #d9d9d9;
+  background-color: white;
+  transition: .5s ease;
+  color: #b86438;
+  font-weight: 800;
+  cursor: pointer;
+  /* border: solid white; */
+  
 }
 .start-referring {
   position: absolute;
@@ -472,7 +478,21 @@
   opacity: 0.8;
   cursor: pointer;
   font-weight: 800;
+  border: solid;
+  
 }
+
+.component-1-child:hover {
+  background: linear-gradient(99.6deg, #bf743c, #6d2e00);
+  box-shadow: 0px 0px 20px white;
+  color: white;
+  /* border: solid #d9d9d9; */
+  
+}
+
+
+
+
 
 button {
   all: unset;

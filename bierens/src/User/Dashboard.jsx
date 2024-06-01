@@ -112,7 +112,7 @@ const UsersMainPageV = () => {
       <b className="tier-31">TIER 3</b>
       <div className="component-1">
         <div className="component-1-child" />
-        <button className="start-referring">START REFERRING</button>
+        <button className="component-1-child">START REFERRING</button>
       </div>
       <div className="component-3">
         <img
