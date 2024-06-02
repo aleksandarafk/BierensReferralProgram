@@ -297,6 +297,10 @@ export default function Users() {
            <h1 className='users-title'>Users</h1>
            <p className='users-title-clarification'>Currently enrolled users in the referral program</p>
            </div>
+           <div className="nav-pages">
+           <Link  to="" state={deletedPeople} style={{textAlign: "left", textDecoration:"none", color: "black"}}> <p style={{margin: 0, marginBottom: "0.5em"}}>Users: {products.length} </p></Link>
+           <Link to="" state={deletedPeople} style={{textAlign: "left", textDecoration:"none" }}> <p style={{margin: 0, marginBottom: "0.5em" }}>Deleted: {deletedPeople.length}</p></Link>
+           </div>
            <div className='navbar'></div>
            <div className='features'>
            <input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>
