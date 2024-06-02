@@ -4,6 +4,7 @@ import './App.css'
 import Dashboard from './Admin/Dashboard'
 import Landing from './Landing/Landing'
 import Referral from './User/Dashboard'
+import Users from './Admin/Users'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <Link to="/Landing"> <div> Landing Page</div> </Link>
     <Link to="/Referral"> <div> User Section</div></Link>
     <Link to="/Admin"> <div> Admin Dashboard</div> </Link>
+    <Link to="/Admin/Users"> <div> Admin Users</div> </Link>
     </div>}
 
    
@@ -24,6 +26,7 @@ function App() {
       <Route path='/Landing' element={<Landing/>}/>
       <Route path='/Referral' element={<Referral/>}/>
       <Route path='/Admin' element={<Dashboard/>}/>
+      <Route path='/Admin/Users' element={<Users/>}/>
     </Routes>
    </div>
    
