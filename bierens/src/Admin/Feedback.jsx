@@ -121,7 +121,7 @@ export default function Feedback() {
         setDeleteProductDialog(true);
     };
 
-    const deleteProduct = () => {
+    const deleteUser = () => {
         let _products = products.filter((val) => val.id !== product.id);
         
         setDeletedPeople(prevState => {
@@ -131,7 +131,7 @@ export default function Feedback() {
         setProducts(_products);
         setDeleteProductDialog(false);
         setProduct(emptyProduct);
-        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
+        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'User feedback Deleted', life: 3000 });
     };
 
     const feedbackSent = () => {
@@ -173,6 +173,33 @@ export default function Feedback() {
         }
 
         return id;
+    };
+
+    const exportExcel = () => {
+        import('xlsx').then((xlsx) => {
+            const worksheet = xlsx.utils.json_to_sheet(products);
+            const workbook = { Sheets: { data: worksheet }, SheetNames: ['data'] };
+            const excelBuffer = xlsx.write(workbook, {
+                bookType: 'xlsx',
+                type: 'array'
+            });
+
+            saveAsExcelFile(excelBuffer, 'users');
+        });
+    };
+
+    const saveAsExcelFile = (buffer, fileName) => {
+        import('file-saver').then((module) => {
+            if (module && module.default) {
+                let EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+                let EXCEL_EXTENSION = '.xlsx';
+                const data = new Blob([buffer], {
+                    type: EXCEL_TYPE
+                });
+
+                module.default.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+            }
+        });
     };
 
     const exportCSV = () => {
@@ -273,7 +300,7 @@ export default function Feedback() {
     const deleteProductDialogFooter = (
         <React.Fragment>
             <Button label="No" icon="pi pi-times" className='button-reform' outlined onClick={hideDeleteProductDialog} />
-            <Button label="Yes" icon="pi pi-check" className='button-reform' severity="danger" onClick={deleteProduct} />
+            <Button label="Yes" icon="pi pi-check" className='button-reform' severity="danger" onClick={deleteUser} />
         </React.Fragment>
     );
     const deleteProductsDialogFooter = (
@@ -286,16 +313,21 @@ export default function Feedback() {
     const feedbackDialogFooter = (
         <React.Fragment>
             <Button label="No" icon="pi pi-times" className='button-reform' outlined onClick={hideFeedbackDialog} />
-            <Button label="Yes" icon="pi pi-check"  className='button-reform' severity="danger" onClick={feedbackSent} />
+            <Button label="Yes" icon="pi pi-check"  className='button-reform' severity="success" onClick={feedbackSent} />
         </React.Fragment>
     );
+
+    
 
     return (
         <section className='feedback-section'>
         <div className='feedback-table'>
             <div className='text-section'>
+            <div className='text-text-section'>
             <h1 className='h1Feedback'>Feedback</h1>
             <p className='paragraphFeedback '>Take a look at all of the reviews given by users.</p>
+            </div>
+            <Button label="Export" icon="pi pi-upload" severity='success' onClick={exportExcel} />
             </div>
             <div className="nav-pages">
             <Link  to="/Feedback" state={deletedPeople} style={{textAlign: "left", textDecoration:"none", color: "black"}}> <p style={{margin: 0, marginBottom: "0.5em"}}>All feedback: {products.length} </p></Link>
@@ -343,7 +375,7 @@ export default function Feedback() {
                 </div>
             </Dialog>
 
-            <Dialog visible={deleteProductDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
+            <Dialog className="dialog" visible={deleteProductDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
                 <div className="confirmation-content" style={{display: "flex", alignItems: "center"}}>
                     <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
                     {product && (
@@ -354,14 +386,14 @@ export default function Feedback() {
                 </div>
             </Dialog>
 
-            <Dialog visible={deleteProductsDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
+            <Dialog className="dialog" visible={deleteProductsDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
                 <div className="confirmation-content">
                     <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
                     {product && <span>Are you sure you want to delete the selected products?</span>}
                 </div>
             </Dialog>
 
-            <Dialog visible={feedbackDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={feedbackDialogFooter} onHide={hideFeedbackDialog}>
+            <Dialog className="dialog" visible={feedbackDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={feedbackDialogFooter} onHide={hideFeedbackDialog}>
                 <div className="confirmation-content">
                     <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
                     {product && <span>Are you sure you want to ask for feedback?</span>}

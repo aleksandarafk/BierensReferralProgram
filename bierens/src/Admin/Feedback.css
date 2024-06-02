@@ -51,12 +51,25 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.text-text-section{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.2em;
+}
 
 .text-section{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2.2em;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-section .p-button{
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
 }
 
 .features{
@@ -187,10 +200,6 @@ a:hover{
 
   .p-dialog-content{
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1em;
   }
 
   .p-inputtext{
@@ -236,4 +245,22 @@ a:hover{
     justify-content: center;
     align-items: center;
     gap: 0.3em;
+}
+
+.dialog .confirmation-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.feedback-table .p-toast-message-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.3em;
+}
+
+.feedback-table .p-toast-message-content .p-toast-icon-close{
+  margin-top: -1.5em;
 }

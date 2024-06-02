@@ -105,7 +105,7 @@ export default function FeedbackDeleted() {
         setProductDialog(true);
     };
 
-    const confirmDeleteProduct = (product) => {
+    const returnUser = (product) => {
         setProduct(product);
         setDeleteProductDialog(true);
     };
@@ -120,7 +120,7 @@ export default function FeedbackDeleted() {
         setProducts(_products);
         setDeleteProductDialog(false);
         setProduct(emptyProduct);
-        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
+        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'User returned to main table', life: 3000 });
     };
 
     const findIndexById = (id) => {
@@ -215,7 +215,7 @@ export default function FeedbackDeleted() {
         return (
             <React.Fragment >
                 <Button icon="pi pi-file"  rounded className="mr-2" onClick={() => editProduct(rowData)} />
-                <Button style={{marginLeft: "0.5em"}}icon="pi pi-plus"  rounded onClick={() => confirmDeleteProduct(rowData)} />
+                <Button style={{marginLeft: "0.5em"}}icon="pi pi-plus"  rounded onClick={() => returnUser(rowData)} />
             </React.Fragment>
         );
     };
@@ -258,8 +258,10 @@ export default function FeedbackDeleted() {
     return (
         <div className='feedback-table'>
             <div className='text-section'>
+                <div className='text-text-section'>
             <h1 className='h1Feedback'> Deleted Feedback</h1>
             <p className='paragraphFeedback '>Here are all the user's which feedback was deleted.</p>
+            </div>
             </div>
             <div className='nav-pages'>
             <Link to="/Feedback" style={{textAlign: "left", textDecoration:"none"}}> <p style={{margin: 0, marginBottom: "0.5em"}}> All feedback: {allData.length - products.length} </p></Link>
@@ -305,7 +307,7 @@ export default function FeedbackDeleted() {
                 </div>
             </Dialog>
 
-            <Dialog visible={deleteProductDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
+            <Dialog className="dialog" visible={deleteProductDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
                 <div className="confirmation-content" style={{display: "flex", alignItems:"center"}}>
                     <i className="pi pi-info-circle mr-3" style={{ fontSize: '2rem' }} />
                     {product && (
@@ -316,7 +318,7 @@ export default function FeedbackDeleted() {
                 </div>
             </Dialog>
 
-            <Dialog visible={deleteProductsDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
+            <Dialog className="dialog" visible={deleteProductsDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
                 <div className="confirmation-content">
                     <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
                     {product && <span>Are you sure you want to delete the selected products?</span>}
