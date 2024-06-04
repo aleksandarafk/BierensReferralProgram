@@ -49,9 +49,14 @@ h1 {
     font-size: 80px;
     font-family: "Play";
 }
+h1 .highlight {
+    font-size: 80px;
+    font-family: "Play";
+}
 p {
     font-family: "Play";
     font-size: 36px;
+    color: black;
 }
 /* #landing-top-text {
     font-weight: 600;
