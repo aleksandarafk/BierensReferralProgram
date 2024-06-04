@@ -116,6 +116,9 @@ export default function LineDemo() {
         <div className='navbar'></div>
 
         <div className="dashboard">
+        <h1 className="dashboard-title">Dashboard</h1>
+            <h3 className="dashboard-heading2">Check Conversion rate, Participation rate, Sales and Brand awareness</h3>
+
 
             <div className="chart-card">
                 <div className="chart-header">
