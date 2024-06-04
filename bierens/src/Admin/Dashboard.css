@@ -1,3 +1,123 @@
-.test{
-    background-color: aqua;
-}
+
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10vw;
+    height: 100vh;
+    background-color: blue;
+    z-index: -1;
+  }
+  .dashboard {
+    padding: 0 60px 0 220px;
+    margin: 60;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .dashboard-title {
+    font-size: 40px;
+    color: #00388B;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-heading2 {
+    font-size: 20px;
+    color: rgba(51, 51, 51, 0.5); 
+    margin-bottom: 20px;
+  }
+  
+  
+  .activity, .feedback {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .activity-feedback {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px; /* Add gap between items */
+  }
+  .activity h2, .feedback h2 {
+    font-size: 18px;
+    color: #202124;
+    display: flex;
+    align-items: center;
+  }
+  
+  .material-icons {
+    margin-right: 10px;
+    color: inherit; /* Use the same color as the text */
+  }
+  
+  .activity p, .feedback p {
+    font-size: 14px;
+    color: #5f6368;
+    display: flex;
+    align-items: center;
+  }
+  
+  .chart-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f1f3f4;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .chart-label-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .chart-label {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+  }
+  
+  /* Active button styles */
+  .chart-label-box.active.CR {
+    background-color: #00388B;
+  }
+  
+  .chart-label-box.active.PR {
+    background-color: #BB261C;
+  }
+  
+  .chart-label-box.active.SA {
+    background-color: #007A05;
+  }
+  
+  .chart-label-box.active.BA {
+    background-color: #D38D05;
+  }
+  
+  /* Inactive button styles */
+  .chart-label-box.inactive {
+    background-color: #787878;
+    color: #fff;
+  }
+  
+  .chart-container {
+    padding: 20px;
+    height: 550px; /* Moved from inline style */
+  }
+  
