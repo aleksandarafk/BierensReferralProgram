@@ -118,7 +118,7 @@ export default function Rewards() {
 
         setProducts(_products);
         setDeleteProductDialog(false);
-        setProduct(emptyProduct);
+        setProduct(emptyProduct);x
         toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Reward Deleted', life: 3000 });
     };
 
@@ -239,7 +239,7 @@ export default function Rewards() {
     };
 
     const imageBodyTemplate = (rowData) => {
-        return <img src={rowData.image} alt={rowData.image} className="product-image" style={{ width: '50px', height: '50px' }} />
+        return <img src={rowData.image} alt={rowData.image} className="product-image" style={{ width: '50px', height: '50px', borderRadius: '10px' }} />
         ;
     };
 
@@ -255,8 +255,7 @@ export default function Rewards() {
     const header = (
         <div className="flex flex-wrap gap-2 align-items-center justify-content-end">
             <IconField iconPosition="left">
-                <InputIcon className="pi pi-search" />
-                <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..." style={{marginRight: '5px'}} />
+                <input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>
                 <Button label="New" icon="pi pi-plus" severity="success" onClick={openNew} style={{marginRight: '5px'}}/>
                 <Button label="Delete" icon="pi pi-trash" severity="danger" onClick={confirmDeleteSelected} disabled={!selectedProducts || !selectedProducts.length} />
             </IconField>
@@ -282,13 +281,17 @@ export default function Rewards() {
     );
 
     return (
-        <div id='RewardsTable' style={{ boxSizing: 'content-box', margin: 'none', padding: 'none' }}>
+        <section className='feedback-section'>
+        <div className='feedback-table'>
             <Toast ref={toast} />
             <div className='textsection'>
+            <div className='text-textsection'>
             <h1 className='h1Rewards'>Rewards</h1>
             <p className='paragraphRewards '>View, change or remove rewards based on Tier, Year & Season</p>
             </div>
+            </div>
             <div className='navbar'></div>
+            {/*<input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>*/}
             <div className="card">
             <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
            dataKey="id"
@@ -298,7 +301,7 @@ export default function Rewards() {
            paginator
            rows={6}
            rowsPerPageOptions={[6, 8, 10, 12]}
-           showGridlines
+            /*showGridlines*/
            paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
            currentPageReportTemplate="Showing {last} out of {totalRecords} rewards"
            globalFilter={globalFilter} header={header}
@@ -404,6 +407,7 @@ export default function Rewards() {
                 </div>
             </Dialog>
         </div>
+        </section>
     );
 }
         
