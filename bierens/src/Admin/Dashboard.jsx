@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Chart } from 'primereact/chart';
-import './Dashboard.css.css'; 
+import './Dashboard.css'; 
 
 export default function LineDemo() {
     const [chartData, setChartData] = useState({});
@@ -146,6 +146,21 @@ export default function LineDemo() {
                 </div>
                 <div className="chart-container">
                     <Chart type="line" data={chartData} options={chartOptions} />
+                </div>
+            </div>
+            <div className="activity-feedback">
+                <div className="activity">
+                    <h2>
+                        
+                        Recent Activity
+                    </h2>
+                    <p> <span className="material-icons">lightbulb</span> Steve from Corporate completed 1 referral today.</p>
+                </div>
+                <div className="feedback">
+                    <h2>
+                        Feedback
+                    </h2>
+                    <p> <span className="material-icons">message</span> "I recently used your referral program to invite a friend and was really satisfied with how..."</p>
                 </div>
             </div>
             </div>
