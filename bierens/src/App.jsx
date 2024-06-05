@@ -4,6 +4,7 @@ import './App.css'
 import Dashboard from './Admin/Dashboard'
 import Landing from './Landing/Landing'
 import Referral from './User/Dashboard'
+import Rewards from './Admin/Rewards'
 import Feedback from './Admin/Feedback'
 import FeedbackDeleted from './Admin/FeedbackDeleted'
 
@@ -27,6 +28,7 @@ function App() {
       <Route path='/Admin' element={<Dashboard/>}/>
       <Route path='/Feedback' element={<Feedback/>}/>
       <Route path='/FeedbackDeleted' element={<FeedbackDeleted/>}/>
+      <Route path='/Rewards' element={<Rewards/>}/>
     </Routes>
    </div>
    
