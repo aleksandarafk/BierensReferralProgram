@@ -1,5 +1,5 @@
 import React from  "react";
-import "./style.css";
+import "./landing.css";
 import introimage from "./image/LandingPage-image.png";
 
 function Landingtop () {
