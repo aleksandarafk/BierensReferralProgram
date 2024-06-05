@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-image: url("assets/landing_background.svg");
+}
+
+#section2_container {
+    display: flex;
+    flex-direction: column;
+}
+
+#section2_title {
+    font-family: 'Play';
+    font-size: 70px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#section2_title c {
+    color: #407BFF;
+}
+
+#section2_description {
+    font-family: 'Play';
+    font-size: 26px;
+    color: var(--bierens-text-gray);
+    margin: 26px 0 52px 0;
+    width: 51vw;
+    align-self: center;
+}
+
+#cards_container {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    gap: 29px;
+    height: 60vh;
+    width: auto;
+}
+
+.cards_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.small_card {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 56, 139, 0.1);
+    border: 1px solid rgba(0, 56, 139, 0.3);
+    border-radius: 10px;
+    height: 210px;
+    flex: 0.35;
+    gap: 56px;
+}
+
+.big_card {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 56, 139, 0.1);
+    border: 1px solid rgba(0, 56, 139, 0.3);
+    border-radius: 10px;
+    height: 210px;
+    flex: 0.60;
+    gap: 106px;
+}
+
+.card_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 0 0 20px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+#description1 {
+    width: 57%;
+}
+
+#description2 {
+    width: 40%;
+}
+
+.bullet_number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 56, 139, 0.3);
+    border-radius: 100%;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.card_title {
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.infoImage {
+    height: 70%;
+    align-self: flex-end;
+}
+
+#rewards_card {
+    gap: 160px;
+}
+
+#progress_card {
+    gap: 0;
+}
+
+#progressImage {
+    width: 44%;
+    margin-right: 5px;
+}
