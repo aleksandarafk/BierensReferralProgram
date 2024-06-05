@@ -460,10 +460,12 @@
   color: #b86438;
   font-weight: 800;
   cursor: pointer;
-  /* border: solid white; */
   
+  /* border: solid white; */
+
 }
-.start-referring {
+
+/* .start-referring {
   position: absolute;
   height: 88.24%;
   width: 88.73%;
@@ -480,25 +482,20 @@
   font-weight: 800;
   border: solid;
   
-}
+} */
 
 .component-1-child:hover {
   background: linear-gradient(99.6deg, #bf743c, #6d2e00);
   box-shadow: 0px 0px 20px white;
   color: white;
+  opacity: 1;
   /* border: solid #d9d9d9; */
   
 }
 
-
-
-
-
 button {
   all: unset;
 }
-
-
 
 .component-1 {
   position: absolute;
@@ -506,9 +503,10 @@ button {
   left: 1544px;
   width: 213px;
   height: 34px;
-  opacity: 0.75;
   text-align: center;
+  opacity: 0.90;
 }
+
 .component-3-child,
 .component-3-item {
   position: absolute;
@@ -524,10 +522,12 @@ button {
   max-height: 100%;
   object-fit: cover;
 }
+
 .component-3-item {
   right: 48.14%;
   left: 41.77%;
 }
+
 .tier-21 {
   position: absolute;
   height: 6.62%;
@@ -539,6 +539,7 @@ button {
   text-align: right;
   align-items: center;
 }
+
 .component-3-inner {
   position: absolute;
   height: 5.57%;
@@ -550,6 +551,7 @@ button {
   border-radius: 0 6px 7px 0;
   background-color: #d9d9d9;
 }
+
 .cant-decide {
   position: absolute;
   height: 6.62%;
@@ -563,6 +565,7 @@ button {
   align-items: center;
   justify-content: center;
 }
+
 .component-10-child {
   position: absolute;
   height: 100%;
@@ -575,8 +578,14 @@ button {
   background: linear-gradient(92.99deg, #bf733d, #6d2e00);
   border: 2px solid #d9d9d9;
   box-sizing: border-box;
+  font-weight: 800;
+  transition: .5s ease;
+  opacity: 0.8;
+  cursor: pointer;
+  
 }
-.spin {
+
+/* .spin {
   position: absolute;
   height: 88.11%;
   width: 88.68%;
@@ -586,7 +595,18 @@ button {
   align-items: center;
   justify-content: center;
   opacity: 0.8;
+  font-weight: 800;
+} */
+
+.component-10-child:hover {
+  background: white;
+  box-shadow: 0px 0px 20px white;
+  color: #bf743c;
+  opacity: 1;
+  /* border: solid #d9d9d9; */
+  
 }
+
 .component-10 {
   position: absolute;
   height: 6.45%;
@@ -597,6 +617,7 @@ button {
   left: 46.95%;
   color: #fff;
 }
+
 .component-3 {
   position: absolute;
   top: 432px;
@@ -609,8 +630,6 @@ button {
   border-image: linear-gradient(to right,transparent,#d9d9d9) 1 0 0 0;
 }
 
-
-
 .users-main-page-v5-child23 {
   position: absolute;
   top: 430px;
@@ -618,15 +637,19 @@ button {
   width: 442px;
   height: 650px;
 }
+
 .span {
   letter-spacing: 0.14em;
 }
+
 .season {
   color: rgba(217, 217, 217, 0.61);
 }
+
 .autumn-season-txt-container {
   width: 100%;
 }
+
 .autumn-season {
   position: absolute;
   height: 100%;
@@ -637,6 +660,7 @@ button {
   align-items: center;
   opacity: 0.9;
 }
+
 .season-switch-autumn {
   position: absolute;
   top: 112px;
@@ -646,6 +670,7 @@ button {
   text-align: left;
   font-size: 40px;
 }
+
 .users-main-page-v5 {
   width: 100%;
   position: relative;

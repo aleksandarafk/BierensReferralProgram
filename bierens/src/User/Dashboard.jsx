@@ -1,12 +1,54 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import "./User.css";
-import { useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { Button } from 'primereact/button';
+import { Dialog } from 'primereact/dialog';
+import { InputText } from "primereact/inputtext";
+import { InputTextarea } from "primereact/inputtextarea";
+import { Rating } from "primereact/rating";
+import "./referPopUp.css"
+// import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
+
+export default function SimplePopup() {
+  
+  const [anchor, setAnchor] = React.useState(null);
+  const [visible, setVisible] = useState(false);
+  const [ratingValue, setRatingValue] = useState(null);
+  const [userData, setUserData] = useState({description: "", 
+    rating: ""
+})
+  console.log(visible)
+const backgroundHover = {position: "fixed" , top:"0", left:"0", width:"100vw", height:"100vh", backgroundColor: "rgba(0,0,0,0.7)", transition: "0.5s ease-in"};
+const backgroundNormal = {backgroundColor: "rgba(0,0,0,0.0)", transition: "0.5s ease-in"};
+
+  const open = Boolean(anchor);
+  const id = open ? 'simple-popper' : undefined;
+
+  const headerElement = (
+    <div >
+        
+        <div className="header-dialog">Refer </div>
+        <div> </div>
+    </div>
+
+  );
+
+const RemoveFeedbackLocalStorage = () => {
+    setVisible(false)
+}
+
+const footerContent = (
+    <div className="footer-dialog">
+        <Button label="DONE" className="popup-button" onClick={RemoveFeedbackLocalStorage} autoFocus />
+    </div>
+);
 
 
-const UsersMainPageV = () => {
   return (
     
     <div className="users-main-page-v5">
+      
       <img
         className="users-main-page-v5-child"
         alt=""
@@ -112,7 +154,11 @@ const UsersMainPageV = () => {
       <b className="tier-31">TIER 3</b>
       <div className="component-1">
         <div className="component-1-child" />
-        <button className="component-1-child">START REFERRING</button>
+        {/* <Button aria-describedby={id} className="component-1-child" type="button" onClick={handleClick}>
+        START REFERRING
+        </Button> */}
+        <button className="component-1-child" onClick={() => {setVisible(true)}}>START REFERRING</button>  
+         
       </div>
       <div className="component-3">
         <img
@@ -130,7 +176,7 @@ const UsersMainPageV = () => {
         <b className="cant-decide">Can’t decide?</b>
         <div className="component-10">
           <div className="component-10-child" />
-          <b className="spin">SPIN</b>
+          <button className="component-10-child">SPIN</button>
         </div>
       </div>
       <div className="users-main-page-v5-child23" />
@@ -144,9 +190,34 @@ const UsersMainPageV = () => {
             <span className="season">SEASON</span>
           </span>
         </b>
+       
       </div>
+     {visible && <div className="card flex justify-content-center"  >
+
+           <Dialog visible={visible} style={{ width: '40rem', height: '35rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header={headerElement} footer={footerContent} modal className=" referral-popup p-fluid "  onHide={RemoveFeedbackLocalStorage}>
+               <div className="popup-points" style={{marginTop: "-1em", marginBottom: "1em"}}> 
+              Get closer to your next tier and recieve <span className="popup-points-inner"> +25 points! </span>
+               </div>
+               <div className="field">
+                   <label htmlFor="description" className="font-bold popup-title">
+                       How is your experience with the referral program so far?
+                   </label>
+                   <InputTextarea id="description" className="popup-textarea" style={{color: "white"}} value={userData.description} onChange={(e) => {setUserData(prevState => { return {...prevState, description: e.value}})}}   required rows={3} cols={20} />
+               </div>
+               <div className="rating">
+                   <label htmlFor="rating" className="popup-title">Rating</label>
+           <Rating  style={{marginTop: "0.3em"}} value={ratingValue} onChange={(e) => setRatingValue(e.value)} cancel={false}/>
+       </div>
+
+              
+           </Dialog>
+       </div> }
+       { visible && <div style={backgroundHover}></div> }
     </div>
+    
   );
 };
 
-export default UsersMainPageV;
+
+
+

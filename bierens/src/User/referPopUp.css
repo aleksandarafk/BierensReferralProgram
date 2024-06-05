@@ -1,0 +1,86 @@
+.referral-popup .p-component {
+    background: #d9d9d9;
+    
+}
+
+.popup-raul{
+    z-index: 3;
+}
+
+
+
+.referral-popup .p-dialog-header,
+.referral-popup .p-dialog-content,
+.referral-popup .p-dialog-footer {
+    background-color: #150C01;
+    font-family: "Play";
+    opacity: 90%;
+}
+
+.referral-popup .p-dialog-header{
+    padding: 16px 16px 0px 16px;
+    border-radius: 15px 15px 0px 0px;
+    border-top: solid #AAAAAA;
+    border-left: solid #AAAAAA;
+    border-right: solid #AAAAAA;
+}
+
+.referral-popup .p-dialog-content{
+    border-width: 3px;
+    border-style: solid;
+    border-image: 
+        linear-gradient(
+        to bottom, rgb(170, 170, 170), rgb(102, 102, 102)) 1 100%;
+}
+
+.referral-popup .p-dialog-footer{
+    padding-left: 20%;
+    border-radius: 0px 0px 15px 15px;
+    border-bottom: solid #666666;
+    border-left: solid #666666;
+    border-right: solid #666666;
+}
+
+.referral-popup  .p-rating-icon{
+    color: #d9d9d9;
+}
+
+.header-dialog{
+    font-family: "Play";
+    font-weight: bold;
+    color: #d9d9d9;
+    letter-spacing: 12%;
+    font-size: 1.6rem;
+}
+
+.popup-title{
+    color: white;
+    font-weight:lighter;
+}
+
+.footer-dialog .p-button{
+    border: 1px solid #d9d9d9;
+}
+
+.footer-dialog .p-button span{
+    font-family: "Play";
+    font-weight: bold;
+    color: #d9d9d9;
+
+}
+
+.popup-points{
+    color: white;
+}
+
+.field .popup-textarea{
+  font-family: "Play";
+}
+
+.popup-points-inner{
+    font-size: 1.1rem;
+    background: -webkit-linear-gradient(#e7b676, #ddda22);
+    font-weight: bold;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
