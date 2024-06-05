@@ -1,9 +1,9 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 .image-1-icon,
 .users-main-page-v5-child {
   background: url(https://cdn.builder.io/api/v1/image/assets/TEMP/76d8b5b84920150e30d48b51fd6b565d181cb7eb8d7c8e9901fb0e6cea3157da?apiKey=1487a4e6add04b00a5f73b9046459d15&) !important; 
-  /* background-image: url("Animated-background.gif") !important; 
+  /* background-image: url("Animated-background.gif") !important; */
   
   position: absolute;
   top: 0;
@@ -11,7 +11,7 @@
   width: 1920px;
   height: 1080px;
   /* background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% 100%; */
 }
 .image-1-icon {
   object-fit: cover;
@@ -200,7 +200,7 @@
   opacity: 0.35;
 }
 .users-main-page-v5-child10 {
-  position: absolute; /* Ensure positioning context for pseudo-elements
+  position: absolute; /* Ensure positioning context for pseudo-elements */
   top: 10px;
   left: 1440px;
   background: linear-gradient(90deg, rgba(130, 130, 130, 0), #bb6b3e);
@@ -216,10 +216,10 @@
 .users-main-page-v5-child10::after {
   content: '';
   position: absolute;
-  z-index: 2; /* Ensure pseudo-elements are above the main element 
+  z-index: 2; /* Ensure pseudo-elements are above the main element */
 }
 
-/* Top border
+/* Top border */
 .users-main-page-v5-child10::before {
   top: 0;
   left: 0;
@@ -228,7 +228,7 @@
   background: linear-gradient(to right, transparent, #d9d9d9);
 }
 
-/* Bottom border
+/* Bottom border */
 .users-main-page-v5-child10::after {
   bottom: 0;
   left: 0;
@@ -461,7 +461,7 @@
   font-weight: 800;
   cursor: pointer;
   
-  /* border: solid white; 
+  /* border: solid white; */
 
 }
 
@@ -482,20 +482,20 @@
   font-weight: 800;
   border: solid;
   
-} 
+} */
 
 .component-1-child:hover {
   background: linear-gradient(99.6deg, #bf743c, #6d2e00);
   box-shadow: 0px 0px 20px white;
   color: white;
   opacity: 1;
-  /* border: solid #d9d9d9; 
+  /* border: solid #d9d9d9; */
   
 }
 
-button {
+/* button {
   all: unset;
-}
+} */
 
 .component-1 {
   position: absolute;
@@ -596,14 +596,14 @@ button {
   justify-content: center;
   opacity: 0.8;
   font-weight: 800;
-}
+} */
 
 .component-10-child:hover {
   background: white;
   box-shadow: 0px 0px 20px white;
   color: #bf743c;
   opacity: 1;
-  /* border: solid #d9d9d9; 
+  /* border: solid #d9d9d9; */
   
 }
 
@@ -680,4 +680,4 @@ button {
   font-size: 20px;
   color: #d9d9d9;
   font-family: "Play";
-} */
+}
