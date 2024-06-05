@@ -5,7 +5,7 @@ import './style.css'
 const Landing = () => {
     return(
         <div>
-        <Howdoesitwork></Howdoesitwork>
+        <Howdoesitwork />
         </div>
     )
 }

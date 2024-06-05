@@ -19,7 +19,6 @@ function App() {
     <Link to="/Referral"> <div> User Section</div></Link>
     <Link to="/Admin"> <div> Admin Dashboard</div> </Link>
     <Link to="/Admin/Users"> <div> Admin Users</div> </Link>
-    <Link to="/Admin/UsersDeleted"> <div> Admin Users Deleted</div> </Link>
     </div>}
 
    
