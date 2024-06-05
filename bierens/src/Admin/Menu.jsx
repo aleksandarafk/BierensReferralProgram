@@ -1,5 +1,5 @@
 import React from  "react";
-import "./style.css";
+import "./Nav.css";
 import logo from "./image/bierens-logo-white.png";
 import logouticon from "./image/logout.png"
 
