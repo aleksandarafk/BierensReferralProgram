@@ -281,8 +281,8 @@ export default function Rewards() {
     );
 
     return (
-        <section className='feedback-section'>
-        <div className='feedback-table'>
+        <section className='reward-section'>
+        <div className='reward-table'>
             <Toast ref={toast} />
             <div className='textsection'>
             <div className='text-textsection'>
@@ -317,24 +317,24 @@ export default function Rewards() {
 </DataTable>
             </div>
 
-            <Dialog visible={productDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Product Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
+            <Dialog visible={productDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Reward Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
     {product.image && <img src={product.image} alt={product.image} className="product-image block m-auto pb-3" />}
     <div className="field">
         <label htmlFor="name" className="font-bold">
-            Name
+            Reward Name
         </label>
         <InputText id="name" value={product.name} onChange={(e) => onInputChange(e, 'name')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.name })} />
         {submitted && !product.name && <small className="p-error">Reward name is required.</small>}
     </div>
     <div className="field">
         <label htmlFor="description" className="font-bold">
-            Description
+            Reward Description
         </label>
         <InputTextarea id="description" value={product.description} onChange={(e) => onInputChange(e, 'description')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.description })}  autoResize rows={3} cols={20} />
         {submitted && !product.description && <small className="p-error">Reward description is required.</small>}
     </div>
     <div className="field">
-        <label className="mb-3 font-bold">Season</label>
+        <label className="mb-3 font-bold">Reward Season</label>
         <div className="formgrid grid">
             <div className="field-radiobutton col-6">
                 <RadioButton inputId="season1" name="season" value="Winter" onChange={onCategoryChange} checked={product.season === 'Winter'} />
@@ -355,7 +355,7 @@ export default function Rewards() {
         </div>
     </div>
     <div className="field">
-        <label className="mb-3 font-bold">Type</label>
+        <label className="mb-3 font-bold">Reward Type</label>
         <div className="formgrid grid">
             <div className="field-radiobutton col-6">
                 <RadioButton inputId="type1" name="type" value="Digital" onChange={onTypeChange} checked={product.type === 'Digital'} />
@@ -370,7 +370,7 @@ export default function Rewards() {
     <div className="formgrid grid">
         <div className="field col">
             <label htmlFor="quantity" className="font-bold">
-                Quantity
+                Reward Quantity
             </label>
             <InputNumber id="quantity" value={product.quantity} min={1} max={99} showButtons onValueChange={(e) => onInputNumberChange(e, 'quantity')} />
         </div>
@@ -378,13 +378,13 @@ export default function Rewards() {
     <div className="formgrid grid">
         <div className="field col">
             <label htmlFor="tier" className="font-bold">
-                Tier
+            Reward Tier
             </label>
             <InputNumber id="tier" value={product.tier} showButtons min={1} max={5} onValueChange={(e) => onInputNumberChange(e, 'tier')} />
         </div>
     </div>
     <div className="field">
-        <label htmlFor="image" className="font-bold">Image</label>
+        <label htmlFor="image" className="font-bold">Reward Image</label>
         <FileUpload name="image" accept="image/*" customUpload uploadHandler={onUpload}/>
     </div>
 </Dialog>

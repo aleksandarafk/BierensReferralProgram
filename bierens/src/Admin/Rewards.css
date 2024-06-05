@@ -228,7 +228,6 @@ size: var(--header1)
   border-radius: 4px;
   margin-right: 5px;
   box-shadow: none;
-  -webkit-appearance: none;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -336,7 +335,7 @@ button.p-inputnumber-button.p-inputnumber-button-up.p-button.p-button-icon-only.
 }
 
 
-.feedback-table{
+.reward-table{
   margin-top: -1em;
   max-width: 1280px;
   padding: 2rem;
@@ -372,18 +371,26 @@ align-items: center;
 gap: 0.3em;
 }
 
-.feedback-table .p-toast-message-content{
+.reward-table .p-toast-message-content{
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 0.3em;
 }
 
-.feedback-table .p-toast-message-content .p-toast-icon-close{
+.reward-table .p-toast-message-content .p-toast-icon-close{
 margin-top: -1.5em;
 }
 
 
 button.p-button.p-component.p-disabled.p-button-danger {
   height: 40px;
+}
+
+button.p-inputnumber-button.p-inputnumber-button-up.p-button.p-button-icon-only.p-component {
+  width: 50px;
+}
+
+button.p-inputnumber-button.p-inputnumber-button-down.p-button.p-button-icon-only.p-component {
+  width: 50px;
 }
