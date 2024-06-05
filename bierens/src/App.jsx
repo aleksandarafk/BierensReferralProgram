@@ -19,7 +19,7 @@ function App() {
    <div>
     {currentPath === "/" && <div> <h1> Navigation </h1>  
     <Link to="/Landing"> <div> Landing Page</div> </Link>
-    <Link to="/Referral"> <div> User Section</div></Link>
+    <Link to="/Referral" > <div> User Section</div></Link>
     <Link to="/Admin"> <div> Admin Dashboard</div> </Link>
     <Link to="/Admin/Users"> <div> Admin Users</div> </Link>
     </div>}
