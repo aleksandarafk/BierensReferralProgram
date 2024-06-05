@@ -220,22 +220,6 @@ export default function UsersDeleted() {
        );
    };
 
-   const getSeverity = (product) => {
-       switch (product.inventoryStatus) {
-           case 'INSTOCK':
-               return 'success';
-
-           case 'LOWSTOCK':
-               return 'warning';
-
-           case 'OUTOFSTOCK':
-               return 'danger';
-
-           default:
-               return null;
-       }
-   };
-
   
    const productDialogFooter = (
        <React.Fragment>
@@ -261,7 +245,6 @@ export default function UsersDeleted() {
                <div className='text-section'>
            <h1 className='users-title'> Deleted Users</h1>
            <p className='users-title-clarification'>Users that have been removed from the referral program</p>
-           </div>
            </div>
            <div className='nav-pages'>
            <Link to="/Admin/Users" style={{textAlign: "left", textDecoration:"none"}}> <p style={{margin: 0, marginBottom: "0.5em"}}> Users: {allData.length - products.length} </p></Link>
@@ -289,23 +272,6 @@ export default function UsersDeleted() {
 
            </div>
 
-           <Dialog visible={productDialog} style={{ width: '32rem', borderRadius:"10px" }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="User Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
-               {product.image && <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.image} className="product-image block m-auto pb-3" />}
-               <div className="field">
-                   <label htmlFor="name" className="font-bold">
-                       Email
-                   </label>
-                   <InputText disabled id="name" value={product.email} onChange={(e) => onInputChange(e, 'description')} />
-                  
-               </div>
-               <div className="field">
-                   <label htmlFor="description" className="font-bold">
-                       Feedback
-                   </label>
-                   <InputTextarea disabled id="description" value={product.feedbackAll} onChange={(e) => onInputChange(e, 'description')}  rows={3} cols={20} />
-               </div>
-           </Dialog>
-
            <Dialog className="dialog" visible={deleteProductDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
                <div className="confirmation-content" style={{display: "flex", alignItems:"center"}}>
                    <i className="pi pi-info-circle mr-3" style={{ fontSize: '2rem' }} />
@@ -323,6 +289,7 @@ export default function UsersDeleted() {
                    {product && <span>Are you sure you want to delete the selected products?</span>}
                </div>
            </Dialog>
+           </div>
        </section>
    );
 }

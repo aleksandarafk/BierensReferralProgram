@@ -133,12 +133,7 @@ export default function Users() {
        setProduct(emptyProduct);
        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'User removed from the referral program', life: 3000 });
    };
-
-   const feedbackSent = () => {
-
-       setFeedbackDialog(false)
-       toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Feedback sent', life: 3000 });
-   }
+   
 
    const showFeedbackPrompt = (severity) => {
        if(selectedProducts === null || selectedProducts.length === deletedPeople.length ){
@@ -209,35 +204,7 @@ export default function Users() {
 
        setProduct(_product);
    };
-
-//    const onInputNumberChange = (e, name) => {
-//        const val = e.value || 0;
-//        let _product = { ...product };
-
-//        _product[`${name}`] = val;
-
-//        setProduct(_product);
-//    };
-
-  
-
-//    const rightToolbarTemplate = () => {
-//        return <Button label="Export" icon="pi pi-upload" className="p-button-help" onClick={exportCSV} />;
-//    };
-
-//    const imageBodyTemplate = (rowData) => {
-//        return <img src={`https://primefaces.org/cdn/primereact/images/product/${rowData.image}`} alt={rowData.image} className="shadow-2 border-round" style={{ width: '64px' }} />;
-//    };
-
-  
-
-//    const ratingBodyTemplate = (rowData) => {
-//        return <Rating value={rowData.rating} readOnly cancel={false} />;
-//    };
-
-//    const statusBodyTemplate = (rowData) => {
-//        return <Tag value={rowData.inventoryStatus} severity={getSeverity(rowData)}></Tag>;
-//    };
+   
 
    const actionBodyTemplate = (rowData) => {
        return (
@@ -245,22 +212,6 @@ export default function Users() {
                <Button style={{marginLeft: "0.5em"}}icon="pi pi-trash"  rounded severity="danger" onClick={() => confirmDeleteProduct(rowData)} />
            </React.Fragment>
        );
-   };
-
-   const getSeverity = (product) => {
-       switch (product.inventoryStatus) {
-           case 'INSTOCK':
-               return 'success';
-
-           case 'LOWSTOCK':
-               return 'warning';
-
-           case 'OUTOFSTOCK':
-               return 'danger';
-
-           default:
-               return null;
-       }
    };
 
   
@@ -273,19 +224,6 @@ export default function Users() {
        <React.Fragment>
            <Button label="No" icon="pi pi-times" className='button-reform' outlined onClick={hideDeleteProductDialog} />
            <Button label="Yes" icon="pi pi-check" className='button-reform' severity="danger" onClick={deleteProduct} />
-       </React.Fragment>
-   );
-   const deleteProductsDialogFooter = (
-       <React.Fragment>
-           <Button label="No" icon="pi pi-times" className='button-reform' outlined onClick={hideDeleteProductsDialog} />
-           <Button label="Yes" icon="pi pi-check"  className='button-reform' severity="danger" onClick={deleteSelectedProducts} />
-       </React.Fragment>
-   );
-
-   const feedbackDialogFooter = (
-       <React.Fragment>
-           <Button label="No" icon="pi pi-times" className='button-reform' outlined onClick={hideFeedbackDialog} />
-           <Button label="Yes" icon="pi pi-check"  className='button-reform' severity="danger" onClick={feedbackSent} />
        </React.Fragment>
    );
 
@@ -351,20 +289,6 @@ export default function Users() {
                    )}
                </div>
            </Dialog>
-
-           {/* <Dialog visible={deleteProductsDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
-               <div className="confirmation-content">
-                   <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
-                   {product && <span>Are you sure you want to delete the selected products?</span>}
-               </div>
-           </Dialog>
-
-           <Dialog visible={feedbackDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={feedbackDialogFooter} onHide={hideFeedbackDialog}>
-               <div className="confirmation-content">
-                   <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
-                   {product && <span>Are you sure you want to ask for feedback?</span>}
-               </div>
-           </Dialog> */}
        </div>
        </section>
    );
