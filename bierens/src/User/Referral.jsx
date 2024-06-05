@@ -172,11 +172,17 @@ const footerContent = (
       </div>
       <div className="component-3">
         <img
+        onMouseLeave={() => setChangeStyle(prevState => {return {...prevState, reward1: false}})}
+        onMouseEnter={() => setChangeStyle(prevState => {return {...prevState, reward1: true}})}
+        style={changeStyle.reward1 ? styleHover : styleNormal}
           className="component-3-child"
           alt=""
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/25c653830a0bf3a6e299ebb473d2ae0ea7ffe033ce9e19dafac95ec7647c8e42?apiKey=1487a4e6add04b00a5f73b9046459d15&"
         />
         <img
+        onMouseLeave={() => setChangeStyle(prevState => {return {...prevState, reward2: false}})}
+        onMouseEnter={() => setChangeStyle(prevState => {return {...prevState, reward2: true}})}
+        style={changeStyle.reward2 ? styleHover : styleNormal}
           className="component-3-item"
           alt=""
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/65319b3450d741ff42fada16b1dc7297e11184055e44edc2b01b515cc20f0ffe?apiKey=1487a4e6add04b00a5f73b9046459d15&"
