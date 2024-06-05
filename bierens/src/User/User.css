@@ -40,7 +40,7 @@
 .rectangle-div {
   top: 261px;
   height: 819px;
-  background-color: rgba(0, 0, 0, 0.57);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .users-main-page-v5-child1 {
   position: absolute;
@@ -208,7 +208,6 @@
   height: 81px;
   opacity: 0.75;
   display: block;
-  z-index: 1;
   margin-top: 2em;
 }
 
@@ -216,7 +215,7 @@
 .users-main-page-v5-child10::after {
   content: '';
   position: absolute;
-  z-index: 2; /* Ensure pseudo-elements are above the main element */
+   /* Ensure pseudo-elements are above the main element */
 }
 
 /* Top border */
