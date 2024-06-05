@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Chart } from 'primereact/chart';
 import './Dashboard.css'; 
 
-export default function LineDemo() {
+const Dashboard = () => {
     const [chartData, setChartData] = useState({});
     const [chartOptions, setChartOptions] = useState({});
     const [showConversionRate, setShowConversionRate] = useState(true);
@@ -12,7 +12,6 @@ export default function LineDemo() {
 
     useEffect(() => {
         const documentStyle = getComputedStyle(document.documentElement);
-        const textColor = documentStyle.getPropertyValue('--text-color') || '#202124';
         const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary') || '#5f6368';
         const surfaceBorder = documentStyle.getPropertyValue('--surface-border') || '#e0e0e0';
 
@@ -112,60 +111,54 @@ export default function LineDemo() {
 
     return (
         <div className="dashboard-section">
-        
-        <div className='navbar'></div>
-
-        <div className="dashboard">
-            <h1 className="dashboard-title">Dashboard</h1>
-            <h3 className="dashboard-heading2">Check Conversion rate, Participation rate, Sales and Brand awareness</h3>
-
-            <div className="chart-card">
-                <div className="chart-header">
-                    <div 
-                        className={`chart-label-box CR ${showConversionRate ? 'active' : 'inactive'}`} 
-                        onClick={toggleConversionRate}
-                    >
-                        <div className="chart-label">Conversion Rate</div>
+            <div className='navbar'></div>
+            <div className="dashboard">
+                <h1 className="dashboard-title">Dashboard</h1>
+                <h3 className="dashboard-heading2">Check Conversion rate, Participation rate, Sales and Brand awareness</h3>
+                <div className="chart-card">
+                    <div className="chart-header">
+                        <div 
+                            className={`chart-label-box CR ${showConversionRate ? 'active' : 'inactive'}`} 
+                            onClick={toggleConversionRate}
+                        >
+                            <div className="chart-label">Conversion Rate</div>
+                        </div>
+                        <div 
+                            className={`chart-label-box PR ${showParticipationRate ? 'active' : 'inactive'}`} 
+                            onClick={toggleParticipationRate}
+                        >
+                            <div className="chart-label">Participation Rate</div>
+                        </div>
+                        <div 
+                            className={`chart-label-box SA ${showSales ? 'active' : 'inactive'}`} 
+                            onClick={toggleSales}
+                        >
+                            <div className="chart-label">Sales</div>
+                        </div>
+                        <div 
+                            className={`chart-label-box BA ${showBrandAwareness ? 'active' : 'inactive'}`} 
+                            onClick={toggleBrandAwareness}
+                        >
+                            <div className="chart-label">Brand Awareness</div>
+                        </div>
                     </div>
-                    <div 
-                        className={`chart-label-box PR ${showParticipationRate ? 'active' : 'inactive'}`} 
-                        onClick={toggleParticipationRate}
-                    >
-                        <div className="chart-label">Participation Rate</div>
-                    </div>
-                    <div 
-                        className={`chart-label-box SA ${showSales ? 'active' : 'inactive'}`} 
-                        onClick={toggleSales}
-                    >
-                        <div className="chart-label">Sales</div>
-                    </div>
-                    <div 
-                        className={`chart-label-box BA ${showBrandAwareness ? 'active' : 'inactive'}`} 
-                        onClick={toggleBrandAwareness}
-                    >
-                        <div className="chart-label">Brand Awareness</div>
+                    <div className="chart-container">
+                        <Chart type="line" data={chartData} options={chartOptions} />
                     </div>
                 </div>
-                <div className="chart-container">
-                    <Chart type="line" data={chartData} options={chartOptions} />
-                </div>
-            </div>
-            <div className="activity-feedback">
-                <div className="activity">
-                    <h2>
-                        
-                        Recent Activity
-                    </h2>
-                    <p> <span className="material-icons">lightbulb</span> Steve from Corporate completed 1 referral today.</p>
-                </div>
-                <div className="feedback">
-                    <h2>
-                        Feedback
-                    </h2>
-                    <p> <span className="material-icons">message</span> "I recently used your referral program to invite a friend and was really satisfied with how..."</p>
+                <div className="activity-feedback">
+                    <div className="activity">
+                        <h2>Recent Activity</h2>
+                        <p><span className="material-icons">lightbulb</span> Steve from Corporate completed 1 referral today.</p>
+                    </div>
+                    <div className="feedback">
+                        <h2>Feedback</h2>
+                        <p><span className="material-icons">message</span> "I recently used your referral program to invite a friend and was really satisfied with how..."</p>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     );
 }
+
+export default Dashboard;
