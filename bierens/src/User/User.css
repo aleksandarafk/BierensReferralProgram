@@ -680,3 +680,15 @@
   color: #d9d9d9;
   font-family: "Play";
 }
+
+.text-reward{
+  position: absolute;
+  top: 973px;
+  left: 500px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  width: 1000px;
+  height: 14px;
+  text-align: left;
+}
