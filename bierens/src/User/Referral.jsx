@@ -136,6 +136,9 @@ const footerContent = (
       <div className="users-main-page-v5-child21" />
       <div className="users-main-page-v5-child22" />
       <div className="log-out">Log out</div>
+      <p className="text-reward" style={changeStyle.reward1 || changeStyle.reward2 ? texthover : textNormal}> {changeStyle.reward1 ? 
+      "Atomic Habits by James Clear is a comprehensive, practical guide on how to change your habits and get 1% better every day. Using a framework called the Four Laws of Behavior Change, Atomic Habits teaches readers a simple set of rules for creating good habits and breaking bad ones." 
+      : "Enjoy a discount when shopping for something that you need or just indulge yourself!"}</p>
       <img
         className="material-symbolslogout-icon"
         alt=""
@@ -228,6 +231,7 @@ const footerContent = (
               
            </Dialog>
        </div> }
+       <div style={changeStyle.reward1 || changeStyle.reward2 ? styleBackgroundHover : styleBackground}>  </div>
        { visible && <div style={backgroundHover}></div> }
     </div>
     
