@@ -8,16 +8,30 @@ import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Rating } from "primereact/rating";
 import "./referPopUp.css"
+import Popup from "../Admin/Popup";
+
+
 // import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
 
 export default function SimplePopup() {
   
   const [anchor, setAnchor] = React.useState(null);
   const [visible, setVisible] = useState(false);
+  const [popUpVisible, setPopupVisible] = useState(false);
   const [ratingValue, setRatingValue] = useState(null);
   const [userData, setUserData] = useState({description: "", 
     rating: ""
-})
+});
+
+useEffect(() => {
+
+  const getPopUpLocalStorage = JSON.parse(localStorage.getItem("feedbackSent"));
+
+  if(getPopUpLocalStorage){
+    setPopupVisible(true);
+  }
+}
+, [])
 
 const [changeStyle, setChangeStyle] = useState({reward1: false, reward2: false});
   const styleNormal = {width: "187px", transition:"0.6s ease-out" };
@@ -58,7 +72,7 @@ const footerContent = (
   return (
     
     <div className="users-main-page-v5">
-      
+      {popUpVisible && <Popup/>}
       <img
         className="users-main-page-v5-child"
         alt=""
