@@ -131,7 +131,7 @@ export default function Users() {
        setProducts(_products);
        setDeleteProductDialog(false);
        setProduct(emptyProduct);
-       toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
+       toast.current.show({ severity: 'success', summary: 'Successful', detail: 'User removed from the referral program', life: 3000 });
    };
 
    const feedbackSent = () => {
@@ -242,7 +242,6 @@ export default function Users() {
    const actionBodyTemplate = (rowData) => {
        return (
            <React.Fragment >
-               <Button icon="pi pi-file"  rounded className="mr-2" onClick={() => editProduct(rowData)} />
                <Button style={{marginLeft: "0.5em"}}icon="pi pi-trash"  rounded severity="danger" onClick={() => confirmDeleteProduct(rowData)} />
            </React.Fragment>
        );
@@ -304,7 +303,7 @@ export default function Users() {
            <div className='navbar'></div>
            <div className='features'>
            <input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>
-           <Button label="+ Invite" id='invite-btn' severity={severityFeedback} onClick={() => showFeedbackPrompt(severityFeedback)}/>
+           <Button label="+ Invite" className="mr-2" id='invite-btn' severity={severityFeedback} onClick={() => openNew()}/>
            </div>
            <Toast ref={toast} />
            <div className="card">
@@ -325,18 +324,18 @@ export default function Users() {
 
            </div>
 
-           <Dialog visible={productDialog} style={{ width: '32rem', borderRadius:"10px"}} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="User Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
+           <Dialog visible={productDialog} style={{ width: '32rem', borderRadius:"10px"}} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Invite New Users" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
                {product.image && <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.image} className="product-image block m-auto pb-3" />}
                <div className="field">
                    <label htmlFor="name" className="font-bold">
-                       Email
+                       Email of the Referee
                    </label>
-                   <InputText disabled id="name" value={product.email} onChange={(e) => onInputChange(e, 'description')} />
+                   <InputText disabled id="name" onChange={(e) => onInputChange(e, 'description')} />
                   
                </div>
                <div className="field">
                    <label htmlFor="description" className="font-bold">
-                       Feedback
+                       Your Invitation Message
                    </label>
                    <InputTextarea disabled id="description" value={product.feedbackAll} onChange={(e) => onInputChange(e, 'description')}  rows={3} cols={20} />
                </div>
@@ -353,7 +352,7 @@ export default function Users() {
                </div>
            </Dialog>
 
-           <Dialog visible={deleteProductsDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
+           {/* <Dialog visible={deleteProductsDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
                <div className="confirmation-content">
                    <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
                    {product && <span>Are you sure you want to delete the selected products?</span>}
@@ -365,7 +364,7 @@ export default function Users() {
                    <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
                    {product && <span>Are you sure you want to ask for feedback?</span>}
                </div>
-           </Dialog>
+           </Dialog> */}
        </div>
        </section>
    );

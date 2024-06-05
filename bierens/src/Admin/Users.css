@@ -163,7 +163,8 @@ a:hover{
 }
 
 .p-paginator-bottom{
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0 0.5rem 0;
+  background-color: transparent;
 }
 
 .p-dropdown-label{

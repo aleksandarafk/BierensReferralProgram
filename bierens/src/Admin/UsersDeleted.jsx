@@ -121,7 +121,7 @@ export default function UsersDeleted() {
        setProducts(_products);
        setDeleteProductDialog(false);
        setProduct(emptyProduct);
-       toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Returned', life: 3000 });
+       toast.current.show({ severity: 'success', summary: 'Successful', detail: 'User returned back to the referral program', life: 3000 });
    };
 
    const findIndexById = (id) => {
@@ -215,7 +215,6 @@ export default function UsersDeleted() {
    const actionBodyTemplate = (rowData) => {
        return (
            <React.Fragment >
-               <Button icon="pi pi-file"  rounded className="mr-2" onClick={() => editProduct(rowData)} />
                <Button style={{marginLeft: "0.5em"}}icon="pi pi-plus"  rounded onClick={() => returnUser(rowData)} />
            </React.Fragment>
        );
@@ -261,11 +260,11 @@ export default function UsersDeleted() {
         <div className='users-table'>
                <div className='text-section'>
            <h1 className='users-title'> Deleted Users</h1>
-           <p className='users-title-clarification'>Currently enrolled users in the referral program</p>
+           <p className='users-title-clarification'>Users that have been removed from the referral program</p>
            </div>
            </div>
            <div className='nav-pages'>
-           <Link to="/Admin/Users" style={{textAlign: "left", textDecoration:"none"}}> <p style={{margin: 0, marginBottom: "0.5em"}}> All feedback: {allData.length - products.length} </p></Link>
+           <Link to="/Admin/Users" style={{textAlign: "left", textDecoration:"none"}}> <p style={{margin: 0, marginBottom: "0.5em"}}> Users: {allData.length - products.length} </p></Link>
            <Link to="./" style={{textAlign: "left", textDecoration:"none", color: "black"}}> <p style={{margin: 0, marginBottom: "0.5em"}}>Deleted: {products.length}</p></Link>
            </div>
            <div className='navbar'></div>
