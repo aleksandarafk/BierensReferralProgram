@@ -1,0 +1,112 @@
+/* .referral-popup .p-component {
+    background: linear-gradient(to right, #eb856b, #ec9e62)
+    
+}
+
+
+
+.referral-popup .p-dialog-header,
+.referral-popup .p-dialog-content,
+.referral-popup .p-dialog-footer {
+    background: linear-gradient(to right, #eb856b, #ec9e62); 
+    font-family: "Play";
+}
+
+.referral-popup  .p-rating-icon{
+    color: #ffd700;
+}
+
+.header-dialog{
+    font-family: "Play";
+    font-weight: bold;
+    color: transparent;
+    letter-spacing: 12%;
+    font-size: 1.6rem;
+        background: -webkit-linear-gradient(#e7b676, #ddda22);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+
+.popup-title{
+    color: white;
+    font-weight:lighter;
+}
+
+.footer-dialog .p-button{
+    border: 1px solid rgb(97, 61, 19);
+}
+
+.footer-dialog .p-button span{
+    font-family: "Play";
+    font-weight: bold;
+    background: -webkit-linear-gradient(#ffe7b4, #301a02);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
+
+
+.referral-popup .p-component {
+    background: #74614d;
+    
+}
+
+
+
+.referral-popup .p-dialog-header,
+.referral-popup .p-dialog-content,
+.referral-popup .p-dialog-footer {
+    background-color: #6B4220;
+    font-family: "Play";
+}
+
+.referral-popup .p-dialog-header{
+    padding: 16px 16px 0px 16px;
+}
+
+.referral-popup  .p-rating-icon{
+    color: #ffd700;
+}
+
+.header-dialog{
+    font-family: "Play";
+    font-weight: bold;
+    color: transparent;
+    letter-spacing: 12%;
+    font-size: 1.6rem;
+        background: -webkit-linear-gradient(#e7b676, #ddda22);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+
+.popup-title{
+    color: white;
+    font-weight:lighter;
+}
+
+.footer-dialog .p-button{
+    border: 1px solid rgb(97, 61, 19);
+}
+
+.footer-dialog .p-button span{
+    font-family: "Play";
+    font-weight: bold;
+    color: #ffd700;
+
+}
+
+.popup-points{
+    color: white;
+}
+
+.field .popup-textarea{
+  font-family: "Play";
+}
+
+.popup-points-inner{
+    font-size: 1.1rem;
+    background: -webkit-linear-gradient(#e7b676, #ddda22);
+    font-weight: bold;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+
