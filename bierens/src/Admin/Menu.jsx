@@ -1,6 +1,7 @@
 import React from  "react";
 import "./style.css";
 import logo from "./image/bierens-logo-white.png";
+import logouticon from "./image/logout.png"
 
 function Menu () {
     return (
@@ -11,16 +12,16 @@ function Menu () {
             <main>
                 <div id="main-inner">
                     <ul>
-                        <li><a>Dashboard</a></li>
-                        <li><a>Users</a></li>
-                        <li><a>Rewards</a></li>
-                        <li><a>Feedback</a></li>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Users</a></li>
+                        <li><a href="#">Rewards</a></li>
+                        <li><a href="#">Feedback</a></li>
                     </ul>
                 </div>
             </main>
             <footer>
                 <ul>
-                    <li><a>&#9783; Log out</a></li>
+                    <li><a href="#"><img src={logouticon}/> Log out</a></li>
                 </ul>
             </footer>
         </div>

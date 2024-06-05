@@ -48,6 +48,10 @@ h1 {
     font-weight: bold; */
     font-size: 80px;
     font-family: "Play";
+    position: relative;
+    margin: 0;
+    float: left;
+    overflow: hidden!important;
 }
 h1 .highlight {
     font-size: 80px;
@@ -70,9 +74,9 @@ button {
             /* --image */
 
 #landing-top-image {
-    width: 90%;
-    max-width: 100%;
-    text-align: center;
+    width: 100%;
+    max-width: 90%;
+    float: right;
 }
 
                                         /* --Header */
@@ -98,6 +102,7 @@ button {
     height: 100%;
     position: relative;
     float: left;
+    overflow: hidden!important;
 }
 
                                     /* --main --innerleft */
@@ -118,19 +123,19 @@ button, .button-a {
 }
 
 .button-calltoaction {
-    width: 264px;
-    height: 84px;
+    width: 236px;
+    height: 70px;
     background: linear-gradient(to left, #326AD7, #2651A4);
     border-radius: 10px;
     border: 0px transparent;
     color: white;
 }
 
-.button-calltoaction:hover {
+/* .button-calltoaction:hover {
     width: 236px;
     height: 70px;
     transition: all 1s;
-}
+} */
 
                                 /* --main --innerleft-inner */
 #main-inner-left-inner {
