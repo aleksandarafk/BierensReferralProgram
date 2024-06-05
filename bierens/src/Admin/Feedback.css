@@ -58,7 +58,7 @@
   gap: 2.2em;
 }
 
-.text-section{
+.text-section-feedback{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -77,6 +77,10 @@
     justify-content: space-between;
     width: inherit;
     margin-bottom: 0.5em;
+}
+
+.button-feedback-page .p-button-label {
+  font-weight: 400;
 }
 
 .navbar{
@@ -263,4 +267,8 @@ a:hover{
 
 .feedback-table .p-toast-message-content .p-toast-icon-close{
   margin-top: -1.5em;
+}
+
+.text-section-button{
+  margin-top: 0.5em;
 }

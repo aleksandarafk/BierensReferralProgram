@@ -23,6 +23,7 @@ import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import { Link } from 'react-router-dom';
+// import Menu from './Menu.jsx';
 
 export default function Feedback() {
      let emptyProduct = {
@@ -321,13 +322,16 @@ export default function Feedback() {
 
     return (
         <section className='feedback-section'>
+            {/* <Menu/> */}
         <div className='feedback-table'>
-            <div className='text-section'>
+            <div className='text-section-feedback'>
             <div className='text-text-section'>
             <h1 className='h1Feedback'>Feedback</h1>
             <p className='paragraphFeedback '>Take a look at all of the reviews given by users.</p>
-            </div>
-            <Button label="Export" icon="pi pi-upload" severity='success' onClick={exportExcel} />
+            </div >
+            <div className='text-section-button'>
+            <Button className="button-feedback-page" label="Export" icon="pi pi-upload" severity='success' onClick={exportExcel} />
+             </div>
             </div>
             <div className="nav-pages">
             <Link  to="/Feedback" state={deletedPeople} style={{textAlign: "left", textDecoration:"none", color: "black"}}> <p style={{margin: 0, marginBottom: "0.5em"}}>All feedback: {products.length} </p></Link>
@@ -336,7 +340,7 @@ export default function Feedback() {
             <div className='navbar'></div>
             <div className='features'>
             <input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>
-            <Button label="Request Feedback" severity={severityFeedback} onClick={() => showFeedbackPrompt(severityFeedback)}/>
+            <Button className="button-feedback-page"label="Request Feedback" severity={severityFeedback} onClick={() => showFeedbackPrompt(severityFeedback)}/>
             </div>
             <Toast ref={toast} />
             <div className="card">
