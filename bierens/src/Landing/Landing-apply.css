@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
-body {
-    background-image: url('Images/Apply-Background.png'); /* Apply background image to the section */
-}
 
 .How-to-apply {
     display: flex;
@@ -11,6 +8,8 @@ body {
     padding: 100px 50px;
     font-family: 'Play', sans-serif; /* Set the font family to 'Play' */
     height: 500px; /* Set the height of the parent container */
+    background-image: url('Images/Apply-Background.png'); /* Apply background image to the section */
+
 }
 
 .How-to-apply-text {
