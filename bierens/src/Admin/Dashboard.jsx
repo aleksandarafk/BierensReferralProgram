@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Chart } from 'primereact/chart';
 import './Dashboard.css'; 
 
-const Dashboard = () => {
+const Dashboard= () => {
     const [chartData, setChartData] = useState({});
     const [chartOptions, setChartOptions] = useState({});
     const [showConversionRate, setShowConversionRate] = useState(true);

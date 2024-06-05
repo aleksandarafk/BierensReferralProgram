@@ -4,7 +4,10 @@ import Howtoapply from "./How-to-apply";
 
 const Landing = () => {
     return (
+        <>
         <Howtoapply/>
+        </>
+
     );
 };
 
