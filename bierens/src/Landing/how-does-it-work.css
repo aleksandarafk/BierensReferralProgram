@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&display=swap');
 
-/* make sure this is not globally styled
-body {
-    background-image: url("assets/landing_background.svg");
-} */
+
+.landing-main-container {
+    background-image: url('Images/Apply-Background.png');
+    background-size: 100% 100%;
+}
 
 #section2_container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 0 100px 70px 100px
 }
 
 #section2_title {
@@ -26,9 +29,10 @@ body {
     font-family: 'Play';
     font-size: 26px;
     color: var(--bierens-text-gray);
-    margin: 26px 0 52px 0;
+    margin: 6px 0 52px 0;
     width: 51vw;
     align-self: center;
+    text-align: center;
 }
 
 #cards_container {

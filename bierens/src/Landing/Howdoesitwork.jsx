@@ -1,4 +1,4 @@
-import './style.css'
+import './how-does-it-work.css'
 import signupImage from './assets/signupshare.png'
 import qualifyImage from './assets/qualify.png'
 import cupImage from './assets/cup.png'
