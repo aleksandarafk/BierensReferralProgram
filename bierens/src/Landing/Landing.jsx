@@ -8,7 +8,7 @@ import Landingtop from "./landingtop";
 const Landing = () => {
     return(
         <div className="landing-main-container">
-        {/*<Landingtop/>*/}
+        <Landingtop/>
         <Howdoesitwork />
         <Howtoapply/>
         </div>
