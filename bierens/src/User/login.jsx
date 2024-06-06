@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Navigate, Link } from 'react-router-dom';
-import './style.css';
+import './login.css';
 import { doSignInWithEmailAndPassword } from './Firebase/auth.js';
 import { useAuth } from "./context/authContext";
 import { AuthProvider } from "./context/authContext";
@@ -42,7 +42,7 @@ const Login = () => {
 
                         <div id="password">
                             <label>Password</label><br />
-                            <input type="password" autoComplete="current-password" value={password} onChange={(e) => {setPassword(e.target.value)}} placeholder='*****' required></input>
+                            <input className='input' type="password" autoComplete="current-password" value={password} onChange={(e) => {setPassword(e.target.value)}} placeholder='*****' required></input>
                             {/* <input type="password" autoComplete="current-password" required></input> */}
                         </div>
 
