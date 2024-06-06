@@ -7,7 +7,7 @@
     align-items: center;
     padding: 100px 50px;
     font-family: 'Play', sans-serif; /* Set the font family to 'Play' */
-    height: 500px; /* Set the height of the parent container */
+    height: 100%; /* Set the height of the parent container */
     /* background-image: url('Images/Apply-Background.png'); Apply background image to the section */
 
 }
@@ -31,6 +31,7 @@
 }
 
 .Email-and-Button {
+    padding-top: 3rem;
     display: flex;
     align-items: center;
 }
