@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+
+/* ------------------------------------------------------ */
+
+
+
+.Top-Landing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 400px 60px;
+    font-family: 'Play', sans-serif; /* Set the font family to 'Play' */
+    height: 500px; /* Set the height of the parent container */
+    /* background-image: url('Images/Apply-Background.png'); Apply background image to the section */
+
+}
+
+.Top-Landing-text {
+    text-align: left; /* Align text to start from the left */
+}
+
+.Top-Landing-text h1 {
+    font-size: 60px;
+    color: #000000;
+}
+
+.Top-Landing-text .network {
+    color: #00388B; 
+}
+
+.Top-Landing-text p {
+    font-size: 30px;
+    color: #000000;
+}
+
+.button-calltoaction{
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    background: linear-gradient(to right, #326AD7, #2651A4); /* Gradient colors */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; 
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
+    height: 60px; /* Match height of the input */
+    font-size: 20px; /* Match font size of the input */
+    width: 177px; /* Set width to 177px */
+}
+
+.RightImgTop {
+    width: 650px; 
+    height: 100%; 
+    margin-left: 100px;
+}

@@ -1,30 +1,32 @@
-import React from  "react";
-import "./landing.css";
+import React from "react";
+import "./landingtop.css";
 import introimage from "./image/LandingPage-image.png";
 
-function Landingtop () {
-    return (
-        <div id="landing-top">
-            <header></header>
-            <main>
-                <div id="main-inner">
-                    <div class="main-inner-content" id="main-inner-left">
-                        <div id="main-inner-left-inner">
-                            <h1 class="landing-h1">Grow your <a class="highlight">network</a>.<br /> Earn better <a class="highlight">rewards</a>.</h1>
-                            <p id="landing-top-text">Grow your network with Bierens, access exclusive events, earn unique rewards for each referral trough our referral program. Become a Bierens Associate today.</p>
-                            <button class="button-calltoaction">Read more</button>
-                        </div>
-                    </div>
-                    <div class="main-inner-content" id="main-inner-right">
-                        <div id="main-inner-right-inner">
-                            <img src={introimage} id="landing-top-image" />
-                        </div>
-                    </div>
-                </div>
-            </main>
-            <footer></footer>
+function Landingtop() {
+  const scrollToSection = () => {
+    const section = document.getElementById('section2_container');
+    section.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <>
+      <div className="Top-Landing">
+        <div className="Top-Landing-text">
+          <h1>
+            Grow your <span className="network">network. </span> <br /> Earn better <span className="network">rewards. </span>
+          </h1>
+          <p>
+            Grow your network with Bierens, access exclusive events, earn unique rewards for each referral through our referral program. Become a Bierens Associate today.
+          </p>
+          <br />
+          <button className="button-calltoaction" onClick={scrollToSection}>Read more</button>
         </div>
-    )
+        <div>
+          <img className="RightImgTop" src={introimage} alt="img" />
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Landingtop;

@@ -113,8 +113,8 @@ const Dashboard= () => {
         <div className="dashboard-section">
             <div className='navbar'></div>
             <div className="dashboard">
-                <h1 className="dashboard-title">Dashboard</h1>
-                <h3 className="dashboard-heading2">Check Conversion rate, Participation rate, Sales and Brand awareness</h3>
+                <h1 className='users-title'>Dashboard</h1>
+           <p className='users-title-clarification'>Check Conversion rate, Participation rate, Sales and Brand awareness</p>
                 <div className="chart-card">
                     <div className="chart-header">
                         <div 
