@@ -14,6 +14,7 @@ export default function SimplePopup() {
   
   const [anchor, setAnchor] = React.useState(null);
   const [visible, setVisible] = useState(false);
+  const [visible2, setVisible2] = useState(false);
   const [ratingValue, setRatingValue] = useState(null);
   const [userData, setUserData] = useState({description: "", 
     rating: ""
@@ -22,21 +23,28 @@ export default function SimplePopup() {
 const backgroundHover = {position: "fixed" , top:"0", left:"0", width:"100vw", height:"100vh", backgroundColor: "rgba(0,0,0,0.7)", transition: "0.5s ease-in"};
 const backgroundNormal = {backgroundColor: "rgba(0,0,0,0.0)", transition: "0.5s ease-in"};
 
-  const open = Boolean(anchor);
-  const id = open ? 'simple-popper' : undefined;
-
   const headerElement = (
     <div className="header-dialog">Refer </div>
   );
-
-const RemoveFeedbackLocalStorage = () => {
-    setVisible(false)
-}
 
 const footerContent = (
     <div className="footer-dialog">
         c
     </div>
+);
+
+const closepopup = () => {setVisible(false)} 
+
+const closepopup2 = () => {setVisible2(false)} 
+
+const header2Element = (
+  <div className="header-dialog2">Your reward:</div>
+);
+
+const footer2Content = (
+  <div className="footer-dialog">
+      c
+  </div>
 );
 
 
@@ -171,7 +179,8 @@ const footerContent = (
         <b className="cant-decide">Can’t decide?</b>
         <div className="component-10">
           <div className="component-10-child" />
-          <button className="component-10-child">SPIN</button>
+          <button className="component-10-child" onClick={() => {setVisible2(true)}}>SPIN</button>
+          {/* <button className="component-10-child">SPIN</button> */}
         </div>
       </div>
       <div className="users-main-page-v5-child23" />
@@ -187,9 +196,10 @@ const footerContent = (
         </b>
        
       </div>
-     {visible && <div className="card flex justify-content-center"  >
 
-           <Dialog visible={visible} style={{ width: '40rem', height: '40rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header={headerElement} footer={footerContent} modal className=" referral-popup p-fluid "  onHide={RemoveFeedbackLocalStorage}>
+{visible && <div className="card flex justify-content-center"  >
+
+           <Dialog visible={visible} style={{ width: '40rem', height: '40rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header={headerElement} footer={footerContent} modal className=" referral-popup p-fluid "  onHide={closepopup}>
               <div className="new-start-referring-child4" />
               <div className="new-start-referring-child5" />
               <div className="new-start-referring-child6" />
@@ -233,7 +243,31 @@ const footerContent = (
               <b className="complete">COMPLETE</b>
            </Dialog>
        </div> }
+       {visible2 && <div className="card flex justify-content-center"  >
+
+           <Dialog visible={visible2} style={{ width: '22rem', height: '28rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header={header2Element} footer={footer2Content} modal className=" referral-popup p-fluid "  onHide={closepopup2}>
+
+              <img
+              className="component-3-child-popup"
+              alt=""
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/25c653830a0bf3a6e299ebb473d2ae0ea7ffe033ce9e19dafac95ec7647c8e42?apiKey=1487a4e6add04b00a5f73b9046459d15&"
+              />
+
+              <div className="component-3-child-popup-effect"></div>
+
+              <div class="loader-container">
+                <div class="loader"></div>
+
+              </div>
+
+
+              
+
+           </Dialog>
+       </div> }
+
        { visible && <div style={backgroundHover}></div> }
+       { visible2 && <div style={backgroundHover}></div> }
     </div>
     
   );
