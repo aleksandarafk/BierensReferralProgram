@@ -257,14 +257,14 @@ export default function Users() {
                    <label htmlFor="name" className="font-bold">
                        Email of the Referee
                    </label>
-                   <InputText disabled id="name" onChange={(e) => onInputChange(e, 'description')} />
+                   <InputText id="name" onChange={(e) => onInputChange(e, 'description')} />
                   
                </div>
                <div className="field">
                    <label htmlFor="description" className="font-bold">
                        Your Invitation Message
                    </label>
-                   <InputTextarea disabled id="description" value={product.feedbackAll} onChange={(e) => onInputChange(e, 'description')}  rows={3} cols={20} />
+                   <InputTextarea id="description" value={product.feedbackAll} onChange={(e) => onInputChange(e, 'description')}  rows={3} cols={20} />
                </div>
            </Dialog>
 
