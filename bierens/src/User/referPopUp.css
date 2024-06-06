@@ -7,7 +7,7 @@
     z-index: 3;
 }
 
-.p-dialog-header-icon{
+.referral-popup .p-dialog-header-icon{
     color: white;
     cursor: pointer;
     padding-top: 10px;
@@ -20,7 +20,7 @@
 .referral-popup .p-dialog-footer {
     background-color: #150C01;
     font-family: "Play";
-    opacity: 90%;
+    
 }
 
 .referral-popup .p-dialog-header{
@@ -376,7 +376,7 @@
     color: #d9d9d9;
     letter-spacing: 12%;
     font-size: 1.6rem;
-    padding-top: 15px;
+    padding-top: 3px;
     padding-left: 20px;
 }
 

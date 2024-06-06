@@ -230,7 +230,7 @@ const footer2Content = (
        
       </div>
 
-{visible && <div className="card flex justify-content-center"  >
+{visible && <div className="card flex justify-content-center "  >
 
            <Dialog visible={visible} style={{ width: '40rem', height: '40rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header={headerElement} footer={footerContent} modal className=" referral-popup p-fluid "  onHide={closepopup}>
               <div className="new-start-referring-child4" />

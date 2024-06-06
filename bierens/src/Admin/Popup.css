@@ -45,37 +45,36 @@
 } */
 
 
-.referral-popup .p-component {
+.referral-popup-feedback .p-component {
     background: #74614d;
-    
 }
 
 
 
-.referral-popup .p-dialog-header,
-.referral-popup .p-dialog-content,
-.referral-popup .p-dialog-footer {
+.referral-popup-feedback .p-dialog-header,
+.referral-popup-feedback .p-dialog-content,
+.referral-popup-feedback .p-dialog-footer {
     background-color: #6B4220;
     font-family: "Play";
 }
 
-.referral-popup .p-dialog-header{
+.referral-popup-feedback .p-dialog-header{
     padding: 16px 16px 0px 16px;
 }
 
-.referral-popup  .p-rating-icon{
+.referral-popup-feedback .p-rating-icon{
     color: #ffd700;
 }
 
-.header-dialog{
+.referral-popup-feedback .header-dialog-feedback{
     font-family: "Play";
     font-weight: bold;
     color: transparent;
     letter-spacing: 12%;
     font-size: 1.6rem;
-        background: -webkit-linear-gradient(#e7b676, #ddda22);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(#e7b676, #ddda22);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .popup-title{
@@ -83,15 +82,14 @@
     font-weight:lighter;
 }
 
-.footer-dialog .p-button{
+.footer-dialog-feedback .p-button{
     border: 1px solid rgb(97, 61, 19);
 }
 
-.footer-dialog .p-button span{
+.footer-dialog-feedback .p-button span{
     font-family: "Play";
     font-weight: bold;
     color: #ffd700;
-
 }
 
 .popup-points{

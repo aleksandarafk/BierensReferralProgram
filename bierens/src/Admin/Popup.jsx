@@ -19,7 +19,7 @@ const Popup = () => {
     const headerElement = (
         <div >
             
-            <div className="header-dialog">Give us your feedback!  </div>
+            <div className="header-dialog-feedback">Give us your feedback!  </div>
             <div> </div>
         </div>
     
@@ -32,7 +32,7 @@ const Popup = () => {
     }
 
     const footerContent = (
-        <div className="footer-dialog">
+        <div className="footer-dialog-feedback">
             <Button label="DONE" className="popup-button" onClick={RemoveFeedbackLocalStorage} autoFocus />
         </div>
     );
@@ -55,7 +55,7 @@ const Popup = () => {
                 </p>
             </Dialog> */}
 
-            <Dialog visible={visible} style={{ width: '32rem', }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header={headerElement} footer={footerContent} modal className=" referral-popup p-fluid "  onHide={RemoveFeedbackLocalStorage}>
+            <Dialog visible={visible} style={{ width: '32rem', }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header={headerElement} footer={footerContent} modal className=" referral-popup-feedback p-fluid "  onHide={RemoveFeedbackLocalStorage}>
                 <div className="popup-points" style={{marginTop: "-1em", marginBottom: "1em"}}> 
                Get closer to your next tier and recieve <span className="popup-points-inner"> +25 points! </span>
                 </div>
