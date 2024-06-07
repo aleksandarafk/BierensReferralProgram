@@ -187,7 +187,7 @@ const footer2Content = (
         {/* <Button aria-describedby={id} className="component-1-child" type="button" onClick={handleClick}>
         START REFERRING
         </Button> */}
-        <button className="component-1-child" onClick={() => {setVisible(true)}}>START REFERRING</button>  
+        <button className="component-1-child" onClick={() => {setVisible(true)}}>REFER AGAIN</button>  
          
       </div>
       <div className="component-3">
