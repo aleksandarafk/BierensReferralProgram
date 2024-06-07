@@ -1,53 +1,55 @@
-// import React, { useState } from  "react";
-// import "./login.css";
-// import { doSignInWithEmailAndPassword } from "./Firebase/auth";
-// import { useAuth } from "./context/authContext";
+import React, { useState } from 'react';
+import './login.css';
+import welcomeimage from "./image/welcome-autumn.png"
+import logo from "./image/bierens-logo-white.png"
 
-// function Login () {
-//     const {userLoggedIn} = useAuth()
+const Login = () => {
 
-//     const [email, setEmail] = useState('')
-//     const [password, setPassword] = useState('')
-//     const [isSigningIn, setIsSigningIn] = useState(false)
-//     const [errorMessage, setErrorMessage] = useState('')
+    // const { userLoggedIn } = useAuth()
+    // const userLoggedIn = useAuth()
 
-//     const onSubmit = async (e) => {
-//         e. preventDefault()
-//         if(!isSigningIn){
-//             setIsSigningIn(true)
-//             await doSignInWithEmailAndPassword(email, password)
-//         }
-//     }
+    // const [email, setEmail] = useState('')
+    // const [password, setPassword] = useState('')
+    // const [isSigningIn, setIsSigningIn] = useState(false)
+    // const [errorMessage, setErrorMessage] = useState('')
 
-//     return (
-//         <div id="login">
-//             {userLoggedIn && (<Navigate to={'./Landing/landingtop.jsx'} replace={true}/>)}
-//             <header>
-//             </header>
-//             <main>
-//                 <form onSubmit={onSubmit}>
-//                     <div id="email">
-//                         <label>E-mail</label>
-//                         <input type="email" autoComplete="email" value={email} onChange={(e) => {setEmail(e.target.value)}} required></input>
-//                     </div>
+    // const onSubmit = async (e) => {
+    //     e.preventDefault()
+    //     if(!isSigningIn) {
+    //         setIsSigningIn(true)
+    //         await doSignInWithEmailAndPassword(email, password)
+    //         // doSendEmailVerification()
+    //     }
+    // }
 
-//                     <div id="password">
-//                         <label>Password</label>
-//                         <input type="password" autoComplete="current-password" value={password} onChange={(e) => {setPassword(e.target.value)}} required></input>
-//                     </div>
+    return (
+            <div id="login">
+                {/* {userLoggedIn && (<Navigate to={'/loggedin'} replace={true} />)}  */}
+                    <form id='form'>
+                        <img src={logo} id="logo" />
+                        <img src={welcomeimage} id="welcome-image" />
+                        <div id="email">
+                            <label class="label">E-mail</label><br />
+                            <input class="input" type="email" autoComplete="email" value={email} onChange={(e) => {setEmail(e.target.value)}} placeholder='example@gmail.com' required></input>
+                            {/* <input type="email" autoComplete="email" required></input> */}
 
-//                     {
-//                         errorMessage && (<span>{errorMessage}</span>)
-//                     }
-//                     <button typ='submit' disabled={isSigningIn}>
-//                         {isSigningIn ? 'Signing in..': 'Sign in'}
-//                     </button>
-//                 </form>
-//             </main>
-//             <footer>
-//             </footer>
-//         </div>
-//     )
-// }
+                        </div>
 
-// export default Login;
+                        <div id="password">
+                            <label class="label">Password</label><br />
+                            <input class="input" type="password" autoComplete="current-password" value={password} onChange={(e) => {setPassword(e.target.value)}} placeholder='*****' required></input>
+                            {/* <input type="password" autoComplete="current-password" required></input> */}
+                        </div>
+
+                        {/* {
+                            errorMessage && (<span>{errorMessage}</span>)
+                        } */}
+                        <button id='submit'>
+                        </button>
+                        
+                    </form>
+            </div>
+    )
+}
+
+export default Login;

@@ -9,15 +9,18 @@
     top: 0;
 }
 
-header, main, footer {
+.header, .main, .footer {
     position: relative;
     width: 100%;
     max-width: 100%;
     text-align: center;
+    display: block;
 }
 
-header {
+.header {
+    margin-top: 100px;
     padding-bottom: 60px;
+    height: auto;
 }
 
 
@@ -25,15 +28,17 @@ header {
             /* --image */
 #logo {
     width: 50%;
+    position: relative;
+    top: -100px;
     margin-top: 40px;
 }
-footer img {
+.footer img {
     height: 24px;
     line-height: -1;
 }
 
             /* --text */
-a, p, b, i {
+.a {
     font-family: "Noto Sans", sans-serif;
     font-size: 20px;
     color: white;
@@ -46,7 +51,7 @@ a, p, b, i {
 }
 
             /* --List */
-ul {
+#list {
     width: 100%;
     max-width: 100%;
     height: 100%;
@@ -54,7 +59,7 @@ ul {
     position: relative;
     padding: 0;
 }
-ul li {
+#list .inner-list {
     list-style: none;
     text-align: center;
     padding: 15px 0px 15px 0px;
@@ -63,25 +68,25 @@ ul li {
     left: 0;
     display: block;
 }
-ul li a {
+.inner-list a {
     text-decoration: none;
     width: 100%;
     height: 100%;
 }
 
         /* --List --hover */
-ul li:hover {
+.inner-list:hover {
     background: white;
     transition: all 1s;
 }
-ul li:hover a {
+.inner-list:hover a {
     color: #00388B;
     font-weight: bold;
     transition: all 1s;
 }
 
                                         /* --main */
-main {
+.main {
     height: calc(100% - 368px);
 }
                                     /* --main --main-inner */
