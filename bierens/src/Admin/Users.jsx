@@ -122,6 +122,11 @@ export default function Users() {
        setProduct(emptyProduct);
        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'User removed from the referral program', life: 3000 });
    };
+
+   const submitInvitation = () => {
+    setProductDialog(false);
+    toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Invitation sent successfully!', life: 3000 });
+   };
    
 
    const showFeedbackPrompt = (severity) => {
@@ -206,7 +211,7 @@ export default function Users() {
   
    const productDialogFooter = (
        <React.Fragment>
-           <Button label="Done" className='button-reform' icon="pi pi-check" onClick={hideDialog} />
+           <Button label="Submit" className='button-reform' onClick={submitInvitation} />
        </React.Fragment>
    );
    const deleteProductDialogFooter = (
