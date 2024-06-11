@@ -7,6 +7,8 @@ import { Rating } from "primereact/rating";
 import "./Popup.css"
 
 const Popup = () => {
+
+    /* Global variables */
     const [visible, setVisible] = useState(false);
     const [ratingValue, setRatingValue] = useState(null);
     const getCloseButton = document.getElementsByClassName("p-dialog-header-icon")
@@ -15,7 +17,7 @@ const Popup = () => {
     rating: ""
 })
    
-    
+    /* Header of popup */
     const headerElement = (
         <div >
             
@@ -25,18 +27,21 @@ const Popup = () => {
     
       );
 
+     /* Removes feedback from localStorage when "X" or "Done" */ 
     const RemoveFeedbackLocalStorage = () => {
         
         localStorage.removeItem("feedbackSent") 
         setVisible(false)
     }
 
+    /* Footer of the popup */
     const footerContent = (
         <div className="footer-dialog-feedback">
             <Button label="DONE" className="popup-button" onClick={RemoveFeedbackLocalStorage} autoFocus />
         </div>
     );
 
+    /* Gets the feedback from localStorage, if its true show the popup */
     useEffect(() => {
         const getPopup = JSON.parse(localStorage.getItem("feedbackSent"));
 
@@ -47,13 +52,6 @@ const Popup = () => {
 
     return (
         <div className="card flex justify-content-center">
-           
-            {/* <Dialog visible={visible} modal header={headerElement} footer={footerContent} style={{ width: '50rem' }} onHide={RemoveFeedbackLocalStorage}>
-                <p className="m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </Dialog> */}
 
             <Dialog visible={visible} style={{ width: '32rem', }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header={headerElement} footer={footerContent} modal className=" referral-popup-feedback p-fluid "  onHide={RemoveFeedbackLocalStorage}>
                 <div className="popup-points" style={{marginTop: "-1em", marginBottom: "1em"}}> 
