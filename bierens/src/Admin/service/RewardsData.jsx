@@ -1,5 +1,6 @@
-export const ProductService = {
-    getProductsData() {
+//Array containing the demo data that is rendered inside the Rewards Table 
+export const RewardService = {
+    getRewardsData() {
         return [
                 {
                   id: 1,
@@ -10,7 +11,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
                 },
                 {
                   id: 2,
@@ -21,7 +22,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
                 },
                 {
                   id: 3,
@@ -32,7 +33,7 @@ export const ProductService = {
                   type: "Digital",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
                 },
                 {
                   id: 4,
@@ -43,7 +44,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
                 },
                 {
                   id: 5,
@@ -54,7 +55,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
                 },
                 {
                   id: 6,
@@ -65,7 +66,7 @@ export const ProductService = {
                   type: "Digital",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -77,7 +78,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -89,7 +90,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -101,7 +102,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -113,7 +114,7 @@ export const ProductService = {
                   type: "Digital",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -125,7 +126,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -137,7 +138,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -149,7 +150,7 @@ export const ProductService = {
                   type: "Digital",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -161,7 +162,7 @@ export const ProductService = {
                   type: "Digital",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -173,7 +174,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -185,7 +186,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -197,7 +198,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -209,7 +210,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -221,7 +222,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -233,7 +234,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -245,7 +246,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -257,7 +258,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -269,7 +270,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -281,7 +282,7 @@ export const ProductService = {
                   type: "Digital",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -293,7 +294,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -305,7 +306,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -317,7 +318,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -329,7 +330,7 @@ export const ProductService = {
                   type: "Digital",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -341,7 +342,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -353,7 +354,7 @@ export const ProductService = {
                   type: "Digital",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
                 },
                 {
                   id: 31,
@@ -364,7 +365,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -376,7 +377,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
 
                 },
                 {
@@ -388,7 +389,7 @@ export const ProductService = {
                   type: "Physical",
                   action: "Edit",
                   image: '/dummyimage.png',
-                  description: 'Product Description',
+                  description: 'Reward Description',
                 },
                 {
                   id: 34,
@@ -398,30 +399,30 @@ export const ProductService = {
                   quantity: 2,
                   type: "Physical",
                   action: "Edit",
-                  description: 'Product Description',
+                  description: 'Reward Description',
                   image: '/dummyimage.png',
                 }
         ];
     },
 
-    getProductsMini() {
-        return Promise.resolve(this.getProductsData().slice(0, 5));
+    getRewardsMini() {
+        return Promise.resolve(this.getRewardsData().slice(0, 5));
     },
 
-    getProductsSmall() {
-        return Promise.resolve(this.getProductsData().slice(0, 10));
+    getRewardsSmall() {
+        return Promise.resolve(this.getRewardsData().slice(0, 10));
     },
 
-    getProducts() {
-        return Promise.resolve(this.getProductsData());
+    getRewards() {
+        return Promise.resolve(this.getRewardsData());
     },
 
-    getProductsWithOrdersSmall() {
-        return Promise.resolve(this.getProductsWithOrdersData().slice(0, 10));
+    getRewardsWithOrdersSmall() {
+        return Promise.resolve(this.getRewardsWithOrdersData().slice(0, 10));
     },
 
-    getProductsWithOrders() {
-        return Promise.resolve(this.getProductsWithOrdersData());
+    getRewardsWithOrders() {
+        return Promise.resolve(this.getRewardsWithOrdersData());
     }
 };
 
