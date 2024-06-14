@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Chart } from 'primereact/chart';
-import './Dashboard.css'; 
+import React, { useState, useEffect } from 'react'; // Import React 
+import { Chart } from 'primereact/chart'; // Import the Chart component from PrimeReact library
+import './Dashboard.css'; // Import the CSS 
 
-const Dashboard= () => {
+// Main component for the Dashboard
+const Dashboard = () => {
     const [chartData, setChartData] = useState({});
     const [chartOptions, setChartOptions] = useState({});
     const [showConversionRate, setShowConversionRate] = useState(true);
@@ -15,6 +16,7 @@ const Dashboard= () => {
         const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary') || '#5f6368';
         const surfaceBorder = documentStyle.getPropertyValue('--surface-border') || '#e0e0e0';
 
+        // Fill in date for the chart
         const data = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [
@@ -100,21 +102,22 @@ const Dashboard= () => {
             }
         };
 
-        setChartData(data);
-        setChartOptions(options);
-    }, [showConversionRate, showParticipationRate, showSales, showBrandAwareness]);
-
+        setChartData(data); 
+        setChartOptions(options); 
+    }, [showConversionRate, showParticipationRate, showSales, showBrandAwareness]); 
+    // Active or not functions
     const toggleConversionRate = () => setShowConversionRate(!showConversionRate);
     const toggleParticipationRate = () => setShowParticipationRate(!showParticipationRate);
     const toggleSales = () => setShowSales(!showSales);
     const toggleBrandAwareness = () => setShowBrandAwareness(!showBrandAwareness);
 
+    // Return the JSX to render the component
     return (
         <div className="dashboard-section">
-            <div className='navbar'></div>
+            <div className='navbar'></div> {/*  navbar section */}
             <div className="dashboard">
                 <h1 className='users-title'>Dashboard</h1>
-           <p className='users-title-clarification'>Check Conversion rate, Participation rate, Sales and Brand awareness</p>
+                <p className='users-title-clarification'>Check Conversion rate, Participation rate, Sales and Brand awareness</p>
                 <div className="chart-card">
                     <div className="chart-header">
                         <div 
@@ -143,9 +146,10 @@ const Dashboard= () => {
                         </div>
                     </div>
                     <div className="chart-container">
-                        <Chart type="line" data={chartData} options={chartOptions} />
+                        <Chart type="line" data={chartData} options={chartOptions} /> {/* display the chart */}
                     </div>
                 </div>
+                {/* display Activity and feedback */}
                 <div className="activity-feedback">
                     <div className="activity">
                         <h2>Recent Activity</h2>
@@ -161,4 +165,4 @@ const Dashboard= () => {
     );
 }
 
-export default Dashboard;
+export default Dashboard; // Export the component for use in other parts of the app
