@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import "./Landing-apply.css";
-import RightSideImg from "./Images/Right-side-img.png";
+import React, { useState } from "react"; // Import React
+import "./Landing-apply.css"; // Import the CSS 
+import RightSideImg from "./Images/Right-side-img.png"; // Import the image
 
 // Popup component
 function Popup({ handleClose }) {
   const handleCloseClick = () => {
-    handleClose();
-    window.location.reload(); // Reload the page
+    handleClose(); // Call the handleClose function 
+    window.location.reload(); // Reload the page 
   };
 
   return (
@@ -21,40 +21,39 @@ function Popup({ handleClose }) {
   );
 }
 
+// Main component for the application form
 function Howtoapply() {
-  const [email, setEmail] = useState("");
-  const [isValidEmail, setIsValidEmail] = useState(true);
-  const [submitting, setSubmitting] = useState(false);
-  const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
-
+  const [email, setEmail] = useState(""); // email input
+  const [isValidEmail, setIsValidEmail] = useState(true); // Valid email?
+  const [submitting, setSubmitting] = useState(false); // submission
+  const [showPopup, setShowPopup] = useState(false); 
   const handleEmailChange = (e) => {
     const inputEmail = e.target.value;
-    setEmail(inputEmail);
-    setIsValidEmail(validateEmail(inputEmail));
+    setEmail(inputEmail); // Update email state
+    setIsValidEmail(validateEmail(inputEmail)); // Validate email and update state
   };
 
+  // Function to validate the email 
   const validateEmail = (email) => {
-    // Regular expression for email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // email validation
     return emailPattern.test(email);
   };
 
+  // Handle form submission
   const handleSubmit = async () => {
     if (isValidEmail && !submitting) {
-      setSubmitting(true);
-      // Simulate form submission process
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // Replace with actual submission code
-      setSubmitting(false);
+      setSubmitting(true); 
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // 2s delay
+      setSubmitting(false); 
       setShowPopup(true); // Show popup after form submission
     }
   };
 
+  // closing popup
   const handleClosePopup = () => {
-    setShowPopup(false);
+    setShowPopup(false); // Hide the popup
     window.location.reload(); // Reload the page
   };
-
-
 
   return (
     <div className="How-to-apply">
@@ -78,23 +77,24 @@ function Howtoapply() {
           />
           <button
             onClick={handleSubmit}
-            disabled={submitting || !email.trim()}
-            className={submitting || !email.trim() ? "disabled-button" : ""}
+            disabled={submitting || !email.trim()} // Disable button if submitting or email is empty
+            className={submitting || !email.trim() ? "disabled-button" : ""} // Apply disabled-button 
           >
-            {submitting ? "Submitting..." : "Apply"}
+            {submitting ? "Submitting..." : "Apply"}  
           </button>
         </div>
+        
         {!isValidEmail && (
-          <p className="error-message">Please enter a valid email address</p>
+          <p className="error-message">Please enter a valid email address</p> // error message if email is not correct
         )}
       </div>
       <div>
-        <img className="RightImg" src={RightSideImg} alt="img" />
+        <img className="RightImg" src={RightSideImg} alt="img" /> 
       </div>
       {/* Popup component */}
-      {showPopup && <Popup handleClose={handleClosePopup} />}
+      {showPopup && <Popup handleClose={handleClosePopup} />} 
     </div>
   );
 }
 
-export default Howtoapply;
+export default Howtoapply; // Export the component for use in other parts of the app
