@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap'); /* Importing the Play font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&display=swap'); /* Importing the Noto Sans font */
 
 
 .landing-main-container {
-    background-image: url('Images/Apply-Background.png');
+    background-image: url('Images/Apply-Background.png'); /* Adding a background to the whole Landing page */
     background-size: 100% 100%;
 }
 
 #section2_container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Putting the cards container below the title of the How Does it Work section */
     align-items: center;
     padding: 0 100px 70px 100px
 }
@@ -25,7 +25,7 @@
     color: #00388B;
 }
 
-#section2_description {
+#section2_description { /* The text below the How Does it Work title */
     font-family: 'Play';
     font-size: 26px;
     color: var(--bierens-text-gray);
@@ -37,8 +37,7 @@
 
 #cards_container {
     display: flex;
-    flex-direction: column;
-    /*justify-content: space-between;*/
+    flex-direction: column; /* Setting two rows for the cards with the steps */
     gap: 29px;
     height: 60vh;
     width: auto;
@@ -72,7 +71,7 @@
     gap: 106px;
 }
 
-.card_description {
+.card_description { /* The text in every card */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -108,7 +107,7 @@
     font-size: 21px;
 }
 
-.infoImage {
+.infoImage { /* The image that is part of every card */
     height: 70%;
     align-self: flex-end;
 }
