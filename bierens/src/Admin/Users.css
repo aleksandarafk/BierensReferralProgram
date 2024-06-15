@@ -1,15 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'); /* Importing Open Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap'); /* Importing Manrope font */
 
-/* This breaks the Rewards Dialog @ Rewards.jsx
-.p-dialog-content{
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1em;
-} */
-
+/* Styling the Users table */
 .p-datatable .p-datatable-thead > tr > th {
   background-color: var(--bierens-blue);
   color: white;
@@ -45,6 +37,7 @@
   border-right: 1px solid #007ad9;
 }
 
+/* Styling the Search bar */
 .input-search{
   padding-left: 40px;
   height: 40px;
@@ -59,7 +52,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
+/* Styling the title and the subtitle by putting them below each other */
 .text-section{
   display: flex;
   flex-direction: column;
@@ -102,6 +95,7 @@ a:hover{
   color: var(--bierens-blue);
 }
 
+/* Styling the paginator */
 .p-paginator {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -182,6 +176,10 @@ a:hover{
   margin-top: -0.15em;
 }
 
+
+/* Styling the part above the table */
+
+
 .users-title {
   color: var(--bierens-blue);
 }
@@ -219,6 +217,9 @@ a:hover{
   justify-content: flex-end;
   gap: 0.7em;
 } 
+
+
+/* Further styling of the Users table */
 
 
 .users-table{

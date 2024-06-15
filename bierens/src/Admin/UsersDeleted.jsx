@@ -1,9 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import "./Users.css"
+import "./Users.css" // Importing the CSS
 import { useLocation } from 'react-router-dom';
+
+// Importing table from the PrimeReact library
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
+
+// Importing the file with the data for the users enrolled in the referral program
 import {UsersData} from "./Users_data.jsx"
+
+// Importing other features from the PrimeReact library
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { Rating } from 'primereact/rating';
@@ -41,6 +47,7 @@ export default function UsersDeleted() {
    const linkProps = useLocation().state;
    console.log(linkProps)
 
+   // Get the data for the enrolled users from Users_data.jsx
    useEffect(() => {
        setProducts(linkProps);
        UsersData.getProducts().then((data) => setAllData(data));
@@ -52,11 +59,13 @@ export default function UsersDeleted() {
        setProductDialog(true);
    };
 
+   // Closing a popup
    const hideDialog = () => {
        setSubmitted(false);
        setProductDialog(false);
    };
 
+   // Closing the Delete User popup
    const hideDeleteProductDialog = () => {
        setDeleteProductDialog(false);
    };
@@ -113,6 +122,7 @@ export default function UsersDeleted() {
        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'User returned back to the referral program', life: 3000 });
    };
 
+   // Selecting a user in the table
    const findIndexById = (id) => {
        let index = -1;
 
@@ -204,6 +214,7 @@ export default function UsersDeleted() {
    const actionBodyTemplate = (rowData) => {
        return (
            <React.Fragment >
+               {/* The "+" button for returning a user to the referral program */}
                <Button style={{marginLeft: "0.5em"}}icon="pi pi-plus"  rounded onClick={() => returnUser(rowData)} />
            </React.Fragment>
        );
@@ -236,6 +247,8 @@ export default function UsersDeleted() {
            <p className='users-title-clarification'>Users that have been removed from the referral program</p>
            </div>
            <div className='nav-pages'>
+
+           {/* Toggling between the table for the enrolled and the deleted users */}
            <Link to="/Admin/Users" style={{textAlign: "left", textDecoration:"none"}}> <p style={{margin: 0, marginBottom: "0.5em"}}> Users: {allData.length - products.length} </p></Link>
            <Link to="./" style={{textAlign: "left", textDecoration:"none", color: "black"}}> <p style={{margin: 0, marginBottom: "0.5em"}}>Deleted: {products.length}</p></Link>
            </div>
@@ -260,7 +273,7 @@ export default function UsersDeleted() {
 </DataTable>
 
            </div>
-
+            {/* Return Users dialog popup */}
            <Dialog className="dialog" visible={deleteProductDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
                <div className="confirmation-content" style={{display: "flex", alignItems:"center"}}>
                    <i className="pi pi-info-circle mr-3" style={{ fontSize: '2rem' }} />
