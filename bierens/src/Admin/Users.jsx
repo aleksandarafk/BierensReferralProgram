@@ -177,6 +177,35 @@ export default function Users() {
        return id;
    };
 
+   /* Exporting the data of the Users table into an .xlsx */
+    const exportExcel = () => {
+        import('xlsx').then((xlsx) => {
+            const worksheet = xlsx.utils.json_to_sheet(products);
+            const workbook = { Sheets: { data: worksheet }, SheetNames: ['data'] };
+            const excelBuffer = xlsx.write(workbook, {
+                bookType: 'xlsx',
+                type: 'array'
+            });
+
+            saveAsExcelFile(excelBuffer, 'users');
+        });
+    };
+
+    /* Exporting the data of the Users table into an .xlsx */
+    const saveAsExcelFile = (buffer, fileName) => {
+        import('file-saver').then((module) => {
+            if (module && module.default) {
+                let EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+                let EXCEL_EXTENSION = '.xlsx';
+                const data = new Blob([buffer], {
+                    type: EXCEL_TYPE
+                });
+
+                module.default.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+            }
+        });
+    };
+
    const exportCSV = () => {
        dt.current.exportCSV();
    };
@@ -240,10 +269,14 @@ export default function Users() {
    return (
        <section className='users-section'>
        <div className='users-table'>
+         <div className='container-users-title-and-export-btn'>
            <div className='text-section'>
            <h1 className='users-title'>Users</h1>
            <p className='users-title-clarification'>Currently enrolled users in the referral program</p>
            </div>
+           {/* Button for exporting the content of the Users table into an Excel file */}
+           <Button className="btn-export-users-table" label="Export" icon="pi pi-upload" severity='success' onClick={exportExcel} />
+         </div>
            <div className="nav-pages">
 
            {/* Toggling between the table for the enrolled and the deleted users */}

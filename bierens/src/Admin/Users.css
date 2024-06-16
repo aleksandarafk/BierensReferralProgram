@@ -180,6 +180,13 @@ a:hover{
 /* Styling the part above the table */
 
 
+.container-users-title-and-export-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .users-title {
   color: var(--bierens-blue);
 }
