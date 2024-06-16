@@ -104,11 +104,13 @@ export default function UsersDeleted() {
        setProductDialog(true);
    };
 
+   // Returns the user to the referral program
    const returnUser = (product) => {
        setProduct(product);
        setDeleteProductDialog(true);
    };
 
+   // Returns the user to the referral program and shows a popup that the user is successfully returned
    const deleteProduct = () => {
        let _products = products.filter((val) => val.id !== product.id);
        
@@ -191,25 +193,6 @@ export default function UsersDeleted() {
        setProduct(_product);
    };
 
-  
-
-   const rightToolbarTemplate = () => {
-       return <Button label="Export" icon="pi pi-upload" className="p-button-help" onClick={exportCSV} />;
-   };
-
-   const imageBodyTemplate = (rowData) => {
-       return <img src={`https://primefaces.org/cdn/primereact/images/product/${rowData.image}`} alt={rowData.image} className="shadow-2 border-round" style={{ width: '64px' }} />;
-   };
-
-  
-
-   const ratingBodyTemplate = (rowData) => {
-       return <Rating value={rowData.rating} readOnly cancel={false} />;
-   };
-
-   const statusBodyTemplate = (rowData) => {
-       return <Tag value={rowData.inventoryStatus} severity={getSeverity(rowData)}></Tag>;
-   };
 
    const actionBodyTemplate = (rowData) => {
        return (
@@ -220,22 +203,12 @@ export default function UsersDeleted() {
        );
    };
 
-  
-   const productDialogFooter = (
-       <React.Fragment>
-           <Button label="Done" icon="pi pi-check" onClick={hideDialog} />
-       </React.Fragment>
-   );
+
    const deleteProductDialogFooter = (
        <React.Fragment>
+           {/* The "Yes" and "No" buttons of the dialog popup for returning a user to the referral program */}
            <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductDialog} />
            <Button label="Yes" icon="pi pi-check" className='button-reform' severity='success' onClick={deleteProduct} />
-       </React.Fragment>
-   );
-   const deleteProductsDialogFooter = (
-       <React.Fragment>
-           <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductsDialog} />
-           <Button label="Yes" icon="pi pi-check"  severity="danger" onClick={deleteSelectedProducts} />
        </React.Fragment>
    );
 
@@ -259,6 +232,7 @@ export default function UsersDeleted() {
            <Toast ref={toast} />
            <div className="card">
 
+           {/* Table with the deleted from the referral program users */}
                <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
        dataKey="id"  paginator rows={7} rowsPerPageOptions={[5, 10, 25]}
        paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
@@ -282,13 +256,6 @@ export default function UsersDeleted() {
                            Are you sure you want to return the selected user <b>{product.name}</b>?
                        </span>
                    )}
-               </div>
-           </Dialog>
-
-           <Dialog className="dialog" visible={deleteProductsDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
-               <div className="confirmation-content">
-                   <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
-                   {product && <span>Are you sure you want to delete the selected products?</span>}
                </div>
            </Dialog>
            </div>

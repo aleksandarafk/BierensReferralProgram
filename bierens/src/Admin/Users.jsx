@@ -75,6 +75,7 @@ export default function Users() {
        setDeleteProductDialog(false);
    };
 
+   // Closing the Delete User popup when the button "No" is clicked
    const hideDeleteProductsDialog = () => {
        setDeleteProductsDialog(false);
    };
@@ -119,6 +120,7 @@ export default function Users() {
        setDeleteProductDialog(true);
    };
 
+   // Deletes the selected user from the table and shows a popuup that the user has been removed from the referral program
    const deleteProduct = () => {
        let _products = products.filter((val) => val.id !== product.id);
        
