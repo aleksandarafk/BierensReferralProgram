@@ -2,6 +2,7 @@ import React from  "react";
 import "./Nav.css";
 import logo from "./image/bierens-logo-white.png";
 import logouticon from "./image/logout.png"
+import { Link } from "react-router-dom";
 
 function Menu () {
     return (
@@ -12,10 +13,10 @@ function Menu () {
             <div class="main">
                 <div id="main-inner">
                     <ul id="list">
-                        <li class="inner-list"><a class="a" href="#">Dashboard</a></li>
-                        <li class="inner-list"><a class="a" href="#">Users</a></li>
-                        <li class="inner-list"><a class="a" href="#">Rewards</a></li>
-                        <li class="inner-list"><a class="a" href="#">Feedback</a></li>
+                        <Link to="/Dashboard"><li class="inner-list"><a class="a" href="#">Dashboard</a></li></Link>
+                        <Link to="/Admin/Users"> <li class="inner-list"><a class="a" href="#">Users</a></li></Link>
+                       <Link to="/Rewards"> <li class="inner-list"><a class="a" href="#">Rewards</a></li></Link>
+                       <Link to="/Feedback"> <li class="inner-list"><a class="a" href="#">Feedback</a></li></Link>
                     </ul>
                 </div>
             </div>

@@ -98,7 +98,8 @@ img.product-image.block.m-auto.pb-3 {
 }
 
 .h1Rewards{
-size: var(--header1)
+size: var(--header1);
+color: var(--bierens-blue);
 }
 
 .p-paginator {

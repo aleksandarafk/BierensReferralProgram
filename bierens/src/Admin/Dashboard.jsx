@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Chart } from 'primereact/chart';
 import './Dashboard.css'; 
+import Menu from './Menu.jsx';
 
 const Dashboard= () => {
     const [chartData, setChartData] = useState({});
@@ -111,7 +112,7 @@ const Dashboard= () => {
 
     return (
         <div className="dashboard-section">
-            <div className='navbar'></div>
+            <Menu/>
             <div className="dashboard">
                 <h1 className='users-title'>Dashboard</h1>
            <p className='users-title-clarification'>Check Conversion rate, Participation rate, Sales and Brand awareness</p>

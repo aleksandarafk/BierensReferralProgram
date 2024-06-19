@@ -14,6 +14,7 @@ import { RadioButton } from 'primereact/radiobutton';
 import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
+import Menu from './Menu.jsx';
 
 //CSS files needed for styling
 import "./Rewards.css";
@@ -290,7 +291,7 @@ export default function Rewards() {
             <p className='paragraphRewards '>View, change or remove rewards based on Tier, Year & Season</p>
             </div>
             </div>
-            <div className='navbar'></div>
+            <Menu/>
             {/*<input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>*/}
             <div className="card">
             <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}

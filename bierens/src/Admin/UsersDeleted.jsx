@@ -13,6 +13,7 @@ import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import { Link } from 'react-router-dom';
+import Menu from './Menu.jsx';
 
 export default function UsersDeleted() {
     let emptyProduct = {
@@ -231,6 +232,7 @@ export default function UsersDeleted() {
    return (
        <section className='users-section'>
         <div className='users-table'>
+            <Menu/>
                <div className='text-section'>
            <h1 className='users-title'> Deleted Users</h1>
            <p className='users-title-clarification'>Users that have been removed from the referral program</p>
@@ -239,7 +241,6 @@ export default function UsersDeleted() {
            <Link to="/Admin/Users" style={{textAlign: "left", textDecoration:"none"}}> <p style={{margin: 0, marginBottom: "0.5em"}}> Users: {allData.length - products.length} </p></Link>
            <Link to="./" style={{textAlign: "left", textDecoration:"none", color: "black"}}> <p style={{margin: 0, marginBottom: "0.5em"}}>Deleted: {products.length}</p></Link>
            </div>
-           <div className='navbar'></div>
            <div className='features'>
            <input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>
            </div>

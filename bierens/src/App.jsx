@@ -30,7 +30,7 @@ function App() {
     <Routes>
       <Route path='/Landing' element={<Landing/>}/>
       <Route path='/Referral' element={<Referral/>}/>
-      <Route path='/Admin' element={<Dashboard/>}/>
+      <Route path='/Dashboard' element={<Dashboard/>}/>
       <Route path='/Feedback' element={<Feedback/>}/>
       <Route path='/FeedbackDeleted' element={<FeedbackDeleted/>}/>
       <Route path='/Rewards' element={<Rewards/>}/>

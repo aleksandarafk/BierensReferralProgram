@@ -9,6 +9,10 @@
     padding: 1rem;
 }
 
+.h1Feedback{
+  color: var(--bierens-blue);
+}
+
 .p-datatable .p-datatable-thead > tr > th:first-child {
     border-top-left-radius: 10px;
     padding: 1rem;

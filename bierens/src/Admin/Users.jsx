@@ -12,6 +12,7 @@ import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import { Link } from 'react-router-dom';
+import Menu from './Menu.jsx';
 
 export default function Users() {
     let emptyProduct = {
@@ -223,6 +224,7 @@ export default function Users() {
 
    return (
        <section className='users-section'>
+        <Menu/>
        <div className='users-table'>
            <div className='text-section'>
            <h1 className='users-title'>Users</h1>
@@ -232,7 +234,6 @@ export default function Users() {
            <Link  to="./" state={deletedPeople} style={{textAlign: "left", textDecoration:"none", color: "black"}}> <p style={{margin: 0, marginBottom: "0.5em"}}>Users: {products.length} </p></Link>
            <Link to="/Admin/UsersDeleted" state={deletedPeople} style={{textAlign: "left", textDecoration:"none" }}> <p style={{margin: 0, marginBottom: "0.5em" }}>Deleted: {deletedPeople.length}</p></Link>
            </div>
-           <div className='navbar'></div>
            <div className='features'>
            <input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>
            <Button label="+ Invite" className="mr-2" id='invite-btn' severity={severityFeedback} onClick={() => openNew()}/>

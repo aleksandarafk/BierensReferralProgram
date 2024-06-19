@@ -15,6 +15,7 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Menu from './Menu.jsx';
 
 export default function FeedbackDeleted() {
      let emptyProduct = {
@@ -262,6 +263,7 @@ export default function FeedbackDeleted() {
 
     return (
         <div className='feedback-table'>
+            <Menu/>
             <div className='text-section'>
                 <div className='text-text-section'>
             <h1 className='h1Feedback'> Deleted Feedback</h1>
@@ -272,7 +274,6 @@ export default function FeedbackDeleted() {
             <Link to="/Feedback" style={{textAlign: "left", textDecoration:"none"}}> <p style={{margin: 0, marginBottom: "0.5em"}}> All feedback: {allData.length - products.length} </p></Link>
             <Link to="/FeedbackDeleted" style={{textAlign: "left", textDecoration:"none", color: "black"}}> <p style={{margin: 0, marginBottom: "0.5em"}}>Deleted: {products.length}</p></Link>
             </div>
-            <div className='navbar'></div>
             <div className='features'>
             <input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>
             </div>
