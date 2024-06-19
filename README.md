@@ -33,19 +33,60 @@ Use `npm install` command to install all necessary dependencies.
 
 The project structure: 
 ```
+$PROJECT_ROOT
+│   # public
+├── images, favicon, assets
+│   # src
+├── Admin Main Folder
+├─── Dashboard.jsx & css, Feedback.jsx & css, Rewards.jsx & css, Users.jsx & css, Menu.jsx & css(Nav.css), Popup.jsx & css
+│  
+├── Landing Main Folder
+├─── HowDoesitWork.jsx & css, HowDoesItApply.jsx & css, Landing.jsx & css, Landingtop.jsx & css, assets Folder, image folder, Images folder
+│
+├── User Main Folder
+├─── Referral jsx & css, Login jsx & css, Context folder (log in), Firebase Folder(log in), Image folder
+│
+└── index.html
 ```
 ## Website contents
 
 The website consists of (pages):
-
+- Folders - Admin, Landing, Users
+- Admin Pages - Dashboard, Users, Rewards, Feedback
+- Landing Pages - Landing 
+- User - Referral 
 
 The website consists of (functions):
+- **Admin Pages**
+- _Searching into the table_
+- _Sortable tables_
+- **Dashboard page specific**
+- _Displayable Metrics_
+- **User page specific**
+- _Delete And Invite a User_
+- **Reward Page Specific**
+- _Add and edit rewards_
+- **Feedback Page Specific**
+- _Remove and Inspect Feedback_
+- **Referral page**
+- _Get a random reward from a tier_
+- _Inspect a reward and get a description_
 
 
 ## Website structure
 
 The website structure: 
 ```
+├── Landing page
+│       # Intro section, How does it work, How to apply
+├── Referral page
+│       # Time remaining, Reward section, Progress bar, Spin a wheel mechanic
+├── Admin Side
+│       # Dashboard page(Conversion rate, Participation rate, Sales, Brand Awareness)
+│       # Users page(User details - Name, Company, Join Date, Email, Referrals Made)
+│       # Rewards page(Reward name, Image, Season, Tier, Quantity, Type, Action)
+│       # Feedback page(Email, Date of feedback given, Rating, Short Review)
+│
 ```
 
 ## TODO
