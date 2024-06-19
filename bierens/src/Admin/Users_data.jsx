@@ -1,4 +1,4 @@
-export const UsersData = {
+export const UsersData = { // Exporting the database for the users enrolled in the referral program
     getProductsData() {
         return [
             {

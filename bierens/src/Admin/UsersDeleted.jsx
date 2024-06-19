@@ -1,9 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import "./Users.css"
+import "./Users.css" // Importing the CSS
 import { useLocation } from 'react-router-dom';
+
+// Importing table from the PrimeReact library
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
+
+// Importing the file with the data for the users enrolled in the referral program
 import {UsersData} from "./Users_data.jsx"
+
+// Importing other features from the PrimeReact library
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { Rating } from 'primereact/rating';
@@ -42,6 +48,7 @@ export default function UsersDeleted() {
    const linkProps = useLocation().state;
    console.log(linkProps)
 
+   // Get the data for the enrolled users from Users_data.jsx
    useEffect(() => {
        setProducts(linkProps);
        UsersData.getProducts().then((data) => setAllData(data));
@@ -53,11 +60,13 @@ export default function UsersDeleted() {
        setProductDialog(true);
    };
 
+   // Closing a popup
    const hideDialog = () => {
        setSubmitted(false);
        setProductDialog(false);
    };
 
+   // Closing the Delete User popup
    const hideDeleteProductDialog = () => {
        setDeleteProductDialog(false);
    };
@@ -96,11 +105,13 @@ export default function UsersDeleted() {
        setProductDialog(true);
    };
 
+   // Returns the user to the referral program
    const returnUser = (product) => {
        setProduct(product);
        setDeleteProductDialog(true);
    };
 
+   // Returns the user to the referral program and shows a popup that the user is successfully returned
    const deleteProduct = () => {
        let _products = products.filter((val) => val.id !== product.id);
        
@@ -114,6 +125,7 @@ export default function UsersDeleted() {
        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'User returned back to the referral program', life: 3000 });
    };
 
+   // Selecting a user in the table
    const findIndexById = (id) => {
        let index = -1;
 
@@ -182,50 +194,22 @@ export default function UsersDeleted() {
        setProduct(_product);
    };
 
-  
-
-   const rightToolbarTemplate = () => {
-       return <Button label="Export" icon="pi pi-upload" className="p-button-help" onClick={exportCSV} />;
-   };
-
-   const imageBodyTemplate = (rowData) => {
-       return <img src={`https://primefaces.org/cdn/primereact/images/product/${rowData.image}`} alt={rowData.image} className="shadow-2 border-round" style={{ width: '64px' }} />;
-   };
-
-  
-
-   const ratingBodyTemplate = (rowData) => {
-       return <Rating value={rowData.rating} readOnly cancel={false} />;
-   };
-
-   const statusBodyTemplate = (rowData) => {
-       return <Tag value={rowData.inventoryStatus} severity={getSeverity(rowData)}></Tag>;
-   };
 
    const actionBodyTemplate = (rowData) => {
        return (
            <React.Fragment >
+               {/* The "+" button for returning a user to the referral program */}
                <Button style={{marginLeft: "0.5em"}}icon="pi pi-plus"  rounded onClick={() => returnUser(rowData)} />
            </React.Fragment>
        );
    };
 
-  
-   const productDialogFooter = (
-       <React.Fragment>
-           <Button label="Done" icon="pi pi-check" onClick={hideDialog} />
-       </React.Fragment>
-   );
+
    const deleteProductDialogFooter = (
        <React.Fragment>
+           {/* The "Yes" and "No" buttons of the dialog popup for returning a user to the referral program */}
            <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductDialog} />
            <Button label="Yes" icon="pi pi-check" className='button-reform' severity='success' onClick={deleteProduct} />
-       </React.Fragment>
-   );
-   const deleteProductsDialogFooter = (
-       <React.Fragment>
-           <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductsDialog} />
-           <Button label="Yes" icon="pi pi-check"  severity="danger" onClick={deleteSelectedProducts} />
        </React.Fragment>
    );
 
@@ -238,6 +222,8 @@ export default function UsersDeleted() {
            <p className='users-title-clarification'>Users that have been removed from the referral program</p>
            </div>
            <div className='nav-pages'>
+
+           {/* Toggling between the table for the enrolled and the deleted users */}
            <Link to="/Admin/Users" style={{textAlign: "left", textDecoration:"none"}}> <p style={{margin: 0, marginBottom: "0.5em"}}> Users: {allData.length - products.length} </p></Link>
            <Link to="./" style={{textAlign: "left", textDecoration:"none", color: "black"}}> <p style={{margin: 0, marginBottom: "0.5em"}}>Deleted: {products.length}</p></Link>
            </div>
@@ -247,6 +233,7 @@ export default function UsersDeleted() {
            <Toast ref={toast} />
            <div className="card">
 
+           {/* Table with the deleted from the referral program users */}
                <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
        dataKey="id"  paginator rows={7} rowsPerPageOptions={[5, 10, 25]}
        paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
@@ -261,7 +248,7 @@ export default function UsersDeleted() {
 </DataTable>
 
            </div>
-
+            {/* Return Users dialog popup */}
            <Dialog className="dialog" visible={deleteProductDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
                <div className="confirmation-content" style={{display: "flex", alignItems:"center"}}>
                    <i className="pi pi-info-circle mr-3" style={{ fontSize: '2rem' }} />
@@ -270,13 +257,6 @@ export default function UsersDeleted() {
                            Are you sure you want to return the selected user <b>{product.name}</b>?
                        </span>
                    )}
-               </div>
-           </Dialog>
-
-           <Dialog className="dialog" visible={deleteProductsDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
-               <div className="confirmation-content">
-                   <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
-                   {product && <span>Are you sure you want to delete the selected products?</span>}
                </div>
            </Dialog>
            </div>

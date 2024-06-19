@@ -1,8 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import "./Users.css"
+import "./Users.css" // Importing the CSS
+
+// Importing table from the PrimeReact library
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
+
+// Importing the file with the data for the users enrolled in the referral program
 import {UsersData} from "./Users_data.jsx"
+
+// Importing other features from the PrimeReact library
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { InputTextarea } from 'primereact/inputtextarea';
@@ -48,7 +54,7 @@ export default function Users() {
    
    let severityFeedback = selectedProducts === null || selectedProducts.length === deletedPeople.length ? "secondary" : "success";
 
-
+   // Get the data for the enrolled users from Users_data.jsx
    useEffect(() => {
        UsersData.getProducts().then((data) => setProducts(data));
    }, []);
@@ -58,16 +64,19 @@ export default function Users() {
        setSubmitted(false);
        setProductDialog(true);
    };
-
+   
+   // Closing a popup
    const hideDialog = () => {
        setSubmitted(false);
        setProductDialog(false);
    };
 
+   // Closing the Delete User popup
    const hideDeleteProductDialog = () => {
        setDeleteProductDialog(false);
    };
 
+   // Closing the Delete User popup when the button "No" is clicked
    const hideDeleteProductsDialog = () => {
        setDeleteProductsDialog(false);
    };
@@ -106,11 +115,13 @@ export default function Users() {
        setProductDialog(true);
    };
 
+   // Deletes the selected user from the table
    const confirmDeleteProduct = (product) => {
        setProduct(product);
        setDeleteProductDialog(true);
    };
 
+   // Deletes the selected user from the table and shows a popuup that the user has been removed from the referral program
    const deleteProduct = () => {
        let _products = products.filter((val) => val.id !== product.id);
        
@@ -124,6 +135,7 @@ export default function Users() {
        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'User removed from the referral program', life: 3000 });
    };
 
+   // When an invitation is made, the Invite Dialog closes and a pop up that the invitation is successful appears
    const submitInvitation = () => {
     setProductDialog(false);
     toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Invitation sent successfully!', life: 3000 });
@@ -141,6 +153,7 @@ export default function Users() {
        }
    }
 
+   // Selecting a user in the table
    const findIndexById = (id) => {
        let index = -1;
 
@@ -164,6 +177,35 @@ export default function Users() {
 
        return id;
    };
+
+   /* Exporting the data of the Users table into an .xlsx */
+    const exportExcel = () => {
+        import('xlsx').then((xlsx) => {
+            const worksheet = xlsx.utils.json_to_sheet(products);
+            const workbook = { Sheets: { data: worksheet }, SheetNames: ['data'] };
+            const excelBuffer = xlsx.write(workbook, {
+                bookType: 'xlsx',
+                type: 'array'
+            });
+
+            saveAsExcelFile(excelBuffer, 'users');
+        });
+    };
+
+    /* Exporting the data of the Users table into an .xlsx */
+    const saveAsExcelFile = (buffer, fileName) => {
+        import('file-saver').then((module) => {
+            if (module && module.default) {
+                let EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+                let EXCEL_EXTENSION = '.xlsx';
+                const data = new Blob([buffer], {
+                    type: EXCEL_TYPE
+                });
+
+                module.default.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+            }
+        });
+    };
 
    const exportCSV = () => {
        dt.current.exportCSV();
@@ -204,6 +246,7 @@ export default function Users() {
    const actionBodyTemplate = (rowData) => {
        return (
            <React.Fragment >
+               {/* The "Delete" button on the table rows */}
                <Button style={{marginLeft: "0.5em"}}icon="pi pi-trash"  rounded severity="danger" onClick={() => confirmDeleteProduct(rowData)} />
            </React.Fragment>
        );
@@ -212,11 +255,13 @@ export default function Users() {
   
    const productDialogFooter = (
        <React.Fragment>
+           {/* The "Submit" button on the Invite dialog popup  */}
            <Button label="Submit" className='button-reform' onClick={submitInvitation} />
        </React.Fragment>
    );
    const deleteProductDialogFooter = (
        <React.Fragment>
+        {/* The "Yes" and "No" buttons on the Delete User dialog popup */}
            <Button label="No" icon="pi pi-times" className='button-reform' outlined onClick={hideDeleteProductDialog} />
            <Button label="Yes" icon="pi pi-check" className='button-reform' severity="danger" onClick={deleteProduct} />
        </React.Fragment>
@@ -226,11 +271,17 @@ export default function Users() {
        <section className='users-section'>
         <Menu/>
        <div className='users-table'>
+         <div className='container-users-title-and-export-btn'>
            <div className='text-section'>
            <h1 className='users-title'>Users</h1>
            <p className='users-title-clarification'>Currently enrolled users in the referral program</p>
            </div>
+           {/* Button for exporting the content of the Users table into an Excel file */}
+           <Button className="btn-export-users-table" label="Export" icon="pi pi-upload" severity='success' onClick={exportExcel} />
+         </div>
            <div className="nav-pages">
+
+           {/* Toggling between the table for the enrolled and the deleted users */}
            <Link  to="./" state={deletedPeople} style={{textAlign: "left", textDecoration:"none", color: "black"}}> <p style={{margin: 0, marginBottom: "0.5em"}}>Users: {products.length} </p></Link>
            <Link to="/Admin/UsersDeleted" state={deletedPeople} style={{textAlign: "left", textDecoration:"none" }}> <p style={{margin: 0, marginBottom: "0.5em" }}>Deleted: {deletedPeople.length}</p></Link>
            </div>
@@ -240,7 +291,8 @@ export default function Users() {
            </div>
            <Toast ref={toast} />
            <div className="card">
-
+    
+    {/* Users table */}
     <DataTable ref={dt}  value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
        dataKey="id"  paginator rows={7} rowsPerPageOptions={[5, 10, 25]}
        paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
@@ -253,10 +305,11 @@ export default function Users() {
    <Column field="referralsmade" header={<div> Referrals Made </div>} sortable style={{ textAlign: "left" }}></Column>
    <Column header={<div> Action </div>} body={actionBodyTemplate} exportable={false} style={{ textAlign: "left" }}></Column>
    
-</DataTable>
+    </DataTable>
 
            </div>
-
+           
+           {/* Invite Users dialog popup */}
            <Dialog visible={productDialog} style={{ width: '32rem', borderRadius:"10px"}} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Invite New Users" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
                {product.image && <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.image} className="product-image block m-auto pb-3" />}
                <div className="field">
@@ -274,6 +327,7 @@ export default function Users() {
                </div>
            </Dialog>
 
+           {/* Delete Users dialog popup */}
            <Dialog visible={deleteProductDialog} style={{ width: '32rem' }} breakpoints={{ '960px': '75vw', '641px': '90vw' }} header="Are you sure?" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
                <div className="confirmation-content" style={{display: "flex", alignItems: "center"}}>
                    <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />

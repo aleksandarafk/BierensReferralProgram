@@ -379,6 +379,7 @@
     padding-left: 20px;
 }
 
+/* Spinner styling */
 .loader {
   position: absolute;
   top: 44%;
@@ -392,6 +393,7 @@
   animation: spin 1.5s linear infinite;
 }
 
+/* adding fade in animations */
 .loader-container{
   animation: fadeloader 1s;
   animation-delay: 2.1s;
@@ -399,11 +401,13 @@
 
 }
 
+/* Spin animation */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
+/* Pop up fade animation */
 @keyframes fade {
   from{
     opacity:0;
@@ -413,6 +417,7 @@
   }
 }
 
+/* Spinner fade animation */
 @keyframes fadeloader {
   from{
     opacity:1;
