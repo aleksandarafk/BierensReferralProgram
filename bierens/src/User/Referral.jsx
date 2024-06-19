@@ -33,6 +33,8 @@ useEffect(() => {
 , [])
 
 const [changeStyle, setChangeStyle] = useState({reward1: false, reward2: false});
+
+  /* Styling */
   const styleNormal = {width: "187px", transition:"0.6s ease-out" };
   const styleHover = {width: "230px", zIndex:"3", height: "auto", transition:"0.5s ease-in"};
   const styleBackgroundHover = { width:"100vw", height:"100vh", position:"fixed", top: "0", left:"0", backgroundColor: "rgba(0,0,0,0.65)" ,
@@ -42,7 +44,6 @@ const [changeStyle, setChangeStyle] = useState({reward1: false, reward2: false})
   const textNormal = {zIndex: "-1", color: "white"};
   const texthover = {zIndex: "1", transition: "0.5s ease-in"};
 
-// Switching background dark when opening a popup or howering over a reward
 const backgroundHover = {position: "fixed" , top:"0", left:"0", width:"100vw", height:"100vh", backgroundColor: "rgba(0,0,0,0.7)", transition: "0.5s ease-in"};
 const backgroundNormal = {backgroundColor: "rgba(0,0,0,0.0)", transition: "0.5s ease-in"};
 

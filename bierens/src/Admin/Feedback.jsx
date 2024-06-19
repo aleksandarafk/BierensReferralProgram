@@ -1,24 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./Feedback.css"
-import { classNames } from 'primereact/utils';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import {FeedbackData} from "./FeedbackData.jsx"
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
-import { FileUpload } from 'primereact/fileupload';
 import { Rating } from 'primereact/rating';
-import { Toolbar } from 'primereact/toolbar';
 import { InputTextarea } from 'primereact/inputtextarea';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { RadioButton } from 'primereact/radiobutton';
-import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { Tag } from 'primereact/tag';
-import { StyleClass } from 'primereact/styleclass';
-import { Paginator } from 'primereact/paginator';
 import 'primereact/resources/themes/saga-blue/theme.css'; 
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -59,7 +50,7 @@ export default function Feedback() {
     
     let severityFeedback = selectedProducts === null || selectedProducts.length === deletedPeople.length ? "secondary" : "success";
 
-
+    /*Gets data from FeedbackData.jsx*/
     useEffect(() => {
         FeedbackData.getProducts().then((data) => setProducts(data));
     }, []);
@@ -70,19 +61,23 @@ export default function Feedback() {
         setProductDialog(true);
     };
 
+    /* Function given to the "X" and closes the popup */
     const hideDialog = () => {
         setSubmitted(false);
         setProductDialog(false);
     };
-
+    
+    /* Function to close the delete feedback popup */
     const hideDeleteProductDialog = () => {
         setDeleteProductDialog(false);
     };
 
+    /* Function to close the delete feedback popup when the user presses "No" */
     const hideDeleteProductsDialog = () => {
         setDeleteProductsDialog(false);
     };
 
+    /* Function to close the feedback popup you get from a user */
     const hideFeedbackDialog = () => {
         setFeedbackDialog(false);
     };
@@ -117,11 +112,13 @@ export default function Feedback() {
         setProductDialog(true);
     };
 
+    /* Gets a the selected person from the table and deletes it */
     const confirmDeleteProduct = (product) => {
         setProduct(product);
         setDeleteProductDialog(true);
     };
 
+    /* Gets a the selected person from the table and deletes it, also shows the popup when a user is deleted */
     const deleteUser = () => {
         let _products = products.filter((val) => val.id !== product.id);
         
@@ -135,12 +132,14 @@ export default function Feedback() {
         toast.current.show({ severity: 'success', summary: 'Successful', detail: 'User feedback Deleted', life: 3000 });
     };
 
+    /* Function to hide the feedback popup and shows the popup on the top that confirms */
     const feedbackSent = () => {
 
         setFeedbackDialog(false)
         toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Feedback sent', life: 3000 });
     }
 
+    /* Funtion that is used on a button to show the feedback popup */
     const showFeedbackPrompt = (severity) => {
         if(selectedProducts === null || selectedProducts.length === deletedPeople.length ){
             setFeedbackDialog(false)
@@ -151,7 +150,7 @@ export default function Feedback() {
             localStorage.setItem("feedbackSent", true)
         }
     }
-
+    /* Function that is used to select a user in the table */
     const findIndexById = (id) => {
         let index = -1;
 
@@ -165,6 +164,7 @@ export default function Feedback() {
         return index;
     };
 
+
     const createId = () => {
         let id = '';
         let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -176,6 +176,7 @@ export default function Feedback() {
         return id;
     };
 
+    /* Function that exports the data of the table into an .xlsx */
     const exportExcel = () => {
         import('xlsx').then((xlsx) => {
             const worksheet = xlsx.utils.json_to_sheet(products);
@@ -189,6 +190,7 @@ export default function Feedback() {
         });
     };
 
+    /* Function that exports the data of the table into an .xlsx */
     const saveAsExcelFile = (buffer, fileName) => {
         import('file-saver').then((module) => {
             if (module && module.default) {
@@ -203,6 +205,7 @@ export default function Feedback() {
         });
     };
 
+    
     const exportCSV = () => {
         dt.current.exportCSV();
     };
@@ -211,6 +214,7 @@ export default function Feedback() {
         setDeleteProductsDialog(true);
     };
 
+    /* Gets Id of selected user and deletes it */
     const deleteSelectedProducts = () => {
         let _products = products.filter((val) => !selectedProducts.includes(val));
 
@@ -229,6 +233,7 @@ export default function Feedback() {
         setProduct(_product);
     };
 
+    /* Used in the input fields that are currently disabled */
     const onInputChange = (e, name) => {
         const val = (e.target && e.target.value) || '';
         let _product = { ...product };
@@ -258,7 +263,7 @@ export default function Feedback() {
     };
 
    
-
+    /* Stars that are rating in the table row */
     const ratingBodyTemplate = (rowData) => {
         return <Rating value={rowData.rating} readOnly cancel={false} />;
     };
@@ -267,6 +272,7 @@ export default function Feedback() {
         return <Tag value={rowData.inventoryStatus} severity={getSeverity(rowData)}></Tag>;
     };
 
+    /*  Buttons in each row of the table  */
     const actionBodyTemplate = (rowData) => {
         return (
             <React.Fragment >
@@ -292,18 +298,20 @@ export default function Feedback() {
         }
     };
 
-   
+    /* Used to render the button in the popups */
     const productDialogFooter = (
         <React.Fragment>
             <Button label="Done" className='button-reform' icon="pi pi-check" onClick={hideDialog} />
         </React.Fragment>
     );
+    
     const deleteProductDialogFooter = (
         <React.Fragment>
             <Button label="No" icon="pi pi-times" className='button-reform' outlined onClick={hideDeleteProductDialog} />
             <Button label="Yes" icon="pi pi-check" className='button-reform' severity="danger" onClick={deleteUser} />
         </React.Fragment>
     );
+    /* Used to render the button in the popups of delete a feedback popup */
     const deleteProductsDialogFooter = (
         <React.Fragment>
             <Button label="No" icon="pi pi-times" className='button-reform' outlined onClick={hideDeleteProductsDialog} />
@@ -311,6 +319,7 @@ export default function Feedback() {
         </React.Fragment>
     );
 
+    /* Used to render the button in the popups */
     const feedbackDialogFooter = (
         <React.Fragment>
             <Button label="No" icon="pi pi-times" className='button-reform' outlined onClick={hideFeedbackDialog} />

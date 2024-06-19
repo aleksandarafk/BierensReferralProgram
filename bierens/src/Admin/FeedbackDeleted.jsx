@@ -1,23 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./Feedback.css"
-import { classNames } from 'primereact/utils';
 import { FeedbackData } from "./FeedbackData.jsx"
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
-import { FileUpload } from 'primereact/fileupload';
 import { Rating } from 'primereact/rating';
-import { Toolbar } from 'primereact/toolbar';
 import { InputTextarea } from 'primereact/inputtextarea';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { RadioButton } from 'primereact/radiobutton';
-import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { Tag } from 'primereact/tag';
-import { StyleClass } from 'primereact/styleclass';
 import 'primereact/resources/themes/saga-blue/theme.css'; 
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -51,6 +43,7 @@ export default function FeedbackDeleted() {
     const linkProps = useLocation().state;
     console.log(linkProps)
 
+    /*Gets data from Feedback.jsx props*/
     useEffect(() => {
         setProducts(linkProps);
         FeedbackData.getProducts().then((data) => setAllData(data));
@@ -62,18 +55,22 @@ export default function FeedbackDeleted() {
         setProductDialog(true);
     };
 
+    /* Function given to the "X" and closes the popup */
     const hideDialog = () => {
         setSubmitted(false);
         setProductDialog(false);
     };
 
+    /* Function to close the delete feedback popup */
     const hideDeleteProductDialog = () => {
         setDeleteProductDialog(false);
     };
 
+    /* Function to close the delete feedback popup when the user presses "No" */
     const hideDeleteProductsDialog = () => {
         setDeleteProductsDialog(false);
     };
+
 
     const saveProduct = () => {
         setSubmitted(true);
@@ -105,6 +102,7 @@ export default function FeedbackDeleted() {
         setProductDialog(true);
     };
 
+    /* Gets a the selected person from the table and returns it to the main table */
     const returnUser = (product) => {
         setProduct(product);
         setDeleteProductDialog(true);
@@ -123,6 +121,7 @@ export default function FeedbackDeleted() {
         toast.current.show({ severity: 'success', summary: 'Successful', detail: 'User returned to main table', life: 3000 });
     };
 
+    /* Function that is used to select a user in the table */
     const findIndexById = (id) => {
         let index = -1;
 
@@ -173,6 +172,7 @@ export default function FeedbackDeleted() {
         setProduct(_product);
     };
 
+    /* Used in the popups input fields if they aren't disabled */
     const onInputChange = (e, name) => {
         const val = (e.target && e.target.value) || '';
         let _product = { ...product };
@@ -202,7 +202,7 @@ export default function FeedbackDeleted() {
     };
 
    
-
+    /* Stars that are rating in the table row */
     const ratingBodyTemplate = (rowData) => {
         return <Rating value={rowData.rating} readOnly cancel={false} />;
     };
@@ -210,7 +210,8 @@ export default function FeedbackDeleted() {
     const statusBodyTemplate = (rowData) => {
         return <Tag value={rowData.inventoryStatus} severity={getSeverity(rowData)}></Tag>;
     };
-
+    
+    /* Buttons in each row of the table */
     const actionBodyTemplate = (rowData) => {
         return (
             <React.Fragment >
@@ -236,18 +237,22 @@ export default function FeedbackDeleted() {
         }
     };
 
-   
+   /* Used to render the button in the popups */
     const productDialogFooter = (
         <React.Fragment>
             <Button label="Done" icon="pi pi-check" onClick={hideDialog} />
         </React.Fragment>
     );
+
+    /* Used to render the button in the popups of delete a feedback popup */
     const deleteProductDialogFooter = (
         <React.Fragment>
             <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductDialog} />
             <Button label="Yes" icon="pi pi-check" className='button-reform' severity='success' onClick={deleteProduct} />
         </React.Fragment>
     );
+
+    /* Used to render the button in the popups */
     const deleteProductsDialogFooter = (
         <React.Fragment>
             <Button label="No" icon="pi pi-times" outlined onClick={hideDeleteProductsDialog} />

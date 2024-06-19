@@ -1,19 +1,24 @@
-import './how-does-it-work.css'
+import './how-does-it-work.css' // Importing the CSS
+
+// Importing the images needed for the How Does it Work section of the Landing page
 import signupImage from './assets/signupshare.png'
 import qualifyImage from './assets/qualify.png'
 import cupImage from './assets/cup.png'
 import progressImage from './assets/progress.png'
 
+
+// Creating the component for the How Does it Work section of the Landing page
 function Howdoesitwork () {
     return (
       <div id='section2_container'>
           <p id='section2_title'> How does it <c>work?</c> </p>
-          <p id='section2_description'> With our straightforward referral process, Bierens referral program gives you added value while you have fun</p>
+          <p id='section2_description'> With our straightforward referral process, Bierens referral program gives you added value while you have fun</p> {/* The text below the How Does it Work title */}
           
-          <div id='cards_container'>
-              <div className='cards_row'>
+          <div id='cards_container'> {/* Container for the cards that show the steps */}
+
+              <div className='cards_row'> {/* Including two cards per row - one big and one small card */}
                   <div className='small_card'>
-                      <div className='card_description' id='description1'>
+                      <div className='card_description' id='description1'> {/* The text in the card */}
                           <div className='bullet_number'>
                             <p>1</p>
                           </div>
@@ -25,7 +30,7 @@ function Howdoesitwork () {
                   </div>
 
                   <div className='big_card'>
-                      <div className='card_description' id='description2'>
+                      <div className='card_description' id='description2'> {/* The text in the card */}
                           <div className='bullet_number'>
                             <p>2</p>
                           </div>
@@ -38,7 +43,7 @@ function Howdoesitwork () {
               
               <div className='cards_row'>
                   <div className='big_card' id='rewards_card'>
-                      <div className='card_description'>
+                      <div className='card_description'> {/* The text in the card */}
                           <div className='bullet_number'>
                             <p>3</p>
                           </div>
@@ -49,7 +54,7 @@ function Howdoesitwork () {
                   </div>
 
                   <div className='small_card' id='progress_card'>
-                      <div className='card_description'>
+                      <div className='card_description'> {/* The text in the card */}
                           <div className='bullet_number'>
                             <p>4</p>
                           </div>
@@ -64,4 +69,4 @@ function Howdoesitwork () {
     );
 }
 
-export default Howdoesitwork;
+export default Howdoesitwork; // Exporting the component for the How Does it Work section of the Landing page so that it can be (re)used

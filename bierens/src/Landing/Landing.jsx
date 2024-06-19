@@ -7,6 +7,7 @@ import Landingtop from "./landingtop";
 
 const Landing = () => {
     return(
+        // Container for the whole Landing page
         <div className="landing-main-container">
         <Landingtop/>
         <Howdoesitwork />
