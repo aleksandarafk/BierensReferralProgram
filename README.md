@@ -53,26 +53,62 @@ The website structure:
 Each team member has a list of tasks they need to do for the project.
 
 Aleksandar:
-- [ ] Responsive Design for the Landing Page(s)
-- [ ] Create the "Rewards" Page in the Admin Dashboard
-- [ ] Help other team members
+- [X] Responsive Design for the Landing Page(s)
+- [X] Create the "Rewards" Page in the Admin Dashboard
+- [X] Help other team members
+- [X] Implement image upload option
+- [X] Create Delete + Add new entry to the table functions
+- [X] Add Filters (Sorting, Seach bar)
+- [X] Style the table based on the prototype
+- [X] Add edit a specific table row function
+- [X] Add paginator to the table
+- [X] Create the structure of the README 
+- [X] Comment code for easier transferrability
+
 
 Ivan Georgiev:
-- [ ] Create the "Feedback" Page in the Admin Dashboard
-- [ ] Help out with the "Tiers" Page
-- [ ] Help other team members
+- [X] Create the "Feedback" Page in the Admin Dashboard
+- [X] Help out with the "Tiers" Page
+- [X] Create delete function
+- [X] Create table with deleted users
+- [X] View feedback of a user
+- [X] Sort functions
+- [X] Search bar functionality
+- [X] Return user's feedback form the deleted
+- [X] Be able to select a user later for request feedback functionality
+- [X] Comment code for easier transferrability
+- [X] Finish filing the contents of the README file
 
 Ivan Petrov:
-- [ ] Create the "Dashboard" Page in the Admin Dashboard
-- [ ] Create the "Apply" Section in the Landing Page
+- [X] Create the "Dashboard" Page in the Admin Dashboard
+- [X] Create the "Apply" Section in the Landing Page
+- [X] Add a form handler for the email
+- [X] Add a popup when submitting the email
+- [X] Experiment with curves and lines in "Dashboard"
+- [X] Make button function active and not active
+- [X] Comment code for easier transferrability
+
 
 Deniz Hadjiosmanov:
-- [ ] Create the "How Does it Work" Section in the Landing Page
-- [ ] Create the "Users" Page in the Admin Dashboard 
+- [X] Create the "How Does it Work" Section in the Landing Page
+- [X] Create the "Users" Page in the Admin Dashboard 
+- [X] Create the 4 cards which represent the idea behind the referral program
+- [X] Create the title and the subtitle of the Users table
+- [X] Create the structure of the Users table using the PrimeReact library
+- [X] Create the file that holds the data for the Users table
+- [X] Include data in the data file so that the table has data
+- [X] Comment code for easier transferrability
 
 Raul Vila:
-- [ ] Create the "Tiers" Page
+- [X] Create the "Tiers" Page
+- [X] Create hover functions for different interactions
+- [X] Create pop-ups for different interactions
+- [X] Add animations for different interactions
+- [X] Create "Spin The Wheel" mechanic
+- [X] Add descriptions for the rewards
+- [X] Comment code for easier transferrability
 
 Christian Kituantala
-- [ ] Create the "Intro" Section in the Landing Page
-- [ ] Create the Navigation Component in the Admin Dashboard
+- [X] Create the "Intro" Section in the Landing Page
+- [X] Create the Navigation Component in the Admin Dashboard
+- [X] Create Log In page
