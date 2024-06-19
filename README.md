@@ -33,19 +33,60 @@ Use `npm install` command to install all necessary dependencies.
 
 The project structure: 
 ```
+$PROJECT_ROOT
+│   # public
+├── images, favicon, assets
+│   # src
+├── Admin Main Folder
+├─── Dashboard.jsx & css, Feedback.jsx & css, Rewards.jsx & css, Users.jsx & css, Menu.jsx & css(Nav.css), Popup.jsx & css
+│  
+├── Landing Main Folder
+├─── HowDoesitWork.jsx & css, HowDoesItApply.jsx & css, Landing.jsx & css, Landingtop.jsx & css, assets Folder, image folder, Images folder
+│
+├── User Main Folder
+├─── Referral jsx & css, Login jsx & css, Context folder (log in), Firebase Folder(log in), Image folder
+│
+└── index.html
 ```
 ## Website contents
 
 The website consists of (pages):
-
+- Folders - Admin, Landing, Users
+- Admin Pages - Dashboard, Users, Rewards, Feedback
+- Landing Pages - Landing 
+- User - Referral 
 
 The website consists of (functions):
+- **Admin Pages**
+- _Searching into the table_
+- _Sortable tables_
+- **Dashboard page specific**
+- _Displayable Metrics_
+- **User page specific**
+- _Delete And Invite a User_
+- **Reward Page Specific**
+- _Add and edit rewards_
+- **Feedback Page Specific**
+- _Remove and Inspect Feedback_
+- **Referral page**
+- _Get a random reward from a tier_
+- _Inspect a reward and get a description_
 
 
 ## Website structure
 
 The website structure: 
 ```
+├── Landing page
+│       # Intro section, How does it work, How to apply
+├── Referral page
+│       # Time remaining, Reward section, Progress bar, Spin a wheel mechanic
+├── Admin Side
+│       # Dashboard page(Conversion rate, Participation rate, Sales, Brand Awareness)
+│       # Users page(User details - Name, Company, Join Date, Email, Referrals Made)
+│       # Rewards page(Reward name, Image, Season, Tier, Quantity, Type, Action)
+│       # Feedback page(Email, Date of feedback given, Rating, Short Review)
+│
 ```
 
 ## TODO
@@ -53,26 +94,62 @@ The website structure:
 Each team member has a list of tasks they need to do for the project.
 
 Aleksandar:
-- [ ] Responsive Design for the Landing Page(s)
-- [ ] Create the "Rewards" Page in the Admin Dashboard
-- [ ] Help other team members
+- [X] Responsive Design for the Landing Page(s)
+- [X] Create the "Rewards" Page in the Admin Dashboard
+- [X] Help other team members
+- [X] Implement image upload option
+- [X] Create Delete + Add new entry to the table functions
+- [X] Add Filters (Sorting, Seach bar)
+- [X] Style the table based on the prototype
+- [X] Add edit a specific table row function
+- [X] Add paginator to the table
+- [X] Create the structure of the README 
+- [X] Comment code for easier transferrability
+
 
 Ivan Georgiev:
-- [ ] Create the "Feedback" Page in the Admin Dashboard
-- [ ] Help out with the "Tiers" Page
-- [ ] Help other team members
+- [X] Create the "Feedback" Page in the Admin Dashboard
+- [X] Help out with the "Tiers" Page
+- [X] Create delete function
+- [X] Create table with deleted users
+- [X] View feedback of a user
+- [X] Sort functions
+- [X] Search bar functionality
+- [X] Return user's feedback form the deleted
+- [X] Be able to select a user later for request feedback functionality
+- [X] Comment code for easier transferrability
+- [X] Finish filing the contents of the README file
 
 Ivan Petrov:
-- [ ] Create the "Dashboard" Page in the Admin Dashboard
-- [ ] Create the "Apply" Section in the Landing Page
+- [X] Create the "Dashboard" Page in the Admin Dashboard
+- [X] Create the "Apply" Section in the Landing Page
+- [X] Add a form handler for the email
+- [X] Add a popup when submitting the email
+- [X] Experiment with curves and lines in "Dashboard"
+- [X] Make button function active and not active
+- [X] Comment code for easier transferrability
+
 
 Deniz Hadjiosmanov:
-- [ ] Create the "How Does it Work" Section in the Landing Page
-- [ ] Create the "Users" Page in the Admin Dashboard 
+- [X] Create the "How Does it Work" Section in the Landing Page
+- [X] Create the "Users" Page in the Admin Dashboard 
+- [X] Create the 4 cards which represent the idea behind the referral program
+- [X] Create the title and the subtitle of the Users table
+- [X] Create the structure of the Users table using the PrimeReact library
+- [X] Create the file that holds the data for the Users table
+- [X] Include data in the data file so that the table has data
+- [X] Comment code for easier transferrability
 
 Raul Vila:
-- [ ] Create the "Tiers" Page
+- [X] Create the "Tiers" Page
+- [X] Create hover functions for different interactions
+- [X] Create pop-ups for different interactions
+- [X] Add animations for different interactions
+- [X] Create "Spin The Wheel" mechanic
+- [X] Add descriptions for the rewards
+- [X] Comment code for easier transferrability
 
 Christian Kituantala
-- [ ] Create the "Intro" Section in the Landing Page
-- [ ] Create the Navigation Component in the Admin Dashboard
+- [X] Create the "Intro" Section in the Landing Page
+- [X] Create the Navigation Component in the Admin Dashboard
+- [X] Create Log In page

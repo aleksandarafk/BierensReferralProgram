@@ -1,0 +1,428 @@
+.referral-popup .p-component {
+    background: #d9d9d9;
+    
+}
+
+.popup-raul{
+    z-index: 3;
+}
+
+.referral-popup .p-dialog-header-icon{
+    color: white;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-right: 13px;
+
+}
+
+.referral-popup .p-dialog-header,
+.referral-popup .p-dialog-content,
+.referral-popup .p-dialog-footer {
+    background-color: #150C01;
+    font-family: "Play";
+}
+
+.referral-popup .p-dialog-header{
+    padding: 16px 16px 0px 16px;
+    border-radius: 10px 10px 0px 0px;
+    border-top: solid #AAAAAA;
+    border-left: solid #AAAAAA;
+    border-right: solid #AAAAAA;
+}
+
+.referral-popup .p-dialog-content{
+    border-width: 3px;
+    border-style: solid;
+    border-image: 
+        linear-gradient(
+        to bottom, rgb(170, 170, 170), rgb(102, 102, 102)) 1 100%;
+}
+
+.referral-popup .p-dialog-footer{
+    padding-left: 20%;
+    border-radius: 0px 0px 10px 10px;
+    border-bottom: solid #666666;
+    border-left: solid #666666;
+    border-right: solid #666666;
+}
+
+.header-dialog{
+    font-family: "Play";
+    font-weight: bold;
+    color: #d9d9d9;
+    letter-spacing: 12%;
+    font-size: 1.6rem;
+    padding-top: 45px;
+    padding-left: 20px;
+}
+
+.popup-title{
+    color: white;
+    font-weight:lighter;
+}
+
+.footer-dialog {
+    opacity: 0;
+
+}
+
+.popup-points{
+    color: white;
+}
+
+.field .popup-textarea{
+  font-family: "Play";
+}
+
+.popup-points-inner{
+    font-size: 1.1rem;
+    background: -webkit-linear-gradient(#e7b676, #ddda22);
+    font-weight: bold;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+
+.new-start-referring-child4 {
+    position: absolute;
+    height: 18%;
+    width: 90%;
+    top: 20%;
+    left: 5.5%;
+    border-radius: 20px 20px 20px 0px;
+    background-color: rgba(255, 255, 255, 0.37);
+  }
+  .new-start-referring-child5 {
+    position: absolute;
+    height: 8%;
+    width: 90%;
+    top: 19%;
+    right: 5%;
+    bottom: 66.39%;
+    left: 5.5%;
+    border-radius: 23.5px;
+    background-color: #d9d9d9;
+  }
+  .new-start-referring-child6 {
+    position: absolute;
+    height: 5%;
+    width: 83%;
+    top: 30%;
+    right: 35.89%;
+    bottom: 62.59%;
+    left: 9%;
+    border-radius: 6px;
+    background-color: #d9d9d9;
+  }
+  .new-start-referring-child7 {
+    position: absolute;
+    height: 6.8%;
+    width: 47.5%;
+    top: 19.6%;
+    right: 48.7%;
+    bottom: 66.67%;
+    left: 6.1%;
+    border-radius: 23.5px;
+    background-color: #a66333;
+  }
+
+.referral-link {
+    position: absolute;
+    color: #d9d9d9;
+    height: 2.78%;
+    width: 20%;
+    top: 21.65%;
+    left: 19%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .email-invite {
+    position: absolute;
+    height: 2.78%;
+    width: 20%;
+    top: 21.65%;
+    left: 64%;
+    font-size: 16px;
+    color: #a66333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .b {
+    position: absolute;
+    height: 1.57%;
+    width: 4.74%;
+    top: 69.17%;
+    left: 40.52%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .httpsbierens-debt-referray {
+    position: absolute;
+    height: 2.69%;
+    width: 40%;
+    top: 31.2%;
+    left: 9%;
+    font-size: 14px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cicopy-icon {
+    position: absolute;
+    height: 3%;
+    width: 3%;
+    top: 31%;
+    right: 36.41%;
+    bottom: 62.96%;
+    left: 86%;
+  }
+
+  .getpoints{
+    font-family: "Play";
+    font-weight: bold;
+    color: #d9d9d9;
+    letter-spacing: 12%;
+    font-size: 1.6rem;
+    padding-top: 185px;
+    padding-left: 35px;
+}
+
+  .span1 {
+    font-size: 32px;
+  }
+
+  .pts10 {
+    font-size: 48px;
+  }
+
+  .pts2 {
+    font-size: 25px;
+  }
+  .pts-txt {
+    width: 100%;
+  }
+  .pts1 {
+    position: absolute;
+    height: 5.93%;
+    width: 20%;
+    top: 59.5%;
+    left: 73%;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    color: #d9d9d9;
+  }
+  .new-start-referring-child1 {
+    position: absolute;
+    height: 17.5%;
+    width: 90%;
+    top: 76%;
+    right: 35%;
+    bottom: 26.48%;
+    left: 5.5%;
+    border-radius: 0px 0px 20px 0px;
+    background-color: #d9d9d9;
+    border: 4px solid #a8a8a8;
+    box-sizing: border-box;
+  }
+
+  .send-a-custom {
+    position: absolute;
+    height: 3.24%;
+    width: 40%;
+    top: 58.5%;
+    left: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    color: #d9d9d9;
+  }
+
+  .send-the-invitation {
+    position: absolute;
+    height: 3.24%;
+    width: 45%;
+    top: 80%;
+    left: 11%;
+    color: #a66333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+  }
+  .pts3 {
+    position: absolute;
+    height: 5.93%;
+    width: 20%;
+    top: 81.2%;
+    left: 73%;
+    display: flex;
+    color: #a66333;
+    align-items: center;
+    font-size: 40px;
+  }
+  .new-start-referring-child2 {
+    position: absolute;
+    height: 3.5%;
+    width: 48%;
+    top: 86%;
+    right: 44.95%;
+    bottom: 29.07%;
+    left: 12%;
+    border-radius: 23.5px;
+    background-color: #a7a7a7;
+  }
+  .new-start-referring-child3 {
+    position: absolute;
+    height: 3.5%;
+    width: 32%;
+    top: 86%;
+    right: 50.99%;
+    bottom: 29.07%;
+    left: 12%;
+    border-radius: 13.5px 0px 0px 13.5px;
+    background-color: #a66333;
+  }
+
+  .complete {
+    position: absolute;
+    height: 3.24%;
+    width: 10.78%;
+    top: 64.1%;
+    left: 12%;
+    font-size: 24px;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    color: #d9d9d9
+  }
+
+
+  .new-start-referring-inner {
+    position: absolute;
+    height: 17.5%;
+    width: 90%;
+    top: 54.5%;
+    right: 35%;
+    bottom: 40.09%;
+    left: 5.5%;
+    border-radius: 0px 0px 20px 0px;
+    background-color: #a66333;
+    border: 4px solid #a6a6a6;
+    box-sizing: border-box;
+  }
+
+  .progress {
+    position: absolute;
+    height: 1.57%;
+    width: 10%;
+    top: 86.88%;
+    left: 24%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d9d9d9
+  }
+
+  .component-3-child-popup {
+    position: absolute;
+    
+    opacity: 0;
+    height: 65%;
+    width: 68.9%;
+    top: 24%;
+    bottom: 42.33%;
+    left: 16%;
+    border-radius: 0 0 17px 0;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+    animation: fade 1s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+  }
+
+  .component-3-child-popup-effect {
+    position: absolute;
+    top: 24.55%;
+    left: 17.2%;
+    border-radius: 0 0 19px 0;
+    background: linear-gradient(180deg, transparent, rgba(12, 140, 53, 0.8));
+    width: 66.4%;
+    height: 63.5%;
+    opacity: 0;
+    animation: fade 1s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+  }
+
+  .header-dialog2{
+    font-family: "Play";
+    font-weight: bold;
+    color: #d9d9d9;
+    letter-spacing: 12%;
+    font-size: 1.6rem;
+    padding-top: 3px;
+    padding-left: 20px;
+}
+
+/* Spinner styling */
+.loader {
+  position: absolute;
+  top: 44%;
+  left: 36%;
+  border: 16px solid #57575781; /* Light grey */
+  border-top: 16px solid #a66333; /* Blue */
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  opacity: 1;
+  animation: spin 1.5s linear infinite;
+}
+
+/* adding fade in animations */
+.loader-container{
+  animation: fadeloader 1s;
+  animation-delay: 2.1s;
+  animation-fill-mode: forwards;
+
+}
+
+/* Spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Pop up fade animation */
+@keyframes fade {
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+/* Spinner fade animation */
+@keyframes fadeloader {
+  from{
+    opacity:1;
+  }
+  to{
+    opacity:0;
+  }
+}
