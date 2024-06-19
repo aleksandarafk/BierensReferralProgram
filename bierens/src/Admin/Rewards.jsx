@@ -333,7 +333,7 @@ export default function Rewards() {
                         <p className='paragraphRewards '>View, change or remove rewards based on Tier, Year & Season</p>
                     </div>
                 </div>
-                <div className='navbar'></div>
+                <Menu/>
                 {/*<input className="input-search"type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..."/>*/}
                 <div className="card">
                     <DataTable ref={dt} value={rewards} selection={selectedrewards} onSelectionChange={(e) => setSelectedrewards(e.value)}

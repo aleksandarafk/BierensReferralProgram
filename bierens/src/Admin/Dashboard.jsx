@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'; // Import React 
 import { Chart } from 'primereact/chart'; // Import the Chart component from PrimeReact library
 import './Dashboard.css'; // Import the CSS 
+import Menu from './Menu';
 
 // Main component for the Dashboard
 const Dashboard = () => {
@@ -114,7 +115,7 @@ const Dashboard = () => {
     // Return the JSX to render the component
     return (
         <div className="dashboard-section">
-            <div className='navbar'></div> {/*  navbar section */}
+            <Menu/>
             <div className="dashboard">
                 <h1 className='users-title'>Dashboard</h1>
                 <p className='users-title-clarification'>Check Conversion rate, Participation rate, Sales and Brand awareness</p>
