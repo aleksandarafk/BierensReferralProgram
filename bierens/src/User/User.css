@@ -6,15 +6,11 @@
 .image-1-icon,
 .users-main-page-v5-child {
   background: url(https://cdn.builder.io/api/v1/image/assets/TEMP/76d8b5b84920150e30d48b51fd6b565d181cb7eb8d7c8e9901fb0e6cea3157da?apiKey=1487a4e6add04b00a5f73b9046459d15&) !important; 
-  /* background-image: url("Animated-background.gif") !important; */
-  
   position: absolute;
   top: 0;
   left: 0;
   width: 1920px;
   height: 1080px;
-  /* background-repeat: no-repeat;
-  background-size: 100% 100%; */
 }
 .image-1-icon {
   object-fit: cover;
@@ -465,37 +461,13 @@
   font-family: "Play";
   font-size: large;
   border-color: #d9d9d9;
-  
-  /* border: solid white; */
-
 }
-
-/* .start-referring {
-  position: absolute;
-  height: 88.24%;
-  width: 88.73%;
-  top: 5.88%;
-  left: 5.63%;
-  display: flex;
-  background: linear-gradient(99.6deg, #bf743c, #6d2e00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.8;
-  cursor: pointer;
-  font-weight: 800;
-  border: solid;
-  
-} */
 
 .component-1-child:hover {
   background: linear-gradient(99.6deg, #bf743c, #6d2e00);
   box-shadow: 0px 0px 20px white;
   color: white;
   opacity: 1;
-  /* border: solid #d9d9d9; */
-  
 }
 
 .component-1 {
@@ -589,26 +561,11 @@
   
 }
 
-/* .spin {
-  position: absolute;
-  height: 88.11%;
-  width: 88.68%;
-  top: 5.95%;
-  left: 5.6%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.8;
-  font-weight: 800;
-} */
-
 .component-10-child:hover {
   background: white;
   box-shadow: 0px 0px 20px white;
   color: #bf743c;
   opacity: 1;
-  /* border: solid #d9d9d9; */
-  
 }
 
 .component-10 {
